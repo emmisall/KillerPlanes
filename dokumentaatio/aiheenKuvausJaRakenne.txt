@@ -1,1 +1,42 @@
 Aihe: Pieni lentokonetaistelupeli
+
+Tehdään kaksintaistelupeli (ei tekoälyä), jossa lentokoneet taistelevat vastekkain.
+Lähtötilanteessa molemmat saavat samanlaiset lentokoneet. Lentokoneet
+taistelevat vastekkain, osumasta saa aina rahaa ja voittaja saa hieman
+enemmän. Jos omaan lentokoneeseen osuu, lentokoneeseen tulee vaurio ja
+sen korjaaminen maksaan. Rahalla voi myös ostaa parempia aseita (uusi
+aseolio). Paremmat aseet osuvat suuremmalla todennäköisyydellä.
+Jos on paljon rahaa niin voi ostaa uuden lentokoneen (uusi lentokoneolio).
+Lentokoneiden määrä on kuitenkin rajoitettu. Pelin voittaa se, jolla on ensin tietty
+summa rahaa kasassa. Rahaa saa voittamisesta, mutta voittaa helpommin kun on parempia koneita
+ja aseita, joten osa rahoista kannattaa tuhlata niihin.
+
+
+Käyttäjät: Pelaaja 1 ja pelaaja 2.
+
+Käyttäjien toiminnot:
+
+Näytä ohje
+
+Aloita peli
+- anna nimi pelaajallesi
+
+Aloita taistelu
+- valitse lentokone
+- valitse ase
+- ammu
+
+Näytä oma rahamäärä
+Näytä kaikki myynnissä olevat aseet ja lentokoneet
+Osta ase
+- valitse mihin lentokoneeseen
+Osta lentokone
+Luettele omat lentokoneet ja niiden aseet
+Myy ase
+- valitse lentokone josta ase otetaan ja myytävä ase
+Myy lentokone
+- valitse lentokone joka myydään
+
+Lopeta peli (luovuttaa)
+
+

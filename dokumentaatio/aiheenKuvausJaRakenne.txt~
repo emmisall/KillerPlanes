@@ -1,1 +1,8 @@
 Aihe: Pieni lentokonetaistelupeli
+
+Tehdään kaksintaistelupeli, jossa lentokoneet taistelevat vastekkain.
+Lähtötilanteessa molemmat saavat samanlaiset lentokoneet. Lentokoneet
+taistelevat vastekkain, osumasta saa aina rahaa ja voittaja saa hieman
+enemmän. Jos omaan lentokoneeseen osuu, lentokoneeseen tulee vaurio ja
+sen korjaaminen maksaan. Rahalla voi myös ostaa parempia aseita.
+
