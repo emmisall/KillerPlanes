@@ -38,7 +38,19 @@ Luettele omat lentokoneet ja niiden aseet
 
 Lopeta peli (luovuttaa)
 
-Pelin ideana on siis kerätä rahaa, jolla saa parempia lentokoneita ja aseita jotta voittaa ampumiskierroksia ja saa
-lisää rahaa. 
+Idea pelin kulkuun
+1) Pelaaja aloittaa pelin, molemmat antavat nimen pelaajilleen, pelaajat 
+saavat ensimmäisen lentokoneen ja rahaa
+2) Taistelukierros, molemmat saavat ampua X-kertaa (esim. 3, ei 30...)
+- Taistelukierroksella on taisteluita X-määrä, jokaisen taistelun aluksi
+valitaan lentokone ja siitä käytettävä ase
+- Samaa konetta saa käyttää vaan kerran per kierros, ellei käyttäjällä
+ole vähemmän koneita kun kierroksessa taisteluita
+- Kierros loppuu kun X-taistelua on käyty  
+3) Taistelun lopputulos ilmoitetaan
+- Pelaajat saavat rahaa riippuen taistelukierroksen lopputuloksesta
+4) Pelaajat ostavat aseita/lentokoneita/lentokoneen korjausta kierrosten välissä
+5) Uusi taistelukierros X-määrällä taisteluita alkaa kun pelaajat haluavat
+6) Peli päättyy kun toinen saa tietyn rahamäärän täyteen ja voittaa 
 
 
