@@ -1,0 +1,12 @@
+Tuntikirjanpito:
+
+28.10.2013
+- aloitusluento: Kurssin esittely, sen jälkeen kaikki kohdat
+Git-ohjeesta: Githubiin tunnarit, SSH-avain, repositorion valmistelu,
+pieni ja toinen ja kolmas repotreeni, netbeansissa projekti
+harjoitustyölle
+- 1,5h
+
+30.10.2013
+- työn suunnittelua
+- 0,5h
