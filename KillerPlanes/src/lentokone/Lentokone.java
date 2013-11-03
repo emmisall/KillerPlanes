@@ -6,16 +6,29 @@
 
 package lentokone;
 
+import kayttaja.Pelaaja;
+
 /**
  *
  * @author verijuotikas
  */
 public class Lentokone {
     
-    private Ase ase;
+//    private Ase ase;
+    private String nimi;
+    private Lentokone lentokone;
     
-    Lentokone (Ase ase) {
-        this.ase=ase;
+    public Lentokone (Pelaaja pelaaja) {
+//        pelaaja.lisaaLentokone(this.lentokone);
     }
+    
+    public void setNimi(String nimi) {
+        this.nimi=nimi;
+    }
+    
+    public String getNimi(Lentokone lentokone) {
+        return nimi;
+    }
+    
     
 }
