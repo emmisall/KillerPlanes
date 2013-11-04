@@ -14,3 +14,7 @@ harjoitustyölle
 31.10.2013
 - työn suunnittelua
 - 0,5h
+
+1.11.-4.11.2013
+- luokkakaavion hahmottelua
+- n. 2h yhteensä koodausta
