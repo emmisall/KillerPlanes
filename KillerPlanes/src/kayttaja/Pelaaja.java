@@ -19,13 +19,11 @@ public class Pelaaja {
     private String nimi;
     private ArrayList<Lentokone> lentokoneet; 
     
-    public Pelaaja(String nimi, ArrayList<Lentokone> lentokoneet) {
+    public Pelaaja(String nimi) {
        this.nimi=nimi;
-       this.lentokoneet=lentokoneet;
+       lentokoneet=new ArrayList<Lentokone>();
         
     }
-    
-    
     
     public String getNimi() {
         return nimi;

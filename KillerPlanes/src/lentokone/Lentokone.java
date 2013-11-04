@@ -6,7 +6,7 @@
 
 package lentokone;
 
-import kayttaja.Pelaaja;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,18 +17,35 @@ public class Lentokone {
 //    private Ase ase;
     private String nimi;
     private Lentokone lentokone;
+    private ArrayList<Ase> aseet;
+    private int kestavyys;
+ 
     
-    public Lentokone (Pelaaja pelaaja) {
-//        pelaaja.lisaaLentokone(this.lentokone);
+    public Lentokone () {
+        aseet=new ArrayList<Ase>();
     }
     
     public void setNimi(String nimi) {
         this.nimi=nimi;
     }
     
-    public String getNimi(Lentokone lentokone) {
+    public String getNimi() {
         return nimi;
     }
     
+    public void lisaaAse(Ase ase) {
+        aseet.add(ase);
+    }
+    
+    public void setKestavyys(int kestavyys) {
+        this.kestavyys=kestavyys;
+    }
+    
+    public int getKestavyys () {
+        return kestavyys;
+    }
+    
+    
+
     
 }
