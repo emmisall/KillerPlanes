@@ -45,6 +45,10 @@ public class Lentokone {
         return kestavyys;
     }
     
+    public void paivitaKestavyys(Ase ase) {
+        this.kestavyys = this.kestavyys-ase.getVoima();
+    }
+    
     
 
     

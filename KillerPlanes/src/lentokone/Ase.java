@@ -44,9 +44,6 @@ public class Ase {
         return this.tarkkuus;
     }
     
-//    public boolean ammu() {
-//        
-//    }
-    
+
 
 }

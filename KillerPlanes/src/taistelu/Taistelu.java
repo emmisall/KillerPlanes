@@ -6,15 +6,31 @@
 
 package taistelu;
 
+import java.util.Random;
+import lentokone.Ase;
+import lentokone.Lentokone;
+
 /**
  *
  * @author verijuotikas
  */
 public class Taistelu {
     
+    Random rand = new Random();
     
     public Taistelu () {
         
+    }
+    
+    
+    public boolean ammu(Lentokone lentokone, Ase ase) {
+        double randomi = rand.nextDouble(); //talletetaan muuttujaan että saan testitulostuksia tehtyä, tulostusta ei jätetä tänne
+        if (randomi < ase.getTarkkuus()) {
+            System.out.println("Osui, random oli:"+randomi);
+            return true; //osuu
+        }
+        System.out.println("Ei osunut, randomi oli: "+randomi);
+        return false; //ei osu
     }
     
     

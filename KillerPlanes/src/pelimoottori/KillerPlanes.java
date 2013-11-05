@@ -9,6 +9,7 @@ import kayttaja.Pelaaja;
 import java.util.Scanner;
 import lentokone.Ase;
 import lentokone.Lentokone;
+import taistelu.Taistelu;
 
 /**
  *
@@ -54,9 +55,15 @@ public class KillerPlanes {
         lentokone1.lisaaAse(ase1);
         System.out.println("Aseen1 nimi on: "+ase1.getNimi()+" ja tarkkuus on "+ase1.getTarkkuus()+" ja voima on "+ase1.getVoima());
         
-        lentokone1.setKestavyys(30);
+        lentokone1.setKestavyys(150);
         System.out.println("Lentokoneen1 kestävyys on: "+lentokone1.getKestavyys());
         
+        Taistelu taistelu1 = new Taistelu();
+        if (taistelu1.ammu(lentokone2, ase1)==true) {
+            lentokone1.paivitaKestavyys(ase1);
+            System.out.println(lentokone1.getKestavyys());
+        }
+
     }
     
   
