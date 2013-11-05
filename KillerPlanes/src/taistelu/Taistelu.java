@@ -27,6 +27,7 @@ public class Taistelu {
         double randomi = rand.nextDouble(); //talletetaan muuttujaan että saan testitulostuksia tehtyä, tulostusta ei jätetä tänne
         if (randomi < ase.getTarkkuus()) {
             System.out.println("Osui, random oli:"+randomi);
+            lentokone.paivitaKestavyys(ase);
             return true; //osuu
         }
         System.out.println("Ei osunut, randomi oli: "+randomi);

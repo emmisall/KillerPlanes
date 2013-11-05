@@ -59,10 +59,9 @@ public class KillerPlanes {
         System.out.println("Lentokoneen1 kestävyys on: "+lentokone1.getKestavyys());
         
         Taistelu taistelu1 = new Taistelu();
-        if (taistelu1.ammu(lentokone2, ase1)==true) {
-            lentokone1.paivitaKestavyys(ase1);
-            System.out.println(lentokone1.getKestavyys());
-        }
+        taistelu1.ammu(lentokone1, ase1);
+        System.out.println(lentokone1.getKestavyys());
+        
 
     }
     

@@ -16,7 +16,6 @@ public class Lentokone {
     
 //    private Ase ase;
     private String nimi;
-    private Lentokone lentokone;
     private ArrayList<Ase> aseet;
     private int kestavyys;
  
