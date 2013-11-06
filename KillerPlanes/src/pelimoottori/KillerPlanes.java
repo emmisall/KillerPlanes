@@ -22,6 +22,8 @@ public class KillerPlanes {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //tämä on vain testailua varten..
                 
         Scanner lukija = new Scanner(System.in);
         String nimi1;
