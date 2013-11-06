@@ -17,11 +17,11 @@ public class Lentokone {
 //    private Ase ase;
     private String nimi;
     private ArrayList<Ase> aseet;
-    private int kestavyys;
+    private int energia;
  
     
     public Lentokone () {
-        aseet=new ArrayList<Ase>();
+        this.aseet=new ArrayList<Ase>();
     }
     
     public void setNimi(String nimi) {
@@ -37,15 +37,20 @@ public class Lentokone {
     }
     
     public void setEnergia(int kestavyys) {
-        this.kestavyys=kestavyys;
+        this.energia=kestavyys;
     }
     
     public int getEnergia () {
-        return kestavyys;
+        return energia;
     }
     
     public void paivitaEnergia(Ase ase) {
-        this.kestavyys = this.kestavyys-ase.getTeho();
+        this.energia = this.energia-ase.getTeho();
+        // pitää lisätä että jos energia menee 0 tai alle 0 niin lentokone tippuu -> poistetaa arrayLististä
+    }
+    
+    public ArrayList<Ase> palautaAseet() {
+        return aseet;
     }
     
     

@@ -22,7 +22,7 @@ public class Pelaaja {
     public Pelaaja(String nimi) {
        this.nimi=nimi;
        lentokoneet=new ArrayList<Lentokone>();
-        
+       // tässä pitää lisätä myös ensimmäinen lentokone kun uusi pelaaja tehdään -> pitää testata
     }
     
     public String getNimi() {
