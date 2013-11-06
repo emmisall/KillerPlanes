@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author verijuotikas
  */
 public class Pelaaja {
-    
+    //testi
     private String nimi;
     private ArrayList<Lentokone> lentokoneet; 
     private Lentokone lentokone;
