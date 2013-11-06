@@ -14,10 +14,13 @@ import java.util.ArrayList;
  */
 public class Lentokone {
     
-//    private Ase ase;
+    private Ase ase;
     private String nimi;
     private ArrayList<Ase> aseet;
     private int energia;
+    //tässä ei puututa virheellisiin (esim. < 0) syöttöarvoihin vielä, tiedetään
+    //mutta lentokoneet lisää ylläpitäjä joka nyt saa toistaiseksi luvan tietää että mitä on tekemässä, 
+    //pelaajat vain ottavat käyttöön ylläpitäjän lisäämiä lentokoneita
  
     
     public Lentokone () {
@@ -36,8 +39,8 @@ public class Lentokone {
         aseet.add(ase);
     }
     
-    public void setEnergia(int kestavyys) {
-        this.energia=kestavyys;
+    public void setEnergia(int energia) {
+        this.energia=energia;
     }
     
     public int getEnergia () {
