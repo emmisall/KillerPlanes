@@ -28,7 +28,7 @@ public class Ase {
         return this.nimi;
     }
     
-    public void setVoima(int teho) {
+    public void setTeho(int teho) {
         this.teho=teho;
     }
     
@@ -36,7 +36,7 @@ public class Ase {
         this.tarkkuus=tarkkuus;
     }
     
-    public int getVoima() {
+    public int getTeho() {
         return this.teho;
     }
     

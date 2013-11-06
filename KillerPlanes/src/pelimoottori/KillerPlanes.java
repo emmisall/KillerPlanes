@@ -51,16 +51,16 @@ public class KillerPlanes {
         Ase ase1 = new Ase();
         ase1.setNimi("Sinko");
         ase1.setTarkkuus(0.7);
-        ase1.setVoima(20);
+        ase1.setTeho(20);
         lentokone1.lisaaAse(ase1);
-        System.out.println("Aseen1 nimi on: "+ase1.getNimi()+" ja tarkkuus on "+ase1.getTarkkuus()+" ja voima on "+ase1.getVoima());
+        System.out.println("Aseen1 nimi on: "+ase1.getNimi()+" ja tarkkuus on "+ase1.getTarkkuus()+" ja voima on "+ase1.getTeho());
         
-        lentokone1.setKestavyys(150);
-        System.out.println("Lentokoneen1 kestävyys on: "+lentokone1.getKestavyys());
+        lentokone1.setEnergia(150);
+        System.out.println("Lentokoneen1 kestävyys on: "+lentokone1.getEnergia());
         
         Taistelu taistelu1 = new Taistelu();
         taistelu1.ammu(lentokone1, ase1);
-        System.out.println(lentokone1.getKestavyys());
+        System.out.println(lentokone1.getEnergia());
         
 
     }

@@ -36,16 +36,16 @@ public class Lentokone {
         aseet.add(ase);
     }
     
-    public void setKestavyys(int kestavyys) {
+    public void setEnergia(int kestavyys) {
         this.kestavyys=kestavyys;
     }
     
-    public int getKestavyys () {
+    public int getEnergia () {
         return kestavyys;
     }
     
-    public void paivitaKestavyys(Ase ase) {
-        this.kestavyys = this.kestavyys-ase.getVoima();
+    public void paivitaEnergia(Ase ase) {
+        this.kestavyys = this.kestavyys-ase.getTeho();
     }
     
     
