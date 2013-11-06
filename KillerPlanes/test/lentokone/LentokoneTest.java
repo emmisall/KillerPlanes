@@ -4,6 +4,7 @@
  */
 package lentokone;
 
+import kayttaja.Pelaaja;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,7 +19,9 @@ import taistelu.Taistelu;
  */
 public class LentokoneTest {
     
-    Lentokone lentokone1 = new Lentokone();
+    Lentokone lentokone1;
+    Ase ase1;
+    Pelaaja pelaaja1;
     
     public LentokoneTest() {
     }
@@ -33,7 +36,9 @@ public class LentokoneTest {
     
     @Before
     public void setUp() {
-        
+        pelaaja1 = new Pelaaja("Emmi");
+        ase1 = new Ase();
+        lentokone1 = new Lentokone();
     }
     
     @After
@@ -49,25 +54,33 @@ public class LentokoneTest {
     
     @Test
     public void paivitaEnergiaToimiiKunOsutaan() {
-        Ase ase1 = new Ase();
         ase1.setTeho(40);
         ase1.setTarkkuus(1);
         lentokone1.setEnergia(200);
         Taistelu taistelu1 = new Taistelu();
-        taistelu1.ammu(lentokone1, ase1);
+        taistelu1.ammu(lentokone1, ase1, pelaaja1);
         assertEquals(160, lentokone1.getEnergia());
         
     }
   
     @Test
     public void paivitaEnergiaToimiiKunEiOsuta() {
-        Ase ase1 = new Ase();
         ase1.setTeho(40);
         ase1.setTarkkuus(0);
         lentokone1.setEnergia(200);
         Taistelu taistelu1 = new Taistelu();
-        taistelu1.ammu(lentokone1, ase1);
+        taistelu1.ammu(lentokone1, ase1, pelaaja1);
         assertEquals(200, lentokone1.getEnergia());
+    }
+    
+    @Test
+    public void josEnergiaNollanTaiAllePalauttaaFalsen() {
+        ase1.setTeho(200);
+        ase1.setTarkkuus(1);
+        lentokone1.setEnergia(200);
+        Taistelu taistelu1 = new Taistelu();
+        taistelu1.ammu(lentokone1, ase1, pelaaja1);
+ 
     }
     
 }

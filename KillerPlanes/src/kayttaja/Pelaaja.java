@@ -18,10 +18,11 @@ public class Pelaaja {
     
     private String nimi;
     private ArrayList<Lentokone> lentokoneet; 
+    private Lentokone lentokone;
     
     public Pelaaja(String nimi) {
        this.nimi=nimi;
-       lentokoneet=new ArrayList<Lentokone>();
+       this.lentokoneet=new ArrayList<Lentokone>();
        // tässä pitää lisätä myös ensimmäinen lentokone kun uusi pelaaja tehdään -> pitää testata
     }
     
@@ -31,6 +32,18 @@ public class Pelaaja {
     
     public void lisaaLentokone(Lentokone lentokone) {
         lentokoneet.add(lentokone);
+    }
+    
+    public ArrayList<Lentokone> palautaLentokoneet() {
+        return lentokoneet;
+    }
+    
+    public boolean tarkistaSailyykoKoneIlmassa(Lentokone lentokone) { //tässä siis poistetaan lentokone pelaajan listasta jos tippuu taistelussa
+        if (lentokone.getEnergia() <= 0) {
+            lentokoneet.remove(lentokone);
+            return false;
+        }
+        else return true;
     }
     
     

@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  */
 public class AseTest {
     
-    
+    //Tässä luokassa ei ainakaan toistaiseksi ole juuri testattavaa koska siinä on vain gettereitä ja settereitä
     
     public AseTest() {
     }

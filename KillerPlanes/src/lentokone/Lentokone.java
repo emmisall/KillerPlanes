@@ -46,7 +46,6 @@ public class Lentokone {
     
     public void paivitaEnergia(Ase ase) {
         this.energia = this.energia-ase.getTeho();
-        // pitää lisätä että jos energia menee 0 tai alle 0 niin lentokone tippuu -> poistetaa arrayLististä
     }
     
     public ArrayList<Ase> palautaAseet() {

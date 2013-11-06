@@ -59,7 +59,7 @@ public class KillerPlanes {
         System.out.println("Lentokoneen1 kestävyys on: "+lentokone1.getEnergia());
         
         Taistelu taistelu1 = new Taistelu();
-        taistelu1.ammu(lentokone1, ase1);
+        taistelu1.ammu(lentokone1, ase1, pelaaja1);
         System.out.println(lentokone1.getEnergia());
         
 
