@@ -16,9 +16,14 @@ harjoitustyölle
 - 0,5h
 
 1.11.-4.11.2013
-- luokkakaavion hahmottelua
-- n. 2h yhteensä koodausta
+- luokkakaavion hahmottelua ja koodausta yhteensä n. 2h
 
 5.11.2013 
 - kaverin kanssa mietittiin peliä, n. 0,75h
 - koodausta n. 0,5h
+
+6.11.2013
+- testien tekoa ja koodausta pajassa n. 2,5h
+
+7.11.2013
+- luokkakaavion piirtäminen puhtaaksi 0,25h
