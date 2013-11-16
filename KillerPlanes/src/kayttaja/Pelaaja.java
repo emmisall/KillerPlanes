@@ -8,6 +8,7 @@ package kayttaja;
 
 import lentokone.Lentokone;
 import java.util.ArrayList;
+import lentokone.Ase;
 
 
 /**
@@ -19,12 +20,14 @@ public class Pelaaja {
     private String nimi;
     private ArrayList<Lentokone> lentokoneet; 
     private Lentokone lentokone;
-    private Raha rahat;
+    private int rahat;
+    private int summa;
+
     
     public Pelaaja(String nimi) {
        this.nimi=nimi;
        this.lentokoneet=new ArrayList<Lentokone>();
-       this.rahat = new Raha();
+       this.rahat=1000; //alkupääoma pelaajalle
        // tässä pitää lisätä myös ensimmäinen lentokone kun uusi pelaaja tehdään -> pitää testata
     }
     
@@ -48,14 +51,33 @@ public class Pelaaja {
         else return true;
     }
     
+    public void setRahaa(int summa) {
+        this.rahat=rahat+summa;
+    }
+    
+    public int getRahat() {
+        return rahat;
+        
+    }
+    
     public boolean ostaLentokone(Lentokone lentokone) {
-        if (rahat.vahennaRahaa(lentokone.getHinta())==true) {
+        if (getRahat()-lentokone.getHinta()>=0) {
+            setRahaa(0-lentokone.getHinta());
             lisaaLentokone(lentokone);
             return true;
         }
         return false;
-        
     }
+    
+     public boolean ostaAse(Ase ase, Lentokone lentokone) {
+         if (getRahat()-ase.getHinta() >= 0) {
+             lentokone.lisaaAse(ase);
+             setRahaa(0-ase.getHinta());
+             return true;
+         }
+         return false;
+     }
+   
     
     
 }
