@@ -27,3 +27,6 @@ harjoitustyölle
 
 7.11.2013
 - luokkakaavion piirtäminen puhtaaksi 0,25h
+
+16.11.2013
+- koodausta n. 2h
