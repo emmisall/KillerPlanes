@@ -24,12 +24,13 @@ public class Taistelu {
     }
     
     
-    public boolean ammu(Lentokone lentokone, Ase ase, Pelaaja pelaaja) {
+    public boolean ammu(Lentokone lentokone, Ase ase, Pelaaja kohde, Pelaaja ampuja) {
         double randomi = rand.nextDouble(); //talletetaan muuttujaan että saan testitulostuksia tehtyä, tulostusta ei jätetä tänne
         if (randomi < ase.getTarkkuus()) {
             System.out.println("Osui, random oli:"+randomi);
             lentokone.paivitaEnergia(ase);
-            pelaaja.tarkistaSailyykoKoneIlmassa(lentokone);
+            kohde.tarkistaSailyykoKoneIlmassa(lentokone);
+            ampuja.setRahaa(ase.getTeho()); //ampuja saa osumasta rahaa sen verran kuin aseessa oli tehoja tai kenties kertaa 3 tms. jos tuntuu että peli ei etene
             return true; //osuu
         }
         System.out.println("Ei osunut, randomi oli: "+randomi);

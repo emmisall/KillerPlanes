@@ -21,6 +21,7 @@ import taistelu.Taistelu;
 public class PelaajaTest {
     
     Pelaaja pelaaja1;
+    Pelaaja pelaaja2;
     Lentokone lentokone1;
     Lentokone lentokone2;
     Taistelu taistelu1;
@@ -41,6 +42,7 @@ public class PelaajaTest {
     @Before
     public void setUp() {
        pelaaja1 = new Pelaaja("Emmi");
+       pelaaja2 = new Pelaaja("Anni");
        lentokone1 = new Lentokone();
        lentokone2 = new Lentokone();
        taistelu1 = new Taistelu();
@@ -65,7 +67,7 @@ public class PelaajaTest {
    @Test
    public void palauttaaFalseJosLentokoneTippuuEnergiaTasanNolla() {
        ase1.setTeho(200);
-       taistelu1.ammu(lentokone1, ase1, pelaaja1);
+       taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
        assertFalse(pelaaja1.tarkistaSailyykoKoneIlmassa(lentokone1));
        
    }
@@ -73,28 +75,28 @@ public class PelaajaTest {
    @Test
    public void palauttaaFalseJosLentokoneTippuuEnergiaAlleNolla() {
        ase1.setTeho(500);
-       taistelu1.ammu(lentokone1, ase1, pelaaja1);
+       taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
        assertFalse(pelaaja1.tarkistaSailyykoKoneIlmassa(lentokone1));
     }   
    
    @Test 
    public void palauttaaTrueJosLentokoneEiTipuEnergiaYliNolla() {
        ase1.setTeho(100);
-       taistelu1.ammu(lentokone1, ase1, pelaaja1);
+       taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
        assertTrue(pelaaja1.tarkistaSailyykoKoneIlmassa(lentokone1));
    }
    
    @Test
    public void poistaaLentokoneenListastaJosSeTippuu() {
        ase1.setTeho(500);
-       taistelu1.ammu(lentokone1, ase1, pelaaja1);
+       taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
        assertFalse(pelaaja1.palautaLentokoneet().contains(lentokone1));
    }
    
    @Test
    public void eiPoistaLentokonettaListastaJosSeEiTipu() {
        ase1.setTeho(100);
-       taistelu1.ammu(lentokone1, ase1, pelaaja1);
+       taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
        assertTrue(pelaaja1.palautaLentokoneet().contains(lentokone1));
    }
    

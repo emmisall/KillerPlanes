@@ -20,8 +20,8 @@ import taistelu.Taistelu;
 public class LentokoneTest {
     
     Lentokone lentokone1;
-    Ase ase1;
     Pelaaja pelaaja1;
+    Pelaaja pelaaja2;
     
     public LentokoneTest() {
     }
@@ -37,7 +37,7 @@ public class LentokoneTest {
     @Before
     public void setUp() {
         pelaaja1 = new Pelaaja("Emmi");
-        ase1 = new Ase();
+        pelaaja2 = new Pelaaja("Anni");
         lentokone1 = new Lentokone();
     }
     
@@ -54,32 +54,35 @@ public class LentokoneTest {
     
     @Test
     public void paivitaEnergiaToimiiKunOsutaan() {
+        Ase ase1 = new Ase();
         ase1.setTeho(40);
         ase1.setTarkkuus(1);
         lentokone1.setEnergia(200);
         Taistelu taistelu1 = new Taistelu();
-        taistelu1.ammu(lentokone1, ase1, pelaaja1);
+        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
         assertEquals(160, lentokone1.getEnergia());
         
     }
   
     @Test
     public void paivitaEnergiaToimiiKunEiOsuta() {
+        Ase ase1 = new Ase();
         ase1.setTeho(40);
         ase1.setTarkkuus(0);
         lentokone1.setEnergia(200);
         Taistelu taistelu1 = new Taistelu();
-        taistelu1.ammu(lentokone1, ase1, pelaaja1);
+        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
         assertEquals(200, lentokone1.getEnergia());
     }
     
     @Test
     public void josEnergiaNollanTaiAllePalauttaaFalsen() {
+        Ase ase1 = new Ase();
         ase1.setTeho(200);
         ase1.setTarkkuus(1);
         lentokone1.setEnergia(200);
         Taistelu taistelu1 = new Taistelu();
-        taistelu1.ammu(lentokone1, ase1, pelaaja1);
+        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
  
     }
     

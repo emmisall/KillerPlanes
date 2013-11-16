@@ -22,7 +22,9 @@ public class TaisteluTest {
     
     Taistelu taistelu1;
     Pelaaja pelaaja1;
+    Pelaaja pelaaja2;
     Lentokone lentokone1;
+
     
     public TaisteluTest() {
     }
@@ -39,6 +41,7 @@ public class TaisteluTest {
     public void setUp() {
         taistelu1 = new Taistelu();
         pelaaja1 = new Pelaaja("Emmi");
+        pelaaja2 = new Pelaaja("Anni");
         lentokone1 = new Lentokone();
     }
     
@@ -48,22 +51,42 @@ public class TaisteluTest {
  
     @Test
     public void ampuminenPalauttaaOikeinKunOsutaan() {
-        lentokone1.setEnergia(300);
         Ase ase1 = new Ase();
+        lentokone1.setEnergia(300);
         ase1.setTeho(40);
         ase1.setTarkkuus(1);
-        assertTrue(taistelu1.ammu(lentokone1, ase1, pelaaja1));
+        assertTrue(taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2));
         
     }
     
     @Test
     public void ampuminenPalauttaaOikeinKunEiOsuta() {
+        Ase ase1 = new Ase();
         lentokone1.setEnergia(300);
+        ase1.setTeho(40);
+        ase1.setTarkkuus(0);
+        assertFalse(taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2));
+    }
+    
+    @Test
+    public void antaaRahaaKunOsutaan() {
+        Ase ase1 = new Ase();
+        ase1.setTeho(40);
+        ase1.setTarkkuus(1);
+        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
+        assertEquals(pelaaja2.getRahat(),1040);
+    }
+    
+    @Test 
+    public void eiAnnaRahaaKunEiOsuta() {
         Ase ase1 = new Ase();
         ase1.setTeho(40);
         ase1.setTarkkuus(0);
-        assertFalse(taistelu1.ammu(lentokone1, ase1, pelaaja1));
+        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
+        assertEquals(pelaaja2.getRahat(),1000);
     }
+        
+    
     
     
     
