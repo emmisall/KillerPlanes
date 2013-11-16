@@ -7,6 +7,7 @@
 package lentokone;
 
 import java.util.ArrayList;
+import kayttaja.Raha;
 
 /**
  *
@@ -16,8 +17,10 @@ public class Lentokone {
     
     private Ase ase;
     private String nimi;
+    private int hinta;
     private ArrayList<Ase> aseet;
     private int energia;
+    private Raha raha;
     //tässä ei puututa virheellisiin (esim. < 0) syöttöarvoihin vielä, tiedetään
     //mutta lentokoneet lisää ylläpitäjä joka nyt saa toistaiseksi luvan tietää että mitä on tekemässä, 
     //pelaajat vain ottavat käyttöön ylläpitäjän lisäämiä lentokoneita
@@ -36,7 +39,7 @@ public class Lentokone {
     }
     
     public void lisaaAse(Ase ase) {
-        aseet.add(ase);
+        aseet.add(this.ase);
     }
     
     public void setEnergia(int energia) {
@@ -53,6 +56,22 @@ public class Lentokone {
     
     public ArrayList<Ase> palautaAseet() {
         return aseet;
+    }
+    
+    public void setHinta(int hinta) {
+        this.hinta=hinta;
+    }
+    
+    public int getHinta() {
+        return hinta;
+    }
+    
+    public boolean ostaAse(Ase ase) {
+        if (raha.vahennaRahaa(ase.getHinta())==true) {
+            lisaaAse(ase);
+            return true;
+        }
+        return false;
     }
     
     

@@ -15,6 +15,7 @@ public class Ase {
     private int teho;
     private double tarkkuus;
     private String nimi;
+    private int hinta;
     
     public Ase () {
         
@@ -29,7 +30,7 @@ public class Ase {
     }
     
     public String getNimi() {
-        return this.nimi;
+        return nimi;
     }
     
     public void setTeho(int teho) {
@@ -47,6 +48,16 @@ public class Ase {
     public double getTarkkuus() {
         return this.tarkkuus;
     }
+    
+    public void setHinta(int hinta) {
+        this.hinta=hinta;
+    }
+    
+    public int getHinta() {
+        return hinta;
+    }
+    
+    
     
 
 

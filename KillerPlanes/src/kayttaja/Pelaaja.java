@@ -19,10 +19,12 @@ public class Pelaaja {
     private String nimi;
     private ArrayList<Lentokone> lentokoneet; 
     private Lentokone lentokone;
+    private Raha rahat;
     
     public Pelaaja(String nimi) {
        this.nimi=nimi;
        this.lentokoneet=new ArrayList<Lentokone>();
+       this.rahat = new Raha();
        // tässä pitää lisätä myös ensimmäinen lentokone kun uusi pelaaja tehdään -> pitää testata
     }
     
@@ -44,6 +46,15 @@ public class Pelaaja {
             return false;
         }
         else return true;
+    }
+    
+    public boolean ostaLentokone(Lentokone lentokone) {
+        if (rahat.vahennaRahaa(lentokone.getHinta())==true) {
+            lisaaLentokone(lentokone);
+            return true;
+        }
+        return false;
+        
     }
     
     
