@@ -30,7 +30,7 @@ public class KillerPlanes {
                 
 //        Scanner lukija = new Scanner(System.in);
 //        
-        
+   
         Kayttoliittyma kayttis = new Kayttoliittyma();
         SwingUtilities.invokeLater(kayttis);
         

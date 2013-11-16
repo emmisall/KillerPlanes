@@ -31,6 +31,8 @@ public class Pelaaja {
        this.rahat=1000; //alkupääoma pelaajalle
        // tässä pitää lisätä myös ensimmäinen lentokone kun uusi pelaaja tehdään -> pitää testata
     }
+
+   
     
     public String getNimi() {
         return nimi;
