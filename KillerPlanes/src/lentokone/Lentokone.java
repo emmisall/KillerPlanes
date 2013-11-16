@@ -41,7 +41,7 @@ public class Lentokone {
     }
     
     public void lisaaAse(Ase ase) {
-        aseet.add(this.ase);
+        aseet.add(ase);
     }
     
     public void setEnergia(int energia) {

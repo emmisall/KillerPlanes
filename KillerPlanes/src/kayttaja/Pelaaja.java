@@ -22,6 +22,7 @@ public class Pelaaja {
     private Lentokone lentokone;
     private int rahat;
     private int summa;
+    private Ase ase;
 
     
     public Pelaaja(String nimi) {
@@ -71,8 +72,8 @@ public class Pelaaja {
     
      public boolean ostaAse(Ase ase, Lentokone lentokone) {
          if (getRahat()-ase.getHinta() >= 0) {
-             lentokone.lisaaAse(ase);
              setRahaa(0-ase.getHinta());
+             lentokone.lisaaAse(ase);
              return true;
          }
          return false;
