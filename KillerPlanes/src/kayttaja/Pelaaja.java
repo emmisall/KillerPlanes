@@ -54,6 +54,7 @@ public class Pelaaja {
     
     public void setRahaa(int summa) {
         this.rahat=rahat+summa;
+        //jos raha ylittää voittosumman, pelaaja voittaa. tarkistus?
     }
     
     public int getRahat() {
