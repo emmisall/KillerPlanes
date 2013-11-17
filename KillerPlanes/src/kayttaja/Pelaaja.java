@@ -9,6 +9,7 @@ package kayttaja;
 import lentokone.Lentokone;
 import java.util.ArrayList;
 import lentokone.Ase;
+import lentokone.LentokoneidenLuominen;
 
 
 /**
@@ -23,16 +24,20 @@ public class Pelaaja {
     private int rahat;
     private int summa;
     private Ase ase;
+    private LentokoneidenLuominen lentsikat;
+    private Lentokone lentokone1;
+    private Lentokone lentokone2;
+    private Lentokone lentokone3;
+    private Lentokone lentokone4;
 
     
     public Pelaaja(String nimi) {
        this.nimi=nimi;
        this.lentokoneet=new ArrayList<Lentokone>();
        this.rahat=1000; //alkupääoma pelaajalle
-       // tässä pitää lisätä myös ensimmäinen lentokone kun uusi pelaaja tehdään -> pitää testata
+       this.lentsikat = new LentokoneidenLuominen(lentokone1, lentokone2, lentokone3, lentokone4);
+       lentokoneet.add(lentsikat.getLento1()); //lisätään ensimmäinen lentokone pelaajalle 
     }
-
-   
     
     public String getNimi() {
         return nimi;

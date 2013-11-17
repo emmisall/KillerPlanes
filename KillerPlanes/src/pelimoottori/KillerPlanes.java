@@ -12,6 +12,7 @@ import kayttoliittyma.Kayttoliittyma;
 import lentokone.Ase;
 import lentokone.Lentokone;
 import taistelu.Taistelu;
+import lentokone.LentokoneidenLuominen;
 
 
 /**
@@ -30,11 +31,10 @@ public class KillerPlanes {
                 
 //        Scanner lukija = new Scanner(System.in);
 //        
-   
         Kayttoliittyma kayttis = new Kayttoliittyma();
         SwingUtilities.invokeLater(kayttis);
         
-        
+ 
 
     }
     

@@ -6,22 +6,32 @@
 
 package kayttoliittyma;
 
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
+
 
 /**
  *
  * @author verijuotikas
  */
-public class PelaajienLisaysKuuntelija implements ActionListener {
+public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
     
     private JTextField pelaajan1Nimi;
     private JTextField pelaajan2Nimi;
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
-    
+    private Kayttoliittyma kayttis;
+    private JFrame frame;
+
     public PelaajienLisaysKuuntelija(Pelaaja pelaaja1, Pelaaja pelaaja2, JTextField pelaajan1Nimi, JTextField pelaajan2Nimi) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;
@@ -34,9 +44,45 @@ public class PelaajienLisaysKuuntelija implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         pelaaja1 = new Pelaaja(pelaajan1Nimi.getText());
         pelaaja2 = new Pelaaja(pelaajan2Nimi.getText());
-//        System.out.println(pelaaja1.getNimi());
-//        System.out.println(pelaaja2.getNimi());
-//        System.out.println(pelaaja1.getRahat());
+        
+        //tiedän että edellinen frame ei sulkeudu kun tämä seuraava avataan, mutta en osannut tehdä sitä sulkeutumista.. 
+        //ja en tiedä saako näin edes tehdä muutenkaan :))
+        run();
+    }
+    
+     
+    @Override
+    public void run() {
+        frame = new JFrame("Pelin aloitus");
+        frame.setPreferredSize(new Dimension(700,200));
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        luoKomponentit(frame.getContentPane());
+        
+        frame.pack();
+        frame.setVisible(true);
+        
+       
+    }
+    
+     private void luoKomponentit(Container container) {
+
+        GridLayout leiska = new GridLayout(5,1);
+        container.setLayout(leiska);
+        JLabel teksti = new JLabel("Taistelu alkaa, ensimmäiset lentokoneet ovat valmiina pelaajille "+pelaaja1.getNimi()+" ja "+pelaaja2.getNimi()+".");
+        JLabel teksti2 = new JLabel("Ensimmäisen lentokoneen tiedot ovat molemmilla samat.");
+        JLabel teksti3 = new JLabel("Nimi on "+pelaaja1.palautaLentokoneet().get(0).getNimi()+" ja energia on "+pelaaja1.palautaLentokoneet().get(0).getEnergia()+".");
+        JButton ohjeet = new JButton("Pelin ohjeet.");
+        JButton ekataistelu = new JButton("Aloita taistelu.");
+        
+        container.add(teksti);
+        container.add(teksti2);
+        container.add(teksti3);
+        container.add(ohjeet); //ei tee vielä mitään
+        container.add(ekataistelu);
+    }
+     
+      public JFrame getFrame() {
+        return frame;
     }
     
 }

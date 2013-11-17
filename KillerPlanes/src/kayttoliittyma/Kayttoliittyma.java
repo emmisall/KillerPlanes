@@ -15,12 +15,15 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
+
 
 public class Kayttoliittyma implements Runnable {
 
@@ -39,7 +42,7 @@ public class Kayttoliittyma implements Runnable {
     
     @Override
     public void run() {
-        frame = new JFrame("Taistelu");
+        frame = new JFrame("Pelaajien nimet");
         frame.setPreferredSize(new Dimension(500,200));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
@@ -51,8 +54,7 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private void luoKomponentit(Container container) {
-//        JLabel nimet = new JLabel("Pelaajien nimet:");
-//        container.add(nimet, BorderLayout.NORTH);
+
         GridLayout leiska = new GridLayout(3,2);
         container.setLayout(leiska);
         JLabel pelaajan1nimi = new JLabel("Pelaajan1 nimi: ");
@@ -77,4 +79,5 @@ public class Kayttoliittyma implements Runnable {
         return frame;
     }
     
+   
 }
