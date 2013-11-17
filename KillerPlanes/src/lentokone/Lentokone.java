@@ -22,6 +22,10 @@ public class Lentokone {
     private ArrayList<Ase> aseet;
     private int energia;
     private Pelaaja pelaaja;
+    private AseidenLuominen aseistuksenTeko;
+    private Ase ase1;
+    private Ase ase2;
+    private Ase ase3;
 
     //tässä ei puututa virheellisiin (esim. < 0) syöttöarvoihin vielä, tiedetään
     //mutta lentokoneet lisää ylläpitäjä joka nyt saa toistaiseksi luvan tietää että mitä on tekemässä, 
@@ -30,6 +34,8 @@ public class Lentokone {
     
     public Lentokone () {
         this.aseet=new ArrayList<Ase>();
+        aseistuksenTeko = new AseidenLuominen(ase1, ase2, ase3);
+        aseet.add(aseistuksenTeko.getAse1()); //lentokoneeseen laitetaan aina eka ase valmiiksi
     }
     
     public void setNimi(String nimi) {

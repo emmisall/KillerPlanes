@@ -46,7 +46,7 @@ public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
         pelaaja2 = new Pelaaja(pelaajan2Nimi.getText());
         
         //tiedän että edellinen frame ei sulkeudu kun tämä seuraava avataan, mutta en osannut tehdä sitä sulkeutumista.. 
-        //ja en tiedä saako näin edes tehdä muutenkaan :))
+        //ja en tiedä saako näin edes tehdä muutenkaan, että tehdään aina uusi kuuntelija joka avaa uuden framen ja se edellinenn suljetaan sitten jotenkin... :))
         run();
     }
     
@@ -66,18 +66,22 @@ public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
     
      private void luoKomponentit(Container container) {
 
-        GridLayout leiska = new GridLayout(5,1);
+        GridLayout leiska = new GridLayout(6,1);
         container.setLayout(leiska);
         JLabel teksti = new JLabel("Taistelu alkaa, ensimmäiset lentokoneet ovat valmiina pelaajille "+pelaaja1.getNimi()+" ja "+pelaaja2.getNimi()+".");
         JLabel teksti2 = new JLabel("Ensimmäisen lentokoneen tiedot ovat molemmilla samat.");
         JLabel teksti3 = new JLabel("Nimi on "+pelaaja1.palautaLentokoneet().get(0).getNimi()+" ja energia on "+pelaaja1.palautaLentokoneet().get(0).getEnergia()+".");
-        JButton ohjeet = new JButton("Pelin ohjeet.");
+        JButton ohjeet = new JButton("Pelin ohjeet."); //ei tee vielä mitään
+        JLabel teksti4 = new JLabel("Ensimmäisellä kierroksella on sama kone ja sama ase molemmilla, joten niitä ei valita.");
         JButton ekataistelu = new JButton("Aloita taistelu.");
+        EkaPeliKuuntelija ekapeli = new EkaPeliKuuntelija(pelaaja1.palautaLentokoneet().get(0), pelaaja2.palautaLentokoneet().get(0), pelaaja1.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja2.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja1, pelaaja2);
+        ekataistelu.addActionListener(ekapeli);
         
         container.add(teksti);
         container.add(teksti2);
         container.add(teksti3);
-        container.add(ohjeet); //ei tee vielä mitään
+        container.add(teksti4);
+        container.add(ohjeet); 
         container.add(ekataistelu);
     }
      
