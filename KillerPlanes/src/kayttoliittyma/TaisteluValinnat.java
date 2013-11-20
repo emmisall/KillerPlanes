@@ -55,12 +55,13 @@ public class TaisteluValinnat implements ActionListener, Runnable{
         JLabel teksti1 = new JLabel ("Pelaajan "+pelaaja1.getNimi()+" lentokoneet ja niiden aseet ovat seuraavat: ");
         ArrayList<Lentokone> koneet1 = new ArrayList<Lentokone>();
         koneet1=pelaaja1.palautaLentokoneet();
-        JLabel kone1=new JLabel();
         for (Lentokone lentokone : koneet1) {
-            kone1=new JLabel(lentokone.getNimi()+" ja sen energia on "+lentokone.getEnergia());
+            JLabel kone=new JLabel(lentokone.getNimi()+" ja sen energia on "+lentokone.getEnergia());
+            container.add(kone);
         }
+        
         container.add(teksti1);
-        container.add(kone1);
+        
        
         
         
