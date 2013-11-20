@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -25,7 +26,7 @@ import lentokone.Lentokone;
  */
 public class TaisteluValinnat implements ActionListener, Runnable{
     
-    //huom huom huom ei puutu vielä virheellisiin valintoihin, ne on mahdollisia
+    //huom huom huom ei puutu vielä virheellisiin valintoihin, ne on mahdollisia 
     
     
     private JFrame frame;
@@ -68,6 +69,7 @@ public class TaisteluValinnat implements ActionListener, Runnable{
         koneet1=pelaaja1.palautaLentokoneet();
         container.add(teksti);
         container.add(teksti1);
+        
         for (Lentokone lentokone : koneet1) {
             JRadioButton koneNappula = new JRadioButton("Lentokone "+lentokone.getNimi()+", energia "+lentokone.getEnergia()+".");
             lentokoneNappulat1.add(koneNappula);
@@ -80,6 +82,10 @@ public class TaisteluValinnat implements ActionListener, Runnable{
                 container.add(aseNappula);
             }
         }
+        
+//        String valittu = lentokoneNappulat1.getSelection().getActionCommand();
+        
+        
         container.add(teksti3);
         ArrayList<Lentokone> koneet2 = new ArrayList<Lentokone>();
         ArrayList<Ase> aseet2 = new ArrayList<Ase>();
@@ -99,10 +105,15 @@ public class TaisteluValinnat implements ActionListener, Runnable{
             }
         }
         
-        
-       
+          
+//          PeliKuuntelija pelikuuntelija = new PeliKuuntelija();
+//          JButton taistele = new JButton("Taistele!");
+//          taistele.addActionListener(pelikuuntelija);
+//          container.add(taistele);
    
     }
+    
+  
     
      public JFrame getFrame() {
         return frame;

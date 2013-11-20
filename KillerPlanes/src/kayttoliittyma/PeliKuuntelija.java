@@ -23,7 +23,7 @@ import taistelu.Taistelu;
  *
  * @author verijuotikas
  */
-public class EkaPeliKuuntelija implements ActionListener, Runnable {
+public class PeliKuuntelija implements ActionListener, Runnable {
     //ekalla kierroksella lentsikat ja aseet on molemmilla samoja, mutta joka tapauksessa jatkossa aina kun kierros alkaa, 
     //pitää olla tiedossa että millä lentsikalla ja millä aseella pelaajat ovat taistelemassa
     private Lentokone lentokone1;
@@ -35,7 +35,7 @@ public class EkaPeliKuuntelija implements ActionListener, Runnable {
     private JFrame frame;
     private Taistelu taistelu1;
     
-    public EkaPeliKuuntelija(Lentokone lentokone1, Lentokone lentokone2, Ase ase1, Ase ase2, Pelaaja pelaaja1, Pelaaja pelaaja2) {
+    public PeliKuuntelija(Lentokone lentokone1, Lentokone lentokone2, Ase ase1, Ase ase2, Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.lentokone1=lentokone1;
         this.lentokone2=lentokone2;
         this.ase1=ase1;
@@ -53,7 +53,7 @@ public class EkaPeliKuuntelija implements ActionListener, Runnable {
     
     @Override
     public void run(){
-        frame = new JFrame("Ensimmäinen peli.");
+        frame = new JFrame("Peli.");
         frame.setPreferredSize(new Dimension(700,200));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
@@ -67,7 +67,7 @@ public class EkaPeliKuuntelija implements ActionListener, Runnable {
         container.setLayout(leiska);
         JLabel teksti2;
         JLabel teksti3;
-        JLabel teksti1 = new JLabel("Ensimmäisen taistelun tulos:");
+        JLabel teksti1 = new JLabel("Taistelun tulos:");
         if (taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2)==true) { //pelaajat kääntyvät tässä siis toisin päin tämän ja seuraavan iffin välillä eli kohde ja ampuja, katso ammu-metodin paramterit luokassa taistelu
             teksti2 = new JLabel("Pelaajaan "+pelaaja1.getNimi()+" osui. Lentokoneen energia on nyt "+lentokone1.getEnergia()+".");
         }

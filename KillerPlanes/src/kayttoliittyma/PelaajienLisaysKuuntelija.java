@@ -37,6 +37,7 @@ public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
         this.pelaaja2=pelaaja2;
         this.pelaajan1Nimi=pelaajan1Nimi;
         this.pelaajan2Nimi=pelaajan2Nimi;
+        //tähän lisätään tarkitus että jos pelaajan nimi on tyhjä niin nimeksi tulee Pelaaja1 tai Pelaaja2
         
     }
     
@@ -73,9 +74,7 @@ public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
         JLabel teksti3 = new JLabel("Nimi on "+pelaaja1.palautaLentokoneet().get(0).getNimi()+" ja energia on "+pelaaja1.palautaLentokoneet().get(0).getEnergia()+".");
         JButton ohjeet = new JButton("Pelin ohjeet."); //ei tee vielä mitään
         JButton aloitus = new JButton("Aloita taistelu.");
-//        EkaPeliKuuntelija ekapeli = new EkaPeliKuuntelija(pelaaja1.palautaLentokoneet().get(0), pelaaja2.palautaLentokoneet().get(0), pelaaja1.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja2.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja1, pelaaja2);
-//        ekataistelu.addActionListener(ekapeli);
-        
+
         TaisteluValinnat valinnat = new TaisteluValinnat(pelaaja1, pelaaja2);
         aloitus.addActionListener(valinnat);
         
