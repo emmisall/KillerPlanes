@@ -35,10 +35,10 @@ public class Kayttoliittyma implements Runnable {
         
     }
     
-//    public Kayttoliittyma(Pelaaja pelaaja1, Pelaaja pelaaja2) {
-//        this.pelaaja1=pelaaja1;
-//        this.pelaaja2=pelaaja2;
-//    }
+    public Kayttoliittyma(Pelaaja pelaaja1, Pelaaja pelaaja2) {
+        this.pelaaja1=pelaaja1;
+        this.pelaaja2=pelaaja2;
+    }
     
     @Override
     public void run() {

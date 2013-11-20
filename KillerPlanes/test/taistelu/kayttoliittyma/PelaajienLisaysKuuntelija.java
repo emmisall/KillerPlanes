@@ -72,18 +72,17 @@ public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
         JLabel teksti2 = new JLabel("Ensimmäisen lentokoneen tiedot ovat molemmilla samat.");
         JLabel teksti3 = new JLabel("Nimi on "+pelaaja1.palautaLentokoneet().get(0).getNimi()+" ja energia on "+pelaaja1.palautaLentokoneet().get(0).getEnergia()+".");
         JButton ohjeet = new JButton("Pelin ohjeet."); //ei tee vielä mitään
-        JButton aloitus = new JButton("Aloita taistelu.");
-//        EkaPeliKuuntelija ekapeli = new EkaPeliKuuntelija(pelaaja1.palautaLentokoneet().get(0), pelaaja2.palautaLentokoneet().get(0), pelaaja1.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja2.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja1, pelaaja2);
-//        ekataistelu.addActionListener(ekapeli);
-        
-        TaisteluValinnat valinnat = new TaisteluValinnat(pelaaja1, pelaaja2);
-        aloitus.addActionListener(valinnat);
+        JLabel teksti4 = new JLabel("Ensimmäisellä kierroksella on sama kone ja sama ase molemmilla, joten niitä ei valita.");
+        JButton ekataistelu = new JButton("Aloita taistelu.");
+        EkaPeliKuuntelija ekapeli = new EkaPeliKuuntelija(pelaaja1.palautaLentokoneet().get(0), pelaaja2.palautaLentokoneet().get(0), pelaaja1.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja2.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja1, pelaaja2);
+        ekataistelu.addActionListener(ekapeli);
         
         container.add(teksti);
         container.add(teksti2);
         container.add(teksti3);
+        container.add(teksti4);
         container.add(ohjeet); 
-        container.add(aloitus);
+        container.add(ekataistelu);
     }
      
       public JFrame getFrame() {

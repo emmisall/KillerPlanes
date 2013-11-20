@@ -62,7 +62,7 @@ public class EkaPeliKuuntelija implements ActionListener, Runnable {
         frame.setVisible(true);
     }
     
-    private void luoKomponentit(Container container) {
+    public void luoKomponentit(Container container) {
         GridLayout leiska = new GridLayout(6,1);
         container.setLayout(leiska);
         JLabel teksti2;
