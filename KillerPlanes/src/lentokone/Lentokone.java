@@ -36,6 +36,7 @@ public class Lentokone {
         this.aseet=new ArrayList<Ase>();
         aseistuksenTeko = new AseidenLuominen(ase1, ase2, ase3);
         aseet.add(aseistuksenTeko.getAse1()); //lentokoneeseen laitetaan aina eka ase valmiiksi
+        aseet.add(aseistuksenTeko.getAse2());
     }
     
     public void setNimi(String nimi) {

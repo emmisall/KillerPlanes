@@ -37,6 +37,7 @@ public class Pelaaja {
        this.rahat=1000; //alkupääoma pelaajalle
        this.lentsikat = new LentokoneidenLuominen(lentokone1, lentokone2, lentokone3, lentokone4);
        lentokoneet.add(lentsikat.getLento1()); //lisätään ensimmäinen lentokone pelaajalle 
+       lentokoneet.add(lentsikat.getLento2()); //toinen testimielessä
     }
     
     public String getNimi() {

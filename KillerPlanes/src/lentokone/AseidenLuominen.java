@@ -41,6 +41,10 @@ public class AseidenLuominen {
         return ase1;
     }
     
+    public Ase getAse2() {
+        return ase2;
+    }
+    
     //muille ei vielä gettereitä
     
 }

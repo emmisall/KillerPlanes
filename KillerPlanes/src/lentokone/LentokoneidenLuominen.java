@@ -44,6 +44,9 @@ public class LentokoneidenLuominen {
         return lentokone1;
     }
     
+    public Lentokone getLento2(){
+        return lentokone2;
+    }    
     //ei vielä gettereitä muille lentsikoille olemassa
     
 }
