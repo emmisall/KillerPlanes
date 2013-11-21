@@ -74,7 +74,7 @@ public class Lentokone {
     public int getHinta() {
         return hinta;
     }
-    
+  
    
     
 
