@@ -27,7 +27,8 @@ import lentokone.Lentokone;
  */
 public class TaisteluValinnat implements ActionListener, Runnable{
     
-    //huom huom huom ei puutu vielä virheellisiin valintoihin, ne on mahdollisia 
+    //ei toimi vielä ollenkaan niinkun pitäs, koska ei pysty siirtämään parametrina eteen päin valittuja lentokoneita ja aseita PeliKuuntelijaan, peliKuuntelija kylläkin toimii jos vaan saisi siirrettyä asiat sinne
+    //lisäksi nuo alasvetovalikot on omituisessa järjestyksessä vielä mutta se varmaan onnistuu korjata jotenkin.
     
     
     private JFrame frame;
@@ -35,7 +36,6 @@ public class TaisteluValinnat implements ActionListener, Runnable{
     private Pelaaja pelaaja2;
     private JComboBox aseistus1;
     private JComboBox aseistus2;
-
     
     public TaisteluValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelaaja1=pelaaja1;
@@ -80,7 +80,7 @@ public class TaisteluValinnat implements ActionListener, Runnable{
             aseet1 = lentokone.palautaAseet();
             aseistus1 = new JComboBox();
             for (Ase ase : aseet1) {
-                aseistus1.addItem(ase.getNimi()+", tarkkuus "+ase.getTarkkuus()+", teho "+ase.getTeho());
+                aseistus1.addItem(lentokone.getNimi()+": "+ase.getNimi()+", tarkkuus "+ase.getTarkkuus()+", teho "+ase.getTeho());
                 container.add(aseistus1);
             }
             
@@ -99,7 +99,7 @@ public class TaisteluValinnat implements ActionListener, Runnable{
             aseet2 = lentokone.palautaAseet();
             aseistus2 = new JComboBox();
             for (Ase ase : aseet2) {
-                aseistus2.addItem(ase.getNimi()+", tarkkuus "+ase.getTarkkuus()+", teho "+ase.getTeho());
+                aseistus2.addItem(lentokone.getNimi()+": "+ase.getNimi()+", tarkkuus "+ase.getTarkkuus()+", teho "+ase.getTeho());
                 container.add(aseistus2);
             }
             
