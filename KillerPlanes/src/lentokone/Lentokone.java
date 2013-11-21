@@ -30,6 +30,10 @@ public class Lentokone {
     //tässä ei puututa virheellisiin (esim. < 0) syöttöarvoihin vielä, tiedetään
     //mutta lentokoneet lisää ylläpitäjä joka nyt saa toistaiseksi luvan tietää että mitä on tekemässä, 
     //pelaajat vain ottavat käyttöön ylläpitäjän lisäämiä lentokoneita
+    
+    /**
+     * Lentokone-luokka hallitsee lentokoneen energiaa ja aseita
+     */
  
     
     public Lentokone () {
@@ -58,6 +62,12 @@ public class Lentokone {
     public int getEnergia () {
         return energia;
     }
+    
+    /**
+     * Päivittää lentokoneen energian, jos siihen osutaan taistelussa, vähentää energiaa
+     * sen verran mitä aseessa on tehoja
+     * @param ase se ase, jolla ammuttiin
+     */
     
     public void paivitaEnergia(Ase ase) {
         this.energia = this.energia-ase.getTeho();

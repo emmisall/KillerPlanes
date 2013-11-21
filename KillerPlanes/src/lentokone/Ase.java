@@ -17,6 +17,10 @@ public class Ase {
     private String nimi;
     private int hinta;
     
+    /**
+     * Asetetaan aseen tiedot ja voidaan saada ne gettereillä taistelua ja ostamista varten
+     */
+    
     public Ase () {
         
     }

@@ -60,11 +60,6 @@ public class Pelaaja {
     }
     
     
-    /**
-     * Metodi pelaajan lentokoneiden palauttamiseen
-     * @return lentokoneet arrayListinä
-     */
-    
     public ArrayList<Lentokone> palautaLentokoneet() {
         return lentokoneet;
     }

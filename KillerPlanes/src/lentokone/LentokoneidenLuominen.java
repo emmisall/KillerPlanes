@@ -12,13 +12,20 @@ package lentokone;
  */
 public class LentokoneidenLuominen {
     
-    //tässä luokassa luodaan lentokoneet, joita käyttäjät voivat ostaa, hintoja ja energiaa yms. ei ole mietitty vielä pelin toimimisen kannalta
-    //pääasia että peliä voi pelata, en tiedä voiko kukaan voittaa näillä hinnoilla ja energioilla
-    //aseille pitää tehdä samanlainen
+    
     private Lentokone lentokone1;
     private Lentokone lentokone2;
     private Lentokone lentokone3;
     private Lentokone lentokone4;
+    
+    /**
+     * Luodaan lentokoneet, joita voi ostaa. "Ylläpidon" määrittelemiä, pelaaja ei voi hallita näitä
+     * 
+     * @param lentokone1
+     * @param lentokone2
+     * @param lentokone3
+     * @param lentokone4 
+     */
     
     public LentokoneidenLuominen(Lentokone lentokone1, Lentokone lentokone2, Lentokone lentokone3, Lentokone lentokone4) {
         this.lentokone1 = new Lentokone();

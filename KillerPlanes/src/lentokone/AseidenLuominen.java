@@ -19,6 +19,13 @@ public class AseidenLuominen {
     //asiden ominaisuudet ei välttämättä ole optimaaliset pelin läpiviennin kannalta vielä mutta ovat kuitenkin olemassa
     //että peliä voi pelata
     
+    /**
+     * Luodaan aseet lentokoneelle, "ylläpidon" määrittelemä, pelaaja ei voi hallita näitä
+     * @param ase1
+     * @param ase2
+     * @param ase3 
+     */
+    
     public AseidenLuominen(Ase ase1, Ase ase2, Ase ase3) {
         this.ase1=new Ase();
         this.ase2=new Ase();
