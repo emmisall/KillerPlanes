@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 
 package kayttaja;
 
@@ -11,13 +8,14 @@ import java.util.ArrayList;
 import lentokone.Ase;
 import lentokone.LentokoneidenLuominen;
 
-
 /**
- *
+ * 
  * @author verijuotikas
  */
+
 public class Pelaaja {
-    //testi
+    
+    
     private String nimi;
     private ArrayList<Lentokone> lentokoneet; 
     private Lentokone lentokone;
@@ -30,6 +28,13 @@ public class Pelaaja {
     private Lentokone lentokone3;
     private Lentokone lentokone4;
 
+    
+    /**
+     * 
+     * Pelaaja-luokka hallitsee pelaajan lentokoneita ja rahoja
+     * 
+     * @param nimi pelaajan antama pelaajanimi
+     */
     
     public Pelaaja(String nimi) {
        this.nimi=nimi;
@@ -44,13 +49,32 @@ public class Pelaaja {
         return nimi;
     }
     
+    
+    /**
+     * Metodi lisää lentokoneen käyttäjän lentokone-arrayListiin
+     * 
+     * @param lentokone Se lentokone, joka halutaan lisätä, esim. ostettu lentokone
+     */
     public void lisaaLentokone(Lentokone lentokone) {
         lentokoneet.add(lentokone);
     }
     
+    
+    /**
+     * Metodi pelaajan lentokoneiden palauttamiseen
+     * @return lentokoneet arrayListinä
+     */
+    
     public ArrayList<Lentokone> palautaLentokoneet() {
         return lentokoneet;
     }
+    
+    /**
+     * Metodin avulla tarkistetaan, säilyykö pelaajan lentokone ilmassa osuman jälkeen, poistaa pelaajan arrayLististä koneen jos se tippuu
+     * 
+     * @param lentokone eli se pelaajan lentokone, johon osuttiin
+     * @return false jos tippuu, true jos ei tipu 
+     */
     
     public boolean tarkistaSailyykoKoneIlmassa(Lentokone lentokone) { //tässä siis poistetaan lentokone pelaajan listasta jos tippuu taistelussa
         if (lentokone.getEnergia() <= 0) {
@@ -70,6 +94,13 @@ public class Pelaaja {
         
     }
     
+    /**
+     * Metodilla ostetaan lentokone, jos on rahaa tarpeeksi. Lentokone lisätään arrayListiin ja pelaajalta otetaan rahaa pois.
+     * 
+     * @param lentokone
+     * @return true jos oli rahaa ostaa, false jos ei ollut
+     */
+    
     public boolean ostaLentokone(Lentokone lentokone) {
         if (getRahat()-lentokone.getHinta()>=0) {
             setRahaa(0-lentokone.getHinta());
@@ -78,6 +109,14 @@ public class Pelaaja {
         }
         return false;
     }
+    
+    /**
+     * Metodilla ostetaan ase, jos on rahaa tarpeeksi. Ase lisätään sen lentokoneen ArrayListiin jolle se ostetaan
+     * Ei sisällä vielä tarkistusta sille että onko koneessa jo 3 asetta, jos on niin ei voi ostaa.
+     * @param ase se ase joka halutaan ostaa
+     * @param lentokone se lentokone, johon asetta ollaan ostamassa
+     * @return true jos oli rahaa ostaa, false jos ei
+     */
     
      public boolean ostaAse(Ase ase, Lentokone lentokone) {
          if (getRahat()-ase.getHinta() >= 0) {

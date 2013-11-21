@@ -34,3 +34,11 @@ harjoitustyölle
 17.11.2013
 - koodausta ja pään seinään hakkaamista n. 5h
 - luokkakaavion päivitys, 0,25h
+
+20.11.2013
+- koodausta n. 5h, josta suurin osa ihan turhaa............
+
+21.11.2013
+- sekvenssikaaviot n. 1h
+- koodausta n. 1h
+- javadoccia n. 1h

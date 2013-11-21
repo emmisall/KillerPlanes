@@ -60,6 +60,7 @@ public class TaisteluValinnat implements ActionListener, Runnable{
         frame.setVisible(true);
     }
     
+    
     private void luoKomponentit(Container container) {
         GridLayout leiska = new GridLayout(20,1);
         container.setLayout(leiska);
@@ -73,6 +74,9 @@ public class TaisteluValinnat implements ActionListener, Runnable{
         container.add(teksti1);
         
         JComboBox lentokoneet1 = new JComboBox();
+        
+        //nämä on kirjoitettu nyt vain niin että näkyy mitä on, eli ei toimi vielä oikein (laitetaan lentokoneita alasvetovalikkoihin)
+        //en saanut sitä toimimaan vielä oikein niin tein niin että näkyy edes mitä siellä on
         
         for (Lentokone lentokone : koneet1) {
             lentokoneet1.addItem(lentokone.getNimi()+", energia "+lentokone.getEnergia());
