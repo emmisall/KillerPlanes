@@ -73,19 +73,21 @@ public class TaisteluValinnat implements ActionListener, Runnable{
         
         lentokoneet1 = new JComboBox<Lentokone>();
         
-
+        //tää ei nyt vieläkään rullaa ihan oikein kun tuo eka lentokoneen alasvetovalikko menee väärään kohtaan..
         
         for (Lentokone lentokone : koneet1) {
             lentokoneet1.addItem(lentokone);
             container.add(lentokoneet1);
             aseet1 = lentokone.palautaAseet();
             aseistus1 = new JComboBox<Ase>();
+            container.add(new JLabel(lentokone.getNimi()+" aseet: "));
             for (Ase ase : aseet1) {
                 aseistus1.addItem(ase);
                 container.add(aseistus1);
             }
             
-        }       
+        }
+
        
         
         container.add(teksti3);
@@ -100,6 +102,7 @@ public class TaisteluValinnat implements ActionListener, Runnable{
             container.add(lentokoneet2);
             aseet2 = lentokone.palautaAseet();
             aseistus2 = new JComboBox<Ase>();
+            container.add(new JLabel(lentokone.getNimi()+" aseet: "));
             for (Ase ase : aseet2) {
                 aseistus2.addItem(ase);
                 container.add(aseistus2);
