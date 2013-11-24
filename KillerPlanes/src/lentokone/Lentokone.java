@@ -51,8 +51,12 @@ public class Lentokone {
         return nimi;
     }
     
-    public void lisaaAse(Ase ase) {
-        aseet.add(ase);
+    public boolean lisaaAse(Ase ase) {
+        if (aseet.size()==3) {
+            return false;
+        }
+        else aseet.add(ase);
+        return true;
     }
     
     public void setEnergia(int energia) {

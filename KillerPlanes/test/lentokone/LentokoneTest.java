@@ -46,10 +46,19 @@ public class LentokoneTest {
     }
     
     @Test
-    public void aseenLisaysToimii() {
+    public void aseenLisaysToimiiJosEiOleLiikaaAseita() {
         Ase ase1 = new Ase();
         lentokone1.lisaaAse(ase1);
         assertTrue(lentokone1.palautaAseet().contains(ase1));
+    }
+    
+    @Test
+    public void aseenLisaysToimiiJosOnJo3Asetta() {
+        Ase ase1 = new Ase();
+        lentokone1.lisaaAse(ase1);
+        lentokone1.lisaaAse(ase1);
+        lentokone1.lisaaAse(ase1);
+        assertFalse(lentokone1.lisaaAse(ase1));
     }
     
     @Test
