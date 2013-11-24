@@ -42,3 +42,6 @@ harjoitustyölle
 - sekvenssikaaviot n. 1h
 - koodausta n. 1h
 - javadoccia n. 1h
+
+24.11.2013
+- koodausta n. 1h
