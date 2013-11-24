@@ -84,6 +84,10 @@ public class Lentokone {
     public int getHinta() {
         return hinta;
     }
+    
+    public String toString() {
+        return getNimi()+", energia "+getEnergia();
+    }
   
    
     

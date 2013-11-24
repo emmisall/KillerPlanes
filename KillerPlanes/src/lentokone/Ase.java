@@ -61,6 +61,10 @@ public class Ase {
         return hinta;
     }
     
+    public String toString() {
+        return getNimi()+", tarkkuus "+getTarkkuus()+", teho "+getTeho();
+    }
+    
     
     
 
