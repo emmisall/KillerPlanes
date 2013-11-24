@@ -80,7 +80,7 @@ public class PeliKuuntelija implements ActionListener, Runnable {
         else
             teksti3 = new JLabel("Pelaajaan "+pelaaja2.getNimi()+" ei osunut.");
         
-        JLabel rahat = new JLabel("Pelaajien omaisuus ensimmäisen taistelun jälkeen: ");
+        JLabel rahat = new JLabel("Pelaajien omaisuus taistelun jälkeen: ");
         JLabel rahat1 = new JLabel(pelaaja1.getNimi()+": "+pelaaja1.getRahat());
         JLabel rahat2 = new JLabel(pelaaja2.getNimi()+": "+pelaaja2.getRahat());
         

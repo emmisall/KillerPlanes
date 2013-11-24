@@ -10,12 +10,10 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JRadioButton;
 import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
 import lentokone.Ase;
@@ -27,15 +25,15 @@ import lentokone.Lentokone;
  */
 public class TaisteluValinnat implements ActionListener, Runnable{
     
-    //ei toimi vielä ollenkaan niinkun pitäs, koska ei pysty siirtämään parametrina eteen päin valittuja lentokoneita ja aseita PeliKuuntelijaan, peliKuuntelija kylläkin toimii jos vaan saisi siirrettyä asiat sinne
-    //lisäksi nuo alasvetovalikot on omituisessa järjestyksessä vielä mutta se varmaan onnistuu korjata jotenkin.
     
     
     private JFrame frame;
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
-    private JComboBox aseistus1;
-    private JComboBox aseistus2;
+    private JComboBox<Ase> aseistus1;
+    private JComboBox<Ase> aseistus2;
+    private JComboBox<Lentokone> lentokoneet1;
+    private JComboBox<Lentokone> lentokoneet2;
     
     public TaisteluValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelaaja1=pelaaja1;
@@ -73,48 +71,52 @@ public class TaisteluValinnat implements ActionListener, Runnable{
         container.add(teksti);
         container.add(teksti1);
         
-        JComboBox lentokoneet1 = new JComboBox();
+        lentokoneet1 = new JComboBox<Lentokone>();
         
-        //nämä on kirjoitettu nyt vain niin että näkyy mitä on, eli ei toimi vielä oikein (laitetaan lentokoneita alasvetovalikkoihin)
-        //en saanut sitä toimimaan vielä oikein niin tein niin että näkyy edes mitä siellä on
+
         
         for (Lentokone lentokone : koneet1) {
-            lentokoneet1.addItem(lentokone.getNimi()+", energia "+lentokone.getEnergia());
+            lentokoneet1.addItem(lentokone);
             container.add(lentokoneet1);
             aseet1 = lentokone.palautaAseet();
-            aseistus1 = new JComboBox();
+            aseistus1 = new JComboBox<Ase>();
             for (Ase ase : aseet1) {
-                aseistus1.addItem(lentokone.getNimi()+": "+ase.getNimi()+", tarkkuus "+ase.getTarkkuus()+", teho "+ase.getTeho());
+                aseistus1.addItem(ase);
                 container.add(aseistus1);
             }
             
-        }
+        }       
+       
         
         container.add(teksti3);
 
         ArrayList<Lentokone> koneet2 = new ArrayList<Lentokone>();
         ArrayList<Ase> aseet2 = new ArrayList<Ase>();
         koneet2=pelaaja2.palautaLentokoneet();
-        JComboBox lentokoneet2 = new JComboBox();
+        lentokoneet2 = new JComboBox<Lentokone>();
         
         for (Lentokone lentokone : koneet2) {
-            lentokoneet2.addItem(lentokone.getNimi()+", energia "+lentokone.getEnergia());
+            lentokoneet2.addItem(lentokone);
             container.add(lentokoneet2);
             aseet2 = lentokone.palautaAseet();
-            aseistus2 = new JComboBox();
+            aseistus2 = new JComboBox<Ase>();
             for (Ase ase : aseet2) {
-                aseistus2.addItem(lentokone.getNimi()+": "+ase.getNimi()+", tarkkuus "+ase.getTarkkuus()+", teho "+ase.getTeho());
+                aseistus2.addItem(ase);
                 container.add(aseistus2);
             }
             
         }
           
+        Lentokone valittulento1 = (Lentokone) lentokoneet1.getSelectedItem();
+        Ase valittuase1 = (Ase) aseistus1.getSelectedItem();
+        Lentokone valittulento2 = (Lentokone) lentokoneet1.getSelectedItem();
+        Ase valittuase2 = (Ase) aseistus1.getSelectedItem();
        
         
-//          PeliKuuntelija pelikuuntelija = new PeliKuuntelija(lentokoneet1.getSelectedItem(), lentokoneet2.getSelectedItem(), aseistus1.getSelectedItem(), aseistus2.getSelectedItem(), pelaaja1, pelaaja2);
-//          JButton taistele = new JButton("Taistele!");
-//          taistele.addActionListener(pelikuuntelija);
-//          container.add(taistele);
+        PeliKuuntelija pelikuuntelija = new PeliKuuntelija(valittulento1, valittulento2, valittuase1, valittuase2, pelaaja1, pelaaja2);
+        JButton taistele = new JButton("Taistele!");
+        taistele.addActionListener(pelikuuntelija);
+        container.add(taistele);
    
     }
     
