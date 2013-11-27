@@ -47,6 +47,10 @@ harjoitustyölle
 - koodausta n. 1h
 
 27.11.2013
-- koodausta n. 5h, aika iso bugi tällä hetkellä ohjelmassa,
+- koodausta n. 6h, aika iso bugi tällä hetkellä ohjelmassa,
 alasvetovalikoista tulee aina valituksi ensimmäinen vaihtoehto,
-tiedän mistä se johtuu..
+tiedän mistä se johtuu.. ja tulipa todettua että täytyy tehdä fiksummin uusiksi tuo käyttöliittymä
+mutta vanhoista koodeista varmasti apua
+- javadocin päivitystä n. 0,5h
+- sekvenssikaavio 0,25h
+
