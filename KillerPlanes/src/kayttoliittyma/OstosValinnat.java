@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
 import lentokone.Ase;
+import lentokone.AseidenLuominen;
 import lentokone.Lentokone;
 
 /**
@@ -27,8 +28,12 @@ public class OstosValinnat implements ActionListener, Runnable {
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
     private JFrame frame;
-    private JComboBox lentokoneet1;
-    private JComboBox lentokoneet2;
+    private JComboBox<Lentokone> lentokoneet1;
+    private JComboBox<Lentokone> lentokoneet2;
+    private JComboBox<Ase> ostoaseet;
+    private Ase ase1;
+    private Ase ase2;
+    private Ase ase3;
     
     public OstosValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelaaja1=pelaaja1;
@@ -60,8 +65,8 @@ public class OstosValinnat implements ActionListener, Runnable {
         koneet1=pelaaja1.palautaLentokoneet();
         
          for (Lentokone lentokone : koneet1) {
-             lentokoneet1 = new JComboBox();
-             lentokoneet1.addItem(lentokone.toString2());
+             lentokoneet1 = new JComboBox<Lentokone>();
+             lentokoneet1.addItem(lentokone);
              container.add(lentokoneet1); 
          }
          
@@ -70,14 +75,16 @@ public class OstosValinnat implements ActionListener, Runnable {
          
          container.add(new JLabel("Pelaajan "+pelaaja2.getNimi()+" lentokoneet ja niiden aseet ovat: "));
          for (Lentokone lentokone : koneet2) {
-             lentokoneet2 = new JComboBox();
-             lentokoneet2.addItem(lentokone.toString2());
+             lentokoneet2 = new JComboBox<Lentokone>();
+             lentokoneet2.addItem(lentokone);
              container.add(lentokoneet2);
          }
          
          container.add(new JLabel("Ostettavia aseita ovat: "));
-         
-        
+         ostoaseet = new JComboBox<Ase>();
+         AseidenLuominen aseet = new AseidenLuominen(ase1, ase2, ase3);
+         ostoaseet.addItem(aseet.getAse1());
+         container.add(ostoaseet);
          
      }
     

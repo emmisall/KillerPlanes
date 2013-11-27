@@ -6,6 +6,8 @@
 
 package lentokone;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author verijuotikas
@@ -15,6 +17,7 @@ public class AseidenLuominen {
     private Ase ase1;
     private Ase ase2;
     private Ase ase3;
+
     
     //asiden ominaisuudet ei välttämättä ole optimaaliset pelin läpiviennin kannalta vielä mutta ovat kuitenkin olemassa
     //että peliä voi pelata
@@ -42,6 +45,7 @@ public class AseidenLuominen {
         this.ase1.setHinta(50);
         this.ase2.setHinta(100);
         this.ase3.setHinta(300);
+
     }
     
     public Ase getAse1() {
@@ -52,6 +56,10 @@ public class AseidenLuominen {
         return ase2;
     }
     
-    //muille ei vielä gettereitä
+    public Ase getAse3() {
+        return ase3;
+    }
+
+
     
 }

@@ -60,9 +60,15 @@ public class Pelaaja {
     }
     
     
+    /**
+     * Tämä metodi palauttaa siis vain tämän pelaajan lentokoneet
+     * @return lista lentokoneista
+     */
+    
     public ArrayList<Lentokone> palautaLentokoneet() {
         return lentokoneet;
     }
+    
     
     /**
      * Metodin avulla tarkistetaan, säilyykö pelaajan lentokone ilmassa osuman jälkeen, poistaa pelaajan arrayLististä koneen jos se tippuu

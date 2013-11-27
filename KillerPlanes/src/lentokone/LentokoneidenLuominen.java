@@ -6,6 +6,8 @@
 
 package lentokone;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author verijuotikas
@@ -17,7 +19,7 @@ public class LentokoneidenLuominen {
     private Lentokone lentokone2;
     private Lentokone lentokone3;
     private Lentokone lentokone4;
-    
+
     /**
      * Luodaan lentokoneet, joita voi ostaa. "Ylläpidon" määrittelemiä, pelaaja ei voi hallita näitä
      * 
@@ -44,7 +46,6 @@ public class LentokoneidenLuominen {
         this.lentokone2.setHinta(300);
         this.lentokone3.setHinta(400);
         this.lentokone4.setHinta(600);
-       
     }
     
     public Lentokone getLento1() {
@@ -63,4 +64,5 @@ public class LentokoneidenLuominen {
         return lentokone4;
     }
     
+
 }

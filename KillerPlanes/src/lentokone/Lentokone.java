@@ -77,9 +77,15 @@ public class Lentokone {
         this.energia = this.energia-ase.getTeho();
     }
     
+    /**
+     *Palauttaa vain tämän pelaajan aseet 
+     * @return aseet listana
+     */
+    
     public ArrayList<Ase> palautaAseet() {
         return aseet;
     }
+    
     
     public void setHinta(int hinta) {
         this.hinta=hinta;
@@ -90,21 +96,12 @@ public class Lentokone {
     }
     
     public String toString() {
-        return getNimi()+", energia "+getEnergia();
-    }
-    
-    public String toString2() {
-        String aseita=" Aseet: ";
+             String aseita=" Aseet: ";
         for (Ase ase4 : aseet) {
             aseita = aseita+ase4+" ";
         }
         return getNimi()+", energia "+getEnergia()+aseita;
     }
-   
-    
-
-    
-    
 
     
 }
