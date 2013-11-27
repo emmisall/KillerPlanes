@@ -23,7 +23,7 @@ import kayttaja.Pelaaja;
  *
  * @author verijuotikas
  */
-public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
+public class PelinAloitus implements ActionListener, Runnable {
     
     private JTextField pelaajan1Nimi;
     private JTextField pelaajan2Nimi;
@@ -32,7 +32,7 @@ public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
     private Kayttoliittyma kayttis;
     private JFrame frame;
 
-    public PelaajienLisaysKuuntelija(Pelaaja pelaaja1, Pelaaja pelaaja2, JTextField pelaajan1Nimi, JTextField pelaajan2Nimi) {
+    public PelinAloitus(Pelaaja pelaaja1, Pelaaja pelaaja2, JTextField pelaajan1Nimi, JTextField pelaajan2Nimi) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;
         this.pelaajan1Nimi=pelaajan1Nimi;
@@ -74,7 +74,7 @@ public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
         JButton ohjeet = new JButton("Pelin ohjeet."); //ei tee vielä mitään
         JLabel teksti4 = new JLabel("Ensimmäisellä kierroksella on sama kone ja sama ase molemmilla, joten niitä ei valita.");
         JButton ekataistelu = new JButton("Aloita taistelu.");
-        PeliKuuntelija ekapeli = new PeliKuuntelija(pelaaja1.palautaLentokoneet().get(0), pelaaja2.palautaLentokoneet().get(0), pelaaja1.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja2.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja1, pelaaja2);
+        PelinTulos ekapeli = new PelinTulos(pelaaja1.palautaLentokoneet().get(0), pelaaja2.palautaLentokoneet().get(0), pelaaja1.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja2.palautaLentokoneet().get(0).palautaAseet().get(0), pelaaja1, pelaaja2);
         ekataistelu.addActionListener(ekapeli);
         
         container.add(teksti);

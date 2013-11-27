@@ -31,6 +31,10 @@ public class Kayttoliittyma implements Runnable {
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
     
+    /**
+     * Pelin alku, annetaan pelaajille nimet.
+     */
+    
     public Kayttoliittyma() {
         
     }
@@ -63,7 +67,7 @@ public class Kayttoliittyma implements Runnable {
         JTextField nimiKentta2 = new JTextField();
         
         JButton lisaaNappula = new JButton("Aloita peli!");
-        PelaajienLisaysKuuntelija pelaajaKuuntelija = new PelaajienLisaysKuuntelija(pelaaja1, pelaaja2, nimiKentta1, nimiKentta2);
+        PelinAloitus pelaajaKuuntelija = new PelinAloitus(pelaaja1, pelaaja2, nimiKentta1, nimiKentta2);
         lisaaNappula.addActionListener(pelaajaKuuntelija);
         
         container.add(pelaajan1nimi);

@@ -23,7 +23,7 @@ import kayttaja.Pelaaja;
  *
  * @author verijuotikas
  */
-public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
+public class PelinAloitus implements ActionListener, Runnable {
     
     private JTextField pelaajan1Nimi;
     private JTextField pelaajan2Nimi;
@@ -32,7 +32,7 @@ public class PelaajienLisaysKuuntelija implements ActionListener, Runnable {
     private Kayttoliittyma kayttis;
     private JFrame frame;
 
-    public PelaajienLisaysKuuntelija(Pelaaja pelaaja1, Pelaaja pelaaja2, JTextField pelaajan1Nimi, JTextField pelaajan2Nimi) {
+    public PelinAloitus(Pelaaja pelaaja1, Pelaaja pelaaja2, JTextField pelaajan1Nimi, JTextField pelaajan2Nimi) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;
         this.pelaajan1Nimi=pelaajan1Nimi;

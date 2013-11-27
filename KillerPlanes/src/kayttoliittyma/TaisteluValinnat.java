@@ -118,7 +118,7 @@ public class TaisteluValinnat implements ActionListener, Runnable{
         Ase valittuase2 = (Ase) aseistus1.getSelectedItem();
        
         
-        PeliKuuntelija pelikuuntelija = new PeliKuuntelija(valittulento1, valittulento2, valittuase1, valittuase2, pelaaja1, pelaaja2);
+        PelinTulos pelikuuntelija = new PelinTulos(valittulento1, valittulento2, valittuase1, valittuase2, pelaaja1, pelaaja2);
         JButton taistele = new JButton("Taistele!");
         taistele.addActionListener(pelikuuntelija);
         container.add(taistele);

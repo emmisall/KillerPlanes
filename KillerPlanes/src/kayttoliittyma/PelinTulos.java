@@ -25,7 +25,7 @@ import taistelu.Taistelu;
  *
  * @author verijuotikas
  */
-public class PeliKuuntelija implements ActionListener, Runnable {
+public class PelinTulos implements ActionListener, Runnable {
     
     private Lentokone lentokone1;
     private Lentokone lentokone2;
@@ -37,7 +37,7 @@ public class PeliKuuntelija implements ActionListener, Runnable {
     private Taistelu taistelu1;
     
     
-    public PeliKuuntelija(Lentokone lentokone1, Lentokone lentokone2, Ase ase1, Ase ase2, Pelaaja pelaaja1, Pelaaja pelaaja2) {
+    public PelinTulos(Lentokone lentokone1, Lentokone lentokone2, Ase ase1, Ase ase2, Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.lentokone1=lentokone1;
         this.lentokone2=lentokone2;
         this.ase1=ase1;

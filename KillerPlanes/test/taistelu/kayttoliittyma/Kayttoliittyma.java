@@ -63,7 +63,7 @@ public class Kayttoliittyma implements Runnable {
         JTextField nimiKentta2 = new JTextField();
         
         JButton lisaaNappula = new JButton("Aloita peli!");
-        PelaajienLisaysKuuntelija pelaajaKuuntelija = new PelaajienLisaysKuuntelija(pelaaja1, pelaaja2, nimiKentta1, nimiKentta2);
+        PelinAloitus pelaajaKuuntelija = new PelinAloitus(pelaaja1, pelaaja2, nimiKentta1, nimiKentta2);
         lisaaNappula.addActionListener(pelaajaKuuntelija);
         
         container.add(pelaajan1nimi);
