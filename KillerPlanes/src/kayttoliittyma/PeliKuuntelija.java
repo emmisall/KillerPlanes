@@ -92,9 +92,9 @@ public class PeliKuuntelija implements ActionListener, Runnable {
         container.add(rahat1);
         container.add(rahat2);
         
-        AseOstosValinnat ostoksille = new AseOstosValinnat(pelaaja1);
+        AseOstosValinnat ostoksille = new AseOstosValinnat(pelaaja1, pelaaja2);
         container.add(new JLabel("Kauppa suoritetaan yksi pelaaja kerrallaan."));
-        JButton kauppa = new JButton("Kauppaan "+pelaaja1.getNimi());
+        JButton kauppa = new JButton("Asekauppaan "+pelaaja1.getNimi());
         kauppa.addActionListener(ostoksille);
         container.add(kauppa);
     }

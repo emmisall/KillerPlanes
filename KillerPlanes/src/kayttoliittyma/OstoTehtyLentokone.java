@@ -22,12 +22,14 @@ import lentokone.Lentokone;
  */
 public class OstoTehtyLentokone implements ActionListener, Runnable {
     
-    private Pelaaja pelaaja;
+    private Pelaaja pelaaja1;
+    private Pelaaja pelaaja2;
     private Lentokone lentokone;
     private JFrame frame;
     
-    public OstoTehtyLentokone(Pelaaja pelaaja, Lentokone lentokone) {
-        this.pelaaja=pelaaja;
+    public OstoTehtyLentokone(Pelaaja pelaaja1, Pelaaja pelaaja2, Lentokone lentokone) {
+        this.pelaaja1=pelaaja1;
+        this.pelaaja2=pelaaja2;
         this.lentokone=lentokone;
     }
     
@@ -38,7 +40,7 @@ public class OstoTehtyLentokone implements ActionListener, Runnable {
     
     @Override
     public void run(){
-        frame = new JFrame("Pelaajan "+pelaaja.getNimi()+"lentokonekauppa.");
+        frame = new JFrame("Pelaajan "+pelaaja1.getNimi()+" lentokoneostos.");
         frame.setPreferredSize(new Dimension(1000,200));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
@@ -51,16 +53,16 @@ public class OstoTehtyLentokone implements ActionListener, Runnable {
         GridLayout leiska = new GridLayout(10,1);
         container.setLayout(leiska);
         
-        if (pelaaja.ostaLentokone(lentokone)==true) {
+        if (pelaaja1.ostaLentokone(lentokone)==true) {
             container.add(new JLabel("Lentokoneen osto onnistui."));
-            container.add(new JLabel("Rahaa on nyt "+pelaaja.getRahat()));
+            container.add(new JLabel("Rahaa on nyt "+pelaaja1.getRahat()));
         }
         else 
             container.add(new JLabel("Osto ei onnistunut. Rahaa ei ollut tarpeeksi."));
         
-        JButton lentsikoita = new JButton("Lentokonekauppaan "+pelaaja.getNimi());
-        LentokoneOstosValinnat lentokoneosto = new LentokoneOstosValinnat(pelaaja);
-        lentsikoita.addActionListener(lentokoneosto);
+        JButton lentsikoita = new JButton("Asekauppaan "+pelaaja2.getNimi());
+        AseOstosValinnat ostoksille = new AseOstosValinnat(pelaaja2, pelaaja1);
+        lentsikoita.addActionListener(ostoksille);
         container.add(lentsikoita);
      
      }   

@@ -24,7 +24,8 @@ import lentokone.LentokoneidenLuominen;
  */
 public class LentokoneOstosValinnat implements ActionListener, Runnable {
     
-    private Pelaaja pelaaja;
+    private Pelaaja pelaaja1;
+    private Pelaaja pelaaja2;
     private JFrame frame;
     private Lentokone lentokone1;
     private Lentokone lentokone2;
@@ -32,8 +33,9 @@ public class LentokoneOstosValinnat implements ActionListener, Runnable {
     private Lentokone lentokone4;
     private JComboBox<Lentokone> ostokoneet;
     
-    public LentokoneOstosValinnat(Pelaaja pelaaja) {
-        this.pelaaja=pelaaja;
+    public LentokoneOstosValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
+        this.pelaaja1=pelaaja1;
+        this.pelaaja2=pelaaja2;
     }
     
     @Override
@@ -43,7 +45,7 @@ public class LentokoneOstosValinnat implements ActionListener, Runnable {
     
     @Override
     public void run(){
-        frame = new JFrame("Pelaajan "+pelaaja.getNimi()+"lentokonekauppa.");
+        frame = new JFrame("Pelaajan "+pelaaja1.getNimi()+"lentokonekauppa.");
         frame.setPreferredSize(new Dimension(1000,200));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
@@ -57,7 +59,7 @@ public class LentokoneOstosValinnat implements ActionListener, Runnable {
         container.setLayout(leiska);
         container.add(new JLabel("Valitse alasvetovalikosta se lentokone, jonka haluat ostaa. Lentokoneessa on yksi ase valmiina."));
         LentokoneidenLuominen lentokoneet = new LentokoneidenLuominen(lentokone1, lentokone2, lentokone3, lentokone4);
-        container.add(new JLabel("Pelaajalla "+pelaaja.getNimi()+" on rahaa "+pelaaja.getRahat()));
+        container.add(new JLabel("Pelaajalla "+pelaaja1.getNimi()+" on rahaa "+pelaaja1.getRahat()));
         ostokoneet = new JComboBox<Lentokone>();
              
         ostokoneet.addItem(lentokoneet.getLento1());
@@ -66,9 +68,12 @@ public class LentokoneOstosValinnat implements ActionListener, Runnable {
         ostokoneet.addItem(lentokoneet.getLento4());
         container.add(ostokoneet);
         
+        Lentokone ostettavalentokone = (Lentokone) ostokoneet.getSelectedItem();
+        
         JButton osta = new JButton("Osta lentokone");
         JButton enosta = new JButton("En osta mitään");
-        
+        OstoTehtyLentokone ostolento = new OstoTehtyLentokone(pelaaja1, pelaaja2, ostettavalentokone);
+        osta.addActionListener(ostolento);
         container.add(osta);
         container.add(enosta);
      }

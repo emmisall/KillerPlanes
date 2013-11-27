@@ -26,7 +26,8 @@ import lentokone.Lentokone;
  */
 public class AseOstosValinnat implements ActionListener, Runnable {
     
-    private Pelaaja pelaaja;
+    private Pelaaja pelaaja1;
+    private Pelaaja pelaaja2;
     private JFrame frame;
     private JComboBox<Lentokone> lentokoneet1;
     private JComboBox<Ase> ostoaseet;
@@ -34,8 +35,9 @@ public class AseOstosValinnat implements ActionListener, Runnable {
     private Ase ase2;
     private Ase ase3;
     
-    public AseOstosValinnat(Pelaaja pelaaja1) {
-        this.pelaaja=pelaaja1;
+    public AseOstosValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
+        this.pelaaja1=pelaaja1;
+        this.pelaaja2=pelaaja2;
     }
       
     @Override
@@ -45,7 +47,7 @@ public class AseOstosValinnat implements ActionListener, Runnable {
     
     @Override
     public void run(){
-        frame = new JFrame("Pelaajan "+pelaaja.getNimi()+"asekauppa.");
+        frame = new JFrame("Pelaajan "+pelaaja1.getNimi()+"asekauppa.");
         frame.setPreferredSize(new Dimension(1000,200));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
@@ -58,9 +60,9 @@ public class AseOstosValinnat implements ActionListener, Runnable {
         GridLayout leiska = new GridLayout(10,1);
         container.setLayout(leiska);
         container.add(new JLabel("Valitse alasvetovalikosta se lentokone, johon haluat ostaa aseen."));
-        container.add(new JLabel("Pelaajan "+pelaaja.getNimi()+" (rahaa "+pelaaja.getRahat()+") lentokoneet ja niiden aseet ovat: "));
+        container.add(new JLabel("Pelaajan "+pelaaja1.getNimi()+" (rahaa "+pelaaja1.getRahat()+") lentokoneet ja niiden aseet ovat: "));
         ArrayList<Lentokone> koneet1 = new ArrayList<Lentokone>();
-        koneet1=pelaaja.palautaLentokoneet();
+        koneet1=pelaaja1.palautaLentokoneet();
         
          for (Lentokone lentokone : koneet1) {
              lentokoneet1 = new JComboBox<Lentokone>();
@@ -81,7 +83,7 @@ public class AseOstosValinnat implements ActionListener, Runnable {
          
          JButton osta = new JButton("Osta ase");
          JButton enosta = new JButton("En osta mitään");
-         OstoTehtyAse osto = new OstoTehtyAse(pelaaja, valittulentokone, ostoase);
+         OstoTehtyAse osto = new OstoTehtyAse(pelaaja1, pelaaja2, valittulentokone, ostoase);
          osta.addActionListener(osto);
          container.add(osta);
          container.add(enosta);

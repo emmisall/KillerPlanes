@@ -100,7 +100,7 @@ public class Lentokone {
         for (Ase ase4 : aseet) {
             aseita = aseita+ase4+" ";
         }
-        return getNimi()+", energia "+getEnergia()+aseita;
+        return getNimi()+", energia "+getEnergia()+" hinta "+getHinta()+aseita;
     }
 
     
