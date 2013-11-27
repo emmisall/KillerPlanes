@@ -70,12 +70,14 @@ public class PeliKuuntelija implements ActionListener, Runnable {
         JLabel teksti3;
         JLabel teksti1 = new JLabel("Taistelun tulos:");
         if (taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2)==true) { //pelaajat kääntyvät tässä siis toisin päin tämän ja seuraavan iffin välillä eli kohde ja ampuja, katso ammu-metodin paramterit luokassa taistelu
+            container.add(new JLabel("ammuttiin lentokonetta"+lentokone1));
             teksti2 = new JLabel("Pelaajaan "+pelaaja1.getNimi()+" osui. Lentokoneen energia on nyt "+lentokone1.getEnergia()+".");
         }
         else 
             teksti2 = new JLabel("Pelaajaan "+pelaaja1.getNimi()+" ei osunut.");
         
         if (taistelu1.ammu(lentokone2, ase2, pelaaja2, pelaaja1)==true) {
+            container.add(new JLabel("ammuttiin lentokonetta"+lentokone2));
             teksti3= new JLabel("Pelaajaan "+pelaaja2.getNimi()+" osui. Lentokoneen energia on nyt "+lentokone2.getEnergia()+".");
         }
         else

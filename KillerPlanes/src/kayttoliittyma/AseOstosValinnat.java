@@ -63,9 +63,9 @@ public class AseOstosValinnat implements ActionListener, Runnable {
         container.add(new JLabel("Pelaajan "+pelaaja1.getNimi()+" (rahaa "+pelaaja1.getRahat()+") lentokoneet ja niiden aseet ovat: "));
         ArrayList<Lentokone> koneet1 = new ArrayList<Lentokone>();
         koneet1=pelaaja1.palautaLentokoneet();
-        
-         for (Lentokone lentokone : koneet1) {
-             lentokoneet1 = new JComboBox<Lentokone>();
+        lentokoneet1 = new JComboBox<Lentokone>();
+         
+        for (Lentokone lentokone : koneet1) {
              lentokoneet1.addItem(lentokone);
              container.add(lentokoneet1); 
          }
