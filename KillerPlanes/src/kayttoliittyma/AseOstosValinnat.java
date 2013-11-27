@@ -10,6 +10,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -75,6 +76,15 @@ public class AseOstosValinnat implements ActionListener, Runnable {
          ostoaseet.addItem(aseet.getAse3());
          container.add(ostoaseet);
          
+        Lentokone valittulentokone = (Lentokone) lentokoneet1.getSelectedItem();
+        Ase ostoase = (Ase) ostoaseet.getSelectedItem();
+         
+         JButton osta = new JButton("Osta");
+         JButton enosta = new JButton("En osta mitään");
+         OstoTehtyAse osto = new OstoTehtyAse(pelaaja, valittulentokone, ostoase);
+         osta.addActionListener(osto);
+         container.add(osta);
+         container.add(enosta);
          
      }
     
