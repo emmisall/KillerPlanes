@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import kayttaja.Pelaaja;
 import java.util.Scanner;
 import javax.swing.SwingUtilities;
-import kayttoliittyma.Kayttoliittyma;
+import kayttoliittyma.Aloitus;
 import lentokone.Ase;
 import lentokone.Lentokone;
 import taistelu.Taistelu;
@@ -31,7 +31,7 @@ public class KillerPlanes {
                 
 //        Scanner lukija = new Scanner(System.in);
 //        
-        Kayttoliittyma kayttis = new Kayttoliittyma();
+        Aloitus kayttis = new Aloitus();
         SwingUtilities.invokeLater(kayttis);
         
  

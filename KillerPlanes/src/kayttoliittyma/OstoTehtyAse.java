@@ -29,6 +29,14 @@ public class OstoTehtyAse implements ActionListener, Runnable{
     private Ase ase;
     private JFrame frame;
     
+    /**
+     * Kun aseiden osto on tehty, pelaaja siirtyy lentokoneiden ostoon
+     * @param pelaaja1
+     * @param pelaaja2
+     * @param lentokone
+     * @param ase 
+     */
+    
     public OstoTehtyAse(Pelaaja pelaaja1, Pelaaja pelaaja2, Lentokone lentokone, Ase ase) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;

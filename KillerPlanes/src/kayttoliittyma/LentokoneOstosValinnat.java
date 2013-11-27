@@ -33,6 +33,13 @@ public class LentokoneOstosValinnat implements ActionListener, Runnable {
     private Lentokone lentokone4;
     private JComboBox<Lentokone> ostokoneet;
     
+    /**
+     * Pelaaja voi ostaa lentokoneen
+     * 
+     * @param pelaaja1
+     * @param pelaaja2 
+     */
+    
     public LentokoneOstosValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;

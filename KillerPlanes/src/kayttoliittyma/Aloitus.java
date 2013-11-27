@@ -25,19 +25,18 @@ import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
 
 
-public class Kayttoliittyma implements Runnable {
+public class Aloitus implements Runnable {
 
     private JFrame frame;
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
     
-    public Kayttoliittyma() {
-        
-    }
+    /**
+     * Pelin alku, annetaan pelaajille nimet.
+     */
     
-    public Kayttoliittyma(Pelaaja pelaaja1, Pelaaja pelaaja2) {
-        this.pelaaja1=pelaaja1;
-        this.pelaaja2=pelaaja2;
+    public Aloitus() {
+        
     }
     
     @Override

@@ -36,6 +36,16 @@ public class PelinTulos implements ActionListener, Runnable {
     private JFrame frame;
     private Taistelu taistelu1;
     
+    /**
+     * Kertoo pelin tuloksen, ampuminen tapahtuu TaisteluValinnat-luokan mukaisilla valinnoilla (jos se vaan toimisi..)
+     * 
+     * @param lentokone1 pelaajan1 valitsema lentokone 
+     * @param lentokone2 pelaajan2 valitsema lentokone
+     * @param ase1 pelaajan1 valitsema ase
+     * @param ase2 pelaajan2 valitsema ase
+     * @param pelaaja1
+     * @param pelaaja2 
+     */
     
     public PelinTulos(Lentokone lentokone1, Lentokone lentokone2, Ase ase1, Ase ase2, Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.lentokone1=lentokone1;
@@ -63,12 +73,18 @@ public class PelinTulos implements ActionListener, Runnable {
         frame.setVisible(true);
     }
     
+    /**
+     * ammutaan molempia vuorotellen valituilla aseilla valittuihin lentokoneisiin
+     * @param container 
+     */
+    
     private void luoKomponentit(Container container) {
         GridLayout leiska = new GridLayout(6,1);
         container.setLayout(leiska);
         JLabel teksti2;
         JLabel teksti3;
         JLabel teksti1 = new JLabel("Taistelun tulos:");
+        
         if (taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2)==true) { //pelaajat kääntyvät tässä siis toisin päin tämän ja seuraavan iffin välillä eli kohde ja ampuja, katso ammu-metodin paramterit luokassa taistelu
             container.add(new JLabel("ammuttiin lentokonetta"+lentokone1));
             teksti2 = new JLabel("Pelaajaan "+pelaaja1.getNimi()+" osui. Lentokoneen energia on nyt "+lentokone1.getEnergia()+".");

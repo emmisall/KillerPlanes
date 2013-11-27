@@ -35,6 +35,13 @@ public class TaisteluValinnat implements ActionListener, Runnable{
     private JComboBox<Lentokone> lentokoneet1;
     private JComboBox<Lentokone> lentokoneet2;
     
+    /**
+     * Pelaajat valitsevat tässä itselleen taisteluun aseen ja lentokoneen omista lentokoneistaan
+     * (tai valitsevat jos tämä toimisi mutta ei toimi nyt oikein..)
+     * 
+     * @param pelaaja1
+     * @param pelaaja2 
+     */
     
     public TaisteluValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelaaja1=pelaaja1;
@@ -111,7 +118,8 @@ public class TaisteluValinnat implements ActionListener, Runnable{
             
         }
  
-                
+        //ei toimi!!! valinnat ei mene eteen päin koska pelikuuntelija-olio luodaan liian aikaisin, valinnat ei tallennu siihen
+        
         Lentokone valittulento1 = (Lentokone) lentokoneet1.getSelectedItem();
         Ase valittuase1 = (Ase) aseistus1.getSelectedItem();
         Lentokone valittulento2 = (Lentokone) lentokoneet1.getSelectedItem();

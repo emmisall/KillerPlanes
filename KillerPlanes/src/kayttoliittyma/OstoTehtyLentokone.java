@@ -27,6 +27,15 @@ public class OstoTehtyLentokone implements ActionListener, Runnable {
     private Lentokone lentokone;
     private JFrame frame;
     
+    /**
+     * Pelaaja on ostanut lentokoneen, tämän jälkeen on taas toisen pelaajan vuoro. Ostoksia tehdään vuorotellen, 1 ase ja 1 lentokone kerrallaan.
+     * Ostaminen loppuu, kun pelaajat haluavat siirtyä taisteluun (ei nappulaa vielä).
+     * 
+     * @param pelaaja1
+     * @param pelaaja2
+     * @param lentokone 
+     */
+    
     public OstoTehtyLentokone(Pelaaja pelaaja1, Pelaaja pelaaja2, Lentokone lentokone) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;

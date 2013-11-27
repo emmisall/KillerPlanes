@@ -35,6 +35,14 @@ public class AseOstosValinnat implements ActionListener, Runnable {
     private Ase ase2;
     private Ase ase3;
     
+    /**
+     * Pelaaja voi ostaa aseen tässä, vain 1 pelaaja kerrallaan voi ostaa. 2:n vuoro tulee kun toinen on ostanut halutessaan lentokoneenkin
+     * 
+     * 
+     * @param pelaaja1
+     * @param pelaaja2 
+     */
+    
     public AseOstosValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;
@@ -56,7 +64,12 @@ public class AseOstosValinnat implements ActionListener, Runnable {
         frame.setVisible(true);
     }
      
-     private void luoKomponentit(Container container) {
+    /**
+     * Listataan pelaajan lentokoneet ja sitten kaikki aseet, jotka ovat ostettavissa
+     * @param container 
+     */
+    
+    private void luoKomponentit(Container container) {
         GridLayout leiska = new GridLayout(10,1);
         container.setLayout(leiska);
         container.add(new JLabel("Valitse alasvetovalikosta se lentokone, johon haluat ostaa aseen."));

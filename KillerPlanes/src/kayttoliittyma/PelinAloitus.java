@@ -29,16 +29,22 @@ public class PelinAloitus implements ActionListener, Runnable {
     private JTextField pelaajan2Nimi;
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
-    private Kayttoliittyma kayttis;
     private JFrame frame;
 
+    /**
+     * Pelaajaoliot on luotu, kerrotaan ensimmäisten lentokoneiden tiedot
+     * 
+     * @param pelaaja1 
+     * @param pelaaja2
+     * @param pelaajan1Nimi
+     * @param pelaajan2Nimi 
+     */
+    
     public PelinAloitus(Pelaaja pelaaja1, Pelaaja pelaaja2, JTextField pelaajan1Nimi, JTextField pelaajan2Nimi) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;
         this.pelaajan1Nimi=pelaajan1Nimi;
         this.pelaajan2Nimi=pelaajan2Nimi;
-        //tähän lisätään tarkitus että jos pelaajan nimi on tyhjä niin nimeksi tulee Pelaaja1 tai Pelaaja2
-        
     }
     
     @Override
