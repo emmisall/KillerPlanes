@@ -55,11 +55,11 @@ public class LentokoneOstosValinnat implements ActionListener, Runnable {
      private void luoKomponentit(Container container) {
         GridLayout leiska = new GridLayout(10,1);
         container.setLayout(leiska);
-        container.add(new JLabel("Valitse alasvetovalikosta se lentokone, jonka haluat ostaa."));
+        container.add(new JLabel("Valitse alasvetovalikosta se lentokone, jonka haluat ostaa. Lentokoneessa on yksi ase valmiina."));
         LentokoneidenLuominen lentokoneet = new LentokoneidenLuominen(lentokone1, lentokone2, lentokone3, lentokone4);
         container.add(new JLabel("Pelaajalla "+pelaaja.getNimi()+" on rahaa "+pelaaja.getRahat()));
         ostokoneet = new JComboBox<Lentokone>();
-        
+             
         ostokoneet.addItem(lentokoneet.getLento1());
         ostokoneet.addItem(lentokoneet.getLento2());
         ostokoneet.addItem(lentokoneet.getLento3());
