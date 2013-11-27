@@ -54,6 +54,13 @@ public class LentokoneidenLuominen {
     public Lentokone getLento2(){
         return lentokone2;
     }    
-    //ei vielä gettereitä muille lentsikoille olemassa
+    
+    public Lentokone getLento3() {
+        return lentokone3;
+    }
+    
+    public Lentokone getLento4() {
+        return lentokone4;
+    }
     
 }

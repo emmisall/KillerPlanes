@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
@@ -90,6 +91,11 @@ public class PeliKuuntelija implements ActionListener, Runnable {
         container.add(rahat);
         container.add(rahat1);
         container.add(rahat2);
+        
+        OstosValinnat ostoksille = new OstosValinnat(pelaaja1, pelaaja2);
+        JButton kauppa = new JButton("Kauppa");
+        kauppa.addActionListener(ostoksille);
+        container.add(kauppa);
     }
     
      public JFrame getFrame() {

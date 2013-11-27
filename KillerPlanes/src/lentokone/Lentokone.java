@@ -40,7 +40,7 @@ public class Lentokone {
         this.aseet=new ArrayList<Ase>();
         aseistuksenTeko = new AseidenLuominen(ase1, ase2, ase3);
         aseet.add(aseistuksenTeko.getAse1()); //lentokoneeseen laitetaan aina eka ase valmiiksi
-        aseet.add(aseistuksenTeko.getAse2());
+        aseet.add(aseistuksenTeko.getAse2()); //toinen että on helpompi testata peliä
     }
     
     public void setNimi(String nimi) {
@@ -92,7 +92,14 @@ public class Lentokone {
     public String toString() {
         return getNimi()+", energia "+getEnergia();
     }
-  
+    
+    public String toString2() {
+        String aseita=" Aseet: ";
+        for (Ase ase4 : aseet) {
+            aseita = aseita+ase4+" ";
+        }
+        return getNimi()+", energia "+getEnergia()+aseita;
+    }
    
     
 
