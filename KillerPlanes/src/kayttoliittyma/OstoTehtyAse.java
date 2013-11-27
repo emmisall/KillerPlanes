@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
@@ -55,10 +56,17 @@ public class OstoTehtyAse implements ActionListener, Runnable{
         
         if (pelaaja.ostaAse(ase,lentokone)==true) {
             container.add(new JLabel("Osto onnistui."));
+            container.add(new JLabel("Rahaa on nyt "+pelaaja.getRahat()));
         }
         else 
-            container.add(new JLabel("Et voinut ostaa, rahaa ei ollut tarpeeksi tai koneen aseet olivat täynnä. "));
+            container.add(new JLabel("Et voinut ostaa, rahaa ei ollut tarpeeksi tai koneen aseet olivat täynnä."));
+       
+        JButton lentsikoita = new JButton("Lentokonekauppaan "+pelaaja.getNimi());
+        LentokoneOstosValinnat lentokoneosto = new LentokoneOstosValinnat(pelaaja);
+        lentsikoita.addActionListener(lentokoneosto);
+        container.add(lentsikoita);
         
+     
      }
     
     

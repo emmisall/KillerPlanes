@@ -46,7 +46,7 @@ public class AseOstosValinnat implements ActionListener, Runnable {
     @Override
     public void run(){
         frame = new JFrame("Pelaajan "+pelaaja.getNimi()+"asekauppa.");
-        frame.setPreferredSize(new Dimension(700,200));
+        frame.setPreferredSize(new Dimension(1000,200));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
         
@@ -79,7 +79,7 @@ public class AseOstosValinnat implements ActionListener, Runnable {
         Lentokone valittulentokone = (Lentokone) lentokoneet1.getSelectedItem();
         Ase ostoase = (Ase) ostoaseet.getSelectedItem();
          
-         JButton osta = new JButton("Osta");
+         JButton osta = new JButton("Osta ase");
          JButton enosta = new JButton("En osta mitään");
          OstoTehtyAse osto = new OstoTehtyAse(pelaaja, valittulentokone, ostoase);
          osta.addActionListener(osto);
