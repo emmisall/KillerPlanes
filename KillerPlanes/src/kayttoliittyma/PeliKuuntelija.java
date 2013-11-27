@@ -12,6 +12,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
@@ -25,8 +26,7 @@ import taistelu.Taistelu;
  * @author verijuotikas
  */
 public class PeliKuuntelija implements ActionListener, Runnable {
-    //ekalla kierroksella lentsikat ja aseet on molemmilla samoja, mutta joka tapauksessa jatkossa aina kun kierros alkaa, 
-    //pitää olla tiedossa että millä lentsikalla ja millä aseella pelaajat ovat taistelemassa
+    
     private Lentokone lentokone1;
     private Lentokone lentokone2;
     private Ase ase1;
@@ -35,6 +35,7 @@ public class PeliKuuntelija implements ActionListener, Runnable {
     private Pelaaja pelaaja2;
     private JFrame frame;
     private Taistelu taistelu1;
+    
     
     public PeliKuuntelija(Lentokone lentokone1, Lentokone lentokone2, Ase ase1, Ase ase2, Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.lentokone1=lentokone1;
@@ -45,7 +46,6 @@ public class PeliKuuntelija implements ActionListener, Runnable {
         this.pelaaja2=pelaaja2;
         this.taistelu1=new Taistelu();
     }
-    
     
     @Override
     public void actionPerformed(ActionEvent ae) {

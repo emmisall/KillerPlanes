@@ -35,6 +35,7 @@ public class TaisteluValinnat implements ActionListener, Runnable{
     private JComboBox<Lentokone> lentokoneet1;
     private JComboBox<Lentokone> lentokoneet2;
     
+    
     public TaisteluValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelaaja1=pelaaja1;
         this.pelaaja2=pelaaja2;
@@ -109,7 +110,8 @@ public class TaisteluValinnat implements ActionListener, Runnable{
             }
             
         }
-          
+ 
+                
         Lentokone valittulento1 = (Lentokone) lentokoneet1.getSelectedItem();
         Ase valittuase1 = (Ase) aseistus1.getSelectedItem();
         Lentokone valittulento2 = (Lentokone) lentokoneet1.getSelectedItem();
@@ -123,7 +125,8 @@ public class TaisteluValinnat implements ActionListener, Runnable{
    
     }
     
-  
+    
+
     
      public JFrame getFrame() {
         return frame;

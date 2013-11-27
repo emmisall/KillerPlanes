@@ -47,4 +47,6 @@ harjoitustyölle
 - koodausta n. 1h
 
 27.11.2013
-- koodausta n. 3h, kaupan tekoa niin että voi ostella vuorotellen aseita ja lentokoneita
+- koodausta n. 5h, aika iso bugi tällä hetkellä ohjelmassa,
+alasvetovalikoista tulee aina valituksi ensimmäinen vaihtoehto,
+tiedän mistä se johtuu..
