@@ -56,3 +56,6 @@ mutta vanhoista koodeista varmasti apua
 
 30.11.2013 
 - käyttöliittymän uudelleen suunnittelua ja koodausta 5h
+
+1.12.2013
+- koodikatselmointi 4h
