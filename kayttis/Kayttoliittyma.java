@@ -45,20 +45,12 @@ public class Kayttoliittyma implements ActionListener, Runnable{
         frame = new JFrame("KillerPlanes");
         frame.setPreferredSize(new Dimension(1000,500));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        luoKomponentit(frame.getContentPane());
+
         
         frame.pack();
         frame.setVisible(true);
 
-        /*
-        while (true) {
-            
-            aloitus.luoKomponentit(this);
-            //odotus kunnes actionlistener
-            gui.tyhjennys();
-            Pelinaloitus.luoKomponentit();
-            gui.tyhjennys();
-        }*/
+   
 
         aloitus = new Aloitus(this);
         aloitus.luoKomponentit(this.frame.getContentPane());
