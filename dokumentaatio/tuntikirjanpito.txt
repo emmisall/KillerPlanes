@@ -54,3 +54,5 @@ mutta vanhoista koodeista varmasti apua
 - javadocin päivitystä n. 0,5h
 - sekvenssikaavio 0,25h
 
+30.11.2013 
+- käyttöliittymän uudelleen suunnittelua ja koodausta 5h
