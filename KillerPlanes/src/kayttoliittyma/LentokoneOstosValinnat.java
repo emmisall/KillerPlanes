@@ -56,6 +56,7 @@ public class LentokoneOstosValinnat {
         JButton enosta = new JButton(kayttis.getPelaaja1().getNimi()+" ei osta lentokonetta");
         osta.addActionListener(this.kayttis);
         container.add(osta);
+        enosta.addActionListener(this.kayttis);
         container.add(enosta);
      }
      

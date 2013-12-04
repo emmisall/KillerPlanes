@@ -166,16 +166,16 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             this.valinnat.luoKomponentit(this.frame.getContentPane());
             this.frame.pack();
         }
-         
-         
-//        
-//        if (ae.getActionCommand().equals(pelaaja1.getNimi()+" ei osta lentokonetta")) {
-//            this.tyhjennys();
-//            this.aseosto2 = new AseOstosValinnat2(this);
-//            this.aseosto2.luoKomponentit(this.frame.getContentPane());           
-//            this.frame.pack();
-//        }
-
+        
+        if (ae.getActionCommand().equals(pelaaja2.getNimi()+" ei osta lentokonetta")) {
+            this.tyhjennys();
+            this.valinnat=new TaisteluValinnat(this);
+            this.valinnat.luoKomponentit(this.frame.getContentPane());
+            this.frame.pack();
+        }
+        
+        
+ 
     }
     
     private void tyhjennys() {
