@@ -30,13 +30,17 @@ public class Aloitus implements Runnable {
     private JFrame frame;
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
+    private Kayttoliittyma kayttis;
+    private JTextField nimiKentta1;
+    private JTextField nimiKentta2;
     
     /**
-     * Pelin alku, annetaan pelaajille nimet.
-     */
+* Pelin alku, annetaan pelaajille nimet.
+* @param kayttis
+*/
     
-    public Aloitus() {
-        
+    public Aloitus(Kayttoliittyma kayttis) {
+        this.kayttis = kayttis;
     }
     
     @Override
@@ -48,30 +52,34 @@ public class Aloitus implements Runnable {
         
         frame.pack();
         frame.setVisible(true);
-        
+
        
     }
     
-    private void luoKomponentit(Container container) {
+    public void luoKomponentit(Container container) {
 
         GridLayout leiska = new GridLayout(3,2);
         container.setLayout(leiska);
         JLabel pelaajan1nimi = new JLabel("Pelaajan1 nimi: ");
-        JTextField nimiKentta1 = new JTextField();
+        nimiKentta1 = new JTextField();
         JLabel pelaajan2nimi = new JLabel("Pelaajan2 nimi: ");
-        JTextField nimiKentta2 = new JTextField();
+        nimiKentta2 = new JTextField();
         
         JButton lisaaNappula = new JButton("Aloita peli!");
-        PelinAloitus pelaajaKuuntelija = new PelinAloitus(pelaaja1, pelaaja2, nimiKentta1, nimiKentta2);
-        lisaaNappula.addActionListener(pelaajaKuuntelija);
+        //PelinAloitus pelaajaKuuntelija = new PelinAloitus(pelaaja1, pelaaja2, nimiKentta1, nimiKentta2);
+        lisaaNappula.addActionListener(this.kayttis);
         
         container.add(pelaajan1nimi);
         container.add(nimiKentta1);
         container.add(pelaajan2nimi);
         container.add(nimiKentta2);
         container.add(lisaaNappula);
-        
-        
+    }
+    public String pelaajanimi1() {
+        return nimiKentta1.getText();
+    }
+    public String pelaajanimi2() {
+        return nimiKentta2.getText();
     }
     
     public JFrame getFrame() {
