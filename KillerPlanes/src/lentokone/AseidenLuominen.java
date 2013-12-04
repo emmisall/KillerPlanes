@@ -44,12 +44,7 @@ public class AseidenLuominen {
         this.ase3.setTarkkuus(0.4);
         this.ase1.setHinta(50);
         this.ase2.setHinta(100);
-        this.ase3.setHinta(300);
-        this.kaikkiaseet = new ArrayList<Ase>();
-        this.kaikkiaseet.add(ase1);
-        this.kaikkiaseet.add(ase2);
-        this.kaikkiaseet.add(ase3);
-
+        this.ase3.setHinta(300);  
     }
     
     public Ase getAse1() {
@@ -65,6 +60,10 @@ public class AseidenLuominen {
     }
     
     public ArrayList<Ase> palautaKaikki() {
+        this.kaikkiaseet = new ArrayList<Ase>();
+        this.kaikkiaseet.add(ase1);
+        this.kaikkiaseet.add(ase2);
+        this.kaikkiaseet.add(ase3);
         return kaikkiaseet;
     }
     

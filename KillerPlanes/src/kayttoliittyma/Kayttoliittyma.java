@@ -31,6 +31,7 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     private TaisteluValinnat valinnat;
     private PelinTulos tulos;
     private AseOstosValinnat aseosto;
+    private LentokoneOstosValinnat lentokoneosto;
     
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
@@ -108,12 +109,15 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             setValittuase1(aseosto.getValittuA1());
             pelaaja1.ostaAse(getValittuase1(), getValittulentokone1());
             this.tyhjennys();
-            //lentokoneen osto
+            this.lentokoneosto = new LentokoneOstosValinnat(this.frame.getContentPane());
+            this.frame.pack();
+            
         }
         
         if (ae.getActionCommand().equals(("En osta asetta"))) {
             this.tyhjennys();
-            //lentokoneen osto
+            this.lentokoneosto = new LentokoneOstosValinnat(this.frame.getContentPane());
+            this.frame.pack()
         }
  
     }

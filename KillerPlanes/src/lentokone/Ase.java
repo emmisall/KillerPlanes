@@ -61,6 +61,7 @@ public class Ase {
         return hinta;
     }
     
+    @Override
     public String toString() {
         return getNimi()+", tarkkuus "+getTarkkuus()+", teho "+getTeho()+", hinta "+getHinta();
     }
