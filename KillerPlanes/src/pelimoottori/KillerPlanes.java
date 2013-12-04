@@ -9,6 +9,7 @@ import kayttaja.Pelaaja;
 import java.util.Scanner;
 import javax.swing.SwingUtilities;
 import kayttoliittyma.Aloitus;
+import kayttoliittyma.Kayttoliittyma;
 import lentokone.Ase;
 import lentokone.Lentokone;
 import taistelu.Taistelu;

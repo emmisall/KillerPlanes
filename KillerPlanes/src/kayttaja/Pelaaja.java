@@ -69,6 +69,9 @@ public class Pelaaja {
         return lentokoneet;
     }
     
+    public ArrayList<Lentokone> palautaKaikki() {
+        return lentsikat.getKaikkiLentokoneet();
+    }
     
     /**
      * Metodin avulla tarkistetaan, säilyykö pelaajan lentokone ilmassa osuman jälkeen, poistaa pelaajan arrayLististä koneen jos se tippuu

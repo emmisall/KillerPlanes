@@ -19,6 +19,7 @@ public class LentokoneidenLuominen {
     private Lentokone lentokone2;
     private Lentokone lentokone3;
     private Lentokone lentokone4;
+    private ArrayList<Lentokone> kaikkilentokoneet;
 
     /**
      * Luodaan lentokoneet, joita voi ostaa. "Ylläpidon" määrittelemiä, pelaaja ei voi hallita näitä
@@ -46,6 +47,12 @@ public class LentokoneidenLuominen {
         this.lentokone2.setHinta(300);
         this.lentokone3.setHinta(400);
         this.lentokone4.setHinta(600);
+        this.kaikkilentokoneet=new ArrayList<Lentokone>();
+        kaikkilentokoneet.add(lentokone1);
+        kaikkilentokoneet.add(lentokone2);
+        kaikkilentokoneet.add(lentokone3);
+        kaikkilentokoneet.add(lentokone4);
+       
     }
     
     public Lentokone getLento1() {
@@ -62,6 +69,10 @@ public class LentokoneidenLuominen {
     
     public Lentokone getLento4() {
         return lentokone4;
+    }
+    
+    public ArrayList<Lentokone> getKaikkiLentokoneet() {
+        return kaikkilentokoneet;
     }
     
     

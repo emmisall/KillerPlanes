@@ -7,16 +7,10 @@
 package kayttoliittyma;
 
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import kayttaja.Pelaaja;
+
 
 
 /**
@@ -24,42 +18,17 @@ import kayttaja.Pelaaja;
  * @author verijuotikas
  */
 
-public class PelinAloitus implements ActionListener, Runnable {
+public class PelinAloitus {
 
-    private JFrame frame;
     private Kayttoliittyma kayttis;
 
-    /**
-* Pelaajaoliot on luotu, kerrotaan ensimmäisten lentokoneiden tiedot
-*
-* @param pelaaja1
-* @param pelaaja2
-* @param pelaajan1Nimi
-* @param pelaajan2Nimi
-*/
+
     
     public PelinAloitus(Kayttoliittyma kayttis) {
         this.kayttis=kayttis;
     }
     
-    @Override
-    public void actionPerformed(ActionEvent ae) {
 
-    }
-    
-     
-    @Override
-    public void run() {
-        frame = new JFrame("Pelin aloitus");
-        frame.setPreferredSize(new Dimension(700,200));
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        luoKomponentit(frame.getContentPane());
-        
-        frame.pack();
-        frame.setVisible(true);
-        
-       
-    }
     
      public void luoKomponentit(Container container) {
 
@@ -70,7 +39,7 @@ public class PelinAloitus implements ActionListener, Runnable {
         JLabel teksti3 = new JLabel("Nimi on "+kayttis.getPelaaja1().palautaLentokoneet().get(0).getNimi()+" ja energia on "+kayttis.getPelaaja1().palautaLentokoneet().get(0).getEnergia()+".");
         JButton ohjeet = new JButton("Pelin ohjeet."); //ei tee vielä mitään
         JButton aloitus = new JButton("Aloita taistelu.");
-
+        aloitus.addActionListener(this.kayttis);
 
         
         container.add(teksti);
@@ -81,9 +50,7 @@ public class PelinAloitus implements ActionListener, Runnable {
 
     }
      
-      public JFrame getFrame() {
-        return frame;
-    }
+   
     
 }
 

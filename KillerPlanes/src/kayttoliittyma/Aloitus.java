@@ -11,25 +11,17 @@ package kayttoliittyma;
  * @author verijuotikas
  */
 
-import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import kayttaja.Pelaaja;
 
 
-public class Aloitus implements Runnable {
 
-    private JFrame frame;
-    private Pelaaja pelaaja1;
-    private Pelaaja pelaaja2;
+public class Aloitus {
+
     private Kayttoliittyma kayttis;
     private JTextField nimiKentta1;
     private JTextField nimiKentta2;
@@ -42,20 +34,7 @@ public class Aloitus implements Runnable {
     public Aloitus(Kayttoliittyma kayttis) {
         this.kayttis = kayttis;
     }
-    
-    @Override
-    public void run() {
-        frame = new JFrame("Pelaajien nimet");
-        frame.setPreferredSize(new Dimension(500,200));
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        luoKomponentit(frame.getContentPane());
-        
-        frame.pack();
-        frame.setVisible(true);
 
-       
-    }
-    
     public void luoKomponentit(Container container) {
 
         GridLayout leiska = new GridLayout(3,2);
@@ -66,7 +45,6 @@ public class Aloitus implements Runnable {
         nimiKentta2 = new JTextField();
         
         JButton lisaaNappula = new JButton("Aloita peli!");
-        //PelinAloitus pelaajaKuuntelija = new PelinAloitus(pelaaja1, pelaaja2, nimiKentta1, nimiKentta2);
         lisaaNappula.addActionListener(this.kayttis);
         
         container.add(pelaajan1nimi);
@@ -75,16 +53,16 @@ public class Aloitus implements Runnable {
         container.add(nimiKentta2);
         container.add(lisaaNappula);
     }
+    
     public String pelaajanimi1() {
         return nimiKentta1.getText();
     }
+    
     public String pelaajanimi2() {
         return nimiKentta2.getText();
     }
     
-    public JFrame getFrame() {
-        return frame;
-    }
+   
     
    
 }

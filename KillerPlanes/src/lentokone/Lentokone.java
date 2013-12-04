@@ -86,6 +86,10 @@ public class Lentokone {
         return aseet;
     }
     
+    public ArrayList<Ase> palautaKaikkiAseet() {
+        return aseistuksenTeko.palautaKaikki();
+    }
+    
     
     public void setHinta(int hinta) {
         this.hinta=hinta;

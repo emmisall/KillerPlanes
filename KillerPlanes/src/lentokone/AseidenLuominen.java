@@ -17,7 +17,7 @@ public class AseidenLuominen {
     private Ase ase1;
     private Ase ase2;
     private Ase ase3;
-
+    private ArrayList<Ase> kaikkiaseet;
     
     //asiden ominaisuudet ei välttämättä ole optimaaliset pelin läpiviennin kannalta vielä mutta ovat kuitenkin olemassa
     //että peliä voi pelata
@@ -45,6 +45,10 @@ public class AseidenLuominen {
         this.ase1.setHinta(50);
         this.ase2.setHinta(100);
         this.ase3.setHinta(300);
+        this.kaikkiaseet = new ArrayList<Ase>();
+        this.kaikkiaseet.add(ase1);
+        this.kaikkiaseet.add(ase2);
+        this.kaikkiaseet.add(ase3);
 
     }
     
@@ -59,6 +63,14 @@ public class AseidenLuominen {
     public Ase getAse3() {
         return ase3;
     }
+    
+    public ArrayList<Ase> palautaKaikki() {
+        return kaikkiaseet;
+    }
+    
+    
+    
+    
 
 
     

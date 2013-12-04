@@ -12,30 +12,38 @@ package kayttoliittyma;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
 import lentokone.Ase;
+import lentokone.AseidenLuominen;
 import lentokone.Lentokone;
+import taistelu.Taistelu;
 
 
 public class Kayttoliittyma implements ActionListener, Runnable{
     
     private JFrame frame;
     private Aloitus aloitus;
-    PelinAloitus pelaajaKuuntelija;
+    private PelinAloitus pelaajaKuuntelija;
+    private TaisteluValinnat valinnat;
+    private PelinTulos tulos;
+    private AseOstosValinnat aseosto;
     
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
     private Lentokone valittulentokone1;
     private Lentokone valittulentokone2;
+    private Lentokone lentokone;
     private Ase valittuase1;
     private Ase valittuase2;
+    private Taistelu taistelu;
 
-    
     public Kayttoliittyma() {
- 
+        
+        this.taistelu=new Taistelu();
 
     }
     
@@ -46,18 +54,13 @@ public class Kayttoliittyma implements ActionListener, Runnable{
         frame.setPreferredSize(new Dimension(1000,500));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        
         frame.pack();
         frame.setVisible(true);
 
-   
-
         aloitus = new Aloitus(this);
         aloitus.luoKomponentit(this.frame.getContentPane());
-
         this.pelaajaKuuntelija = new PelinAloitus(this);
         
-
         
     }
     
@@ -65,18 +68,54 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     public void actionPerformed(ActionEvent ae) {
         if ( ae.getActionCommand().equals("Aloita peli!") ) {
             this.tyhjennys();
-            System.out.println("1");
             this.pelaaja1 = new Pelaaja(aloitus.pelaajanimi1());
             this.pelaaja2 = new Pelaaja(aloitus.pelaajanimi2());
-            System.out.println("2");
+            setPelaaja1(pelaaja1);
+            setPelaaja2(pelaaja2);
             this.pelaajaKuuntelija.luoKomponentit(this.frame.getContentPane());
             this.frame.pack();
-            System.out.println("3");
         }
         
+        if (ae.getActionCommand().equals("Aloita taistelu.")) {
+            this.tyhjennys();
+            this.valinnat=new TaisteluValinnat(this);
+            this.valinnat.luoKomponentit(this.frame.getContentPane());
+            this.frame.pack();
+        }
         
+        if (ae.getActionCommand().equals("Taistele!")) {
+              
+            setValittulentokone1(valinnat.getValittuL1());
+            setValittuase1(valinnat.getValittuA1());
+            setValittulentokone2(valinnat.getValittuL2());
+            setValittuase2(valinnat.getValittuA2());
+            this.tyhjennys();
+            this.tulos = new PelinTulos(this);
+            this.tulos.luoKomponentit(this.frame.getContentPane());
+            this.frame.pack();
+        }
         
+        if (ae.getActionCommand().equals("Asekauppaan "+pelaaja1.getNimi())) {
+            this.tyhjennys();
+            this.aseosto = new AseOstosValinnat(this);
+            this.aseosto.luoKomponentit(this.frame.getContentPane());
+            this.frame.pack();
+            
+        }
         
+        if (ae.getActionCommand().equals("Osta ase "+pelaaja1.getNimi())) {
+            setValittulentokone1(aseosto.getValittuL1());
+            setValittuase1(aseosto.getValittuA1());
+            pelaaja1.ostaAse(getValittuase1(), getValittulentokone1());
+            this.tyhjennys();
+            //lentokoneen osto
+        }
+        
+        if (ae.getActionCommand().equals(("En osta asetta"))) {
+            this.tyhjennys();
+            //lentokoneen osto
+        }
+ 
     }
     
     private void tyhjennys() {
@@ -130,6 +169,19 @@ public class Kayttoliittyma implements ActionListener, Runnable{
 
     public void setValittuase2(Ase valittuase2) {
         this.valittuase2 = valittuase2;
+    }
+    
+    public Taistelu getTaistelu() {
+        return this.taistelu;
+    }
+    
+    public ArrayList<Lentokone> getKaikkiLentokoneet() {
+        return pelaaja1.palautaLentokoneet();
+    }
+    
+    public ArrayList<Ase> getKaikkiAseet() {
+        lentokone = new Lentokone();
+        return lentokone.palautaKaikkiAseet();
     }
     
     

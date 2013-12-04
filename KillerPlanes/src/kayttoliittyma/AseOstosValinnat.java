@@ -5,16 +5,11 @@
 package kayttoliittyma;
 
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
 import lentokone.Ase;
 import lentokone.AseidenLuominen;
@@ -24,16 +19,11 @@ import lentokone.Lentokone;
  *
  * @author emmisall
  */
-public class AseOstosValinnat implements ActionListener, Runnable {
-    
-    private Pelaaja pelaaja1;
-    private Pelaaja pelaaja2;
-    private JFrame frame;
+public class AseOstosValinnat {
+
     private JComboBox<Lentokone> lentokoneet1;
     private JComboBox<Ase> ostoaseet;
-    private Ase ase1;
-    private Ase ase2;
-    private Ase ase3;
+    private Kayttoliittyma kayttis;
     
     /**
      * Pelaaja voi ostaa aseen tässä, vain 1 pelaaja kerrallaan voi ostaa. 2:n vuoro tulee kun toinen on ostanut halutessaan lentokoneenkin
@@ -43,39 +33,22 @@ public class AseOstosValinnat implements ActionListener, Runnable {
      * @param pelaaja2 
      */
     
-    public AseOstosValinnat(Pelaaja pelaaja1, Pelaaja pelaaja2) {
-        this.pelaaja1=pelaaja1;
-        this.pelaaja2=pelaaja2;
+    public AseOstosValinnat(Kayttoliittyma kayttis) {
+        this.kayttis=kayttis;
     }
-      
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        run();
-    }
-    
-    @Override
-    public void run(){
-        frame = new JFrame("Pelaajan "+pelaaja1.getNimi()+"asekauppa.");
-        frame.setPreferredSize(new Dimension(1000,200));
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        luoKomponentit(frame.getContentPane());
-        
-        frame.pack();
-        frame.setVisible(true);
-    }
-     
+ 
     /**
      * Listataan pelaajan lentokoneet ja sitten kaikki aseet, jotka ovat ostettavissa
      * @param container 
      */
     
-    private void luoKomponentit(Container container) {
+    public void luoKomponentit(Container container) {
         GridLayout leiska = new GridLayout(10,1);
         container.setLayout(leiska);
         container.add(new JLabel("Valitse alasvetovalikosta se lentokone, johon haluat ostaa aseen."));
-        container.add(new JLabel("Pelaajan "+pelaaja1.getNimi()+" (rahaa "+pelaaja1.getRahat()+") lentokoneet ja niiden aseet ovat: "));
+        container.add(new JLabel("Pelaajan "+kayttis.getPelaaja1().getNimi()+" (rahaa "+kayttis.getPelaaja1().getRahat()+") lentokoneet ja niiden aseet ovat: "));
         ArrayList<Lentokone> koneet1 = new ArrayList<Lentokone>();
-        koneet1=pelaaja1.palautaLentokoneet();
+        koneet1=kayttis.getPelaaja1().palautaLentokoneet();
         lentokoneet1 = new JComboBox<Lentokone>();
          
         for (Lentokone lentokone : koneet1) {
@@ -83,24 +56,33 @@ public class AseOstosValinnat implements ActionListener, Runnable {
              container.add(lentokoneet1); 
          }
     
-         container.add(new JLabel("Ostettavia aseita ovat: "));
-         ostoaseet = new JComboBox<Ase>();
-         AseidenLuominen aseet = new AseidenLuominen(ase1, ase2, ase3);
-         ostoaseet.addItem(aseet.getAse1());
-         ostoaseet.addItem(aseet.getAse2());
-         ostoaseet.addItem(aseet.getAse3());
-         container.add(ostoaseet);
-         
-        Lentokone valittulentokone = (Lentokone) lentokoneet1.getSelectedItem();
-        Ase ostoase = (Ase) ostoaseet.getSelectedItem();
-         
-         JButton osta = new JButton("Osta ase");
-         JButton enosta = new JButton("En osta mitään");
-         OstoTehtyAse osto = new OstoTehtyAse(pelaaja1, pelaaja2, valittulentokone, ostoase);
-         osta.addActionListener(osto);
-         container.add(osta);
-         container.add(enosta);
+        container.add(new JLabel("Ostettavia aseita ovat: "));
+        ostoaseet = new JComboBox<Ase>();
+        ArrayList<Ase> aseet = new ArrayList<Ase>();
+        aseet=kayttis.getKaikkiAseet();
+        
+        for (Ase ase : aseet) {
+            ostoaseet.addItem(ase);
+            container.add(ostoaseet);
+        }
+ 
+        JButton osta = new JButton("Osta ase "+kayttis.getPelaaja1().getNimi());
+        JButton enosta = new JButton("En osta asetta");
+        osta.addActionListener(this.kayttis);
+        container.add(osta);
+        enosta.addActionListener(this.kayttis);
+        container.add(enosta);
          
      }
     
+    public Lentokone getValittuL1() {
+        return (Lentokone) lentokoneet1.getSelectedItem();
+    }
+    
+    
+    public Ase getValittuA1() {
+        return (Ase) ostoaseet.getSelectedItem();
+    }
+    
+  
 }
