@@ -32,6 +32,8 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     private PelinTulos tulos;
     private AseOstosValinnat aseosto;
     private LentokoneOstosValinnat lentokoneosto;
+    private AseOstosValinnat2 aseosto2;
+    private LentokoneOstosValinnat2 lentokoneosto2;
     
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
@@ -109,17 +111,71 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             setValittuase1(aseosto.getValittuA1());
             pelaaja1.ostaAse(getValittuase1(), getValittulentokone1());
             this.tyhjennys();
-            this.lentokoneosto = new LentokoneOstosValinnat(this.frame.getContentPane());
+            this.lentokoneosto = new LentokoneOstosValinnat(this);
+            this.lentokoneosto.luoKomponentit(this.frame.getContentPane());
             this.frame.pack();
             
         }
         
-        if (ae.getActionCommand().equals(("En osta asetta"))) {
+        if (ae.getActionCommand().equals((pelaaja1.getNimi()+" ei osta asetta"))) {
             this.tyhjennys();
-            this.lentokoneosto = new LentokoneOstosValinnat(this.frame.getContentPane());
-            this.frame.pack()
+            this.lentokoneosto = new LentokoneOstosValinnat(this);
+            this.lentokoneosto.luoKomponentit(this.frame.getContentPane());
+            this.frame.pack();
         }
- 
+        
+        if (ae.getActionCommand().equals("Osta lentokone "+pelaaja1.getNimi())) {
+            setValittulentokone1(lentokoneosto.getValittuL1());
+            pelaaja1.ostaLentokone(getValittulentokone1());
+            this.tyhjennys();
+            this.aseosto2 = new AseOstosValinnat2(this);
+            this.aseosto2.luoKomponentit(this.frame.getContentPane());           
+            this.frame.pack();
+        }
+        
+        if (ae.getActionCommand().equals(pelaaja1.getNimi()+" ei osta lentokonetta")) {
+            this.tyhjennys();
+            this.aseosto2 = new AseOstosValinnat2(this);
+            this.aseosto2.luoKomponentit(this.frame.getContentPane());           
+            this.frame.pack();
+        }
+        
+         if (ae.getActionCommand().equals("Osta ase "+pelaaja2.getNimi())) {
+            setValittulentokone1(aseosto2.getValittuL1());
+            setValittuase1(aseosto2.getValittuA1());
+            pelaaja2.ostaAse(getValittuase1(), getValittulentokone1());
+            this.tyhjennys();
+            this.lentokoneosto2 = new LentokoneOstosValinnat2(this);
+            this.lentokoneosto2.luoKomponentit(this.frame.getContentPane());
+            this.frame.pack();
+            
+        }
+        
+        if (ae.getActionCommand().equals((pelaaja2.getNimi()+" ei osta asetta"))) {
+            this.tyhjennys();
+            this.lentokoneosto2 = new LentokoneOstosValinnat2(this);
+            this.lentokoneosto2.luoKomponentit(this.frame.getContentPane());
+            this.frame.pack();
+        }
+        
+        if (ae.getActionCommand().equals("Osta lentokone "+pelaaja2.getNimi())) {
+            setValittulentokone1(lentokoneosto2.getValittuL1());
+            pelaaja2.ostaLentokone(getValittulentokone1());
+            this.tyhjennys();
+            this.valinnat=new TaisteluValinnat(this);
+            this.valinnat.luoKomponentit(this.frame.getContentPane());
+            this.frame.pack();
+        }
+         
+         
+//        
+//        if (ae.getActionCommand().equals(pelaaja1.getNimi()+" ei osta lentokonetta")) {
+//            this.tyhjennys();
+//            this.aseosto2 = new AseOstosValinnat2(this);
+//            this.aseosto2.luoKomponentit(this.frame.getContentPane());           
+//            this.frame.pack();
+//        }
+
     }
     
     private void tyhjennys() {
@@ -180,7 +236,7 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     }
     
     public ArrayList<Lentokone> getKaikkiLentokoneet() {
-        return pelaaja1.palautaLentokoneet();
+        return pelaaja1.palautaKaikki();
     }
     
     public ArrayList<Ase> getKaikkiAseet() {

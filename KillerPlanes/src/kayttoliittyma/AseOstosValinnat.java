@@ -67,7 +67,7 @@ public class AseOstosValinnat {
         }
  
         JButton osta = new JButton("Osta ase "+kayttis.getPelaaja1().getNimi());
-        JButton enosta = new JButton("En osta asetta");
+        JButton enosta = new JButton(kayttis.getPelaaja1().getNimi()+" ei osta asetta");
         osta.addActionListener(this.kayttis);
         container.add(osta);
         enosta.addActionListener(this.kayttis);

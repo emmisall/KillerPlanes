@@ -47,12 +47,6 @@ public class LentokoneidenLuominen {
         this.lentokone2.setHinta(300);
         this.lentokone3.setHinta(400);
         this.lentokone4.setHinta(600);
-        this.kaikkilentokoneet=new ArrayList<Lentokone>();
-        kaikkilentokoneet.add(lentokone1);
-        kaikkilentokoneet.add(lentokone2);
-        kaikkilentokoneet.add(lentokone3);
-        kaikkilentokoneet.add(lentokone4);
-       
     }
     
     public Lentokone getLento1() {
@@ -72,6 +66,11 @@ public class LentokoneidenLuominen {
     }
     
     public ArrayList<Lentokone> getKaikkiLentokoneet() {
+        this.kaikkilentokoneet=new ArrayList<Lentokone>();
+        this.kaikkilentokoneet.add(lentokone1);
+        this.kaikkilentokoneet.add(lentokone2);
+        this.kaikkilentokoneet.add(lentokone3);
+        this.kaikkilentokoneet.add(lentokone4);
         return kaikkilentokoneet;
     }
     
