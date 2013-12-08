@@ -95,6 +95,7 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             setValittuase1(valinnat.getValittuA1());
             setValittulentokone2(valinnat.getValittuL2());
             setValittuase2(valinnat.getValittuA2());
+            
             this.tyhjennys();
             this.tulos = new PelinTulos(this);
             this.tulos.luoKomponentit(this.frame.getContentPane());

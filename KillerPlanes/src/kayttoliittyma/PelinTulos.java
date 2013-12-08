@@ -53,13 +53,13 @@ public class PelinTulos {
         JLabel teksti1 = new JLabel("Taistelun tulos:");
         
         if (kayttis.getTaistelu().ammu(kayttis.getValittulentokone1(), kayttis.getValittuase1(), kayttis.getPelaaja1(), kayttis.getPelaaja2())==true) { 
-            teksti2 = new JLabel("Pelaajaan "+kayttis.getPelaaja1().getNimi()+" osui. Lentokoneen"+kayttis.getValittulentokone1()+" energia on nyt "+kayttis.getValittulentokone1().getEnergia()+".");
+            teksti2 = new JLabel("Pelaajaan "+kayttis.getPelaaja1().getNimi()+" osui. Lentokoneen "+kayttis.getValittulentokone1()+" energia on nyt "+kayttis.getValittulentokone1().getEnergia()+".");
         }
         else 
             teksti2 = new JLabel("Pelaajaan "+kayttis.getPelaaja1().getNimi()+" ei osunut.");
         
         if (kayttis.getTaistelu().ammu(kayttis.getValittulentokone2(), kayttis.getValittuase2(), kayttis.getPelaaja2(), kayttis.getPelaaja1())==true) {
-            teksti3= new JLabel("Pelaajaan "+kayttis.getPelaaja2().getNimi()+" osui. Lentokoneen"+kayttis.getValittulentokone2()+" energia on nyt "+kayttis.getValittulentokone2().getEnergia()+".");
+            teksti3= new JLabel("Pelaajaan "+kayttis.getPelaaja2().getNimi()+" osui. Lentokoneen "+kayttis.getValittulentokone2()+" energia on nyt "+kayttis.getValittulentokone2().getEnergia()+".");
         }
         else
             teksti3 = new JLabel("Pelaajaan "+kayttis.getPelaaja2().getNimi()+" ei osunut.");

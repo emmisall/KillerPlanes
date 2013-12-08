@@ -74,7 +74,7 @@ public class Lentokone {
      */
     
     public void paivitaEnergia(Ase ase) {
-        this.energia = this.energia-ase.getTeho();
+        this.energia = this.energia-ase.getTeho()*3;
     }
     
     /**

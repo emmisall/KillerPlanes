@@ -69,7 +69,7 @@ public class LentokoneTest {
         lentokone1.setEnergia(200);
         Taistelu taistelu1 = new Taistelu();
         taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
-        assertEquals(160, lentokone1.getEnergia());
+        assertEquals(80, lentokone1.getEnergia());
         
     }
   
