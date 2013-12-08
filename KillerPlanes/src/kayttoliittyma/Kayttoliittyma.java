@@ -32,11 +32,12 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     private PelinTulos tulos;
     private AseOstosValinnat aseosto;
     private LentokoneOstosValinnat lentokoneosto;
-    private AseOstosValinnat2 aseosto2;
-    private LentokoneOstosValinnat2 lentokoneosto2;
-    
+//    private AseOstosValinnat2 aseosto2;
+//    private LentokoneOstosValinnat2 lentokoneosto2;
+//    
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
+    private Pelaaja valittuPelaaja;
     private Lentokone valittulentokone1;
     private Lentokone valittulentokone2;
     private Lentokone lentokone;
@@ -99,27 +100,35 @@ public class Kayttoliittyma implements ActionListener, Runnable{
         }
         
         if (ae.getActionCommand().equals("Asekauppaan "+pelaaja1.getNimi())) {
+            setValittuPelaaja(pelaaja1);
             this.tyhjennys();
-            this.aseosto = new AseOstosValinnat(this);
+            this.aseosto = new AseOstosValinnat(this, getValittuPelaaja());
             this.aseosto.luoKomponentit(this.frame.getContentPane());
             this.frame.pack();
             
         }
         
-        if (ae.getActionCommand().equals("Osta ase "+pelaaja1.getNimi())) {
+        if (ae.getActionCommand().equals("Osta ase "+pelaaja1.getNimi()) || ae.getActionCommand().equals("Osta ase "+pelaaja2.getNimi())) {
             setValittulentokone1(aseosto.getValittuL1());
             setValittuase1(aseosto.getValittuA1());
             pelaaja1.ostaAse(getValittuase1(), getValittulentokone1());
             this.tyhjennys();
-            this.lentokoneosto = new LentokoneOstosValinnat(this);
+            if (getValittuPelaaja().equals(pelaaja1)) {
+                this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja1);
+            }
+            else this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja2);
+            
             this.lentokoneosto.luoKomponentit(this.frame.getContentPane());
             this.frame.pack();
             
         }
         
-        if (ae.getActionCommand().equals((pelaaja1.getNimi()+" ei osta asetta"))) {
+        if (ae.getActionCommand().equals((pelaaja1.getNimi()+" ei osta asetta")) || ae.getActionCommand().equals(pelaaja2.getNimi()+" ei osta asetta")) {
             this.tyhjennys();
-            this.lentokoneosto = new LentokoneOstosValinnat(this);
+            if (getValittuPelaaja().equals(pelaaja1)) {
+                this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja1);
+            }
+            else this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja2);
             this.lentokoneosto.luoKomponentit(this.frame.getContentPane());
             this.frame.pack();
         }
@@ -128,38 +137,40 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             setValittulentokone1(lentokoneosto.getValittuL1());
             pelaaja1.ostaLentokone(getValittulentokone1());
             this.tyhjennys();
-            this.aseosto2 = new AseOstosValinnat2(this);
-            this.aseosto2.luoKomponentit(this.frame.getContentPane());           
+            setValittuPelaaja(pelaaja2);
+            this.aseosto = new AseOstosValinnat(this, getValittuPelaaja());
+            this.aseosto.luoKomponentit(this.frame.getContentPane());          
             this.frame.pack();
         }
         
         if (ae.getActionCommand().equals(pelaaja1.getNimi()+" ei osta lentokonetta")) {
             this.tyhjennys();
-            this.aseosto2 = new AseOstosValinnat2(this);
-            this.aseosto2.luoKomponentit(this.frame.getContentPane());           
+            setValittuPelaaja(pelaaja2);
+            this.aseosto = new AseOstosValinnat(this, getValittuPelaaja());
+            this.aseosto.luoKomponentit(this.frame.getContentPane());           
             this.frame.pack();
         }
-        
-         if (ae.getActionCommand().equals("Osta ase "+pelaaja2.getNimi())) {
-            setValittulentokone1(aseosto2.getValittuL1());
-            setValittuase1(aseosto2.getValittuA1());
-            pelaaja2.ostaAse(getValittuase1(), getValittulentokone1());
-            this.tyhjennys();
-            this.lentokoneosto2 = new LentokoneOstosValinnat2(this);
-            this.lentokoneosto2.luoKomponentit(this.frame.getContentPane());
-            this.frame.pack();
-            
-        }
-        
-        if (ae.getActionCommand().equals((pelaaja2.getNimi()+" ei osta asetta"))) {
-            this.tyhjennys();
-            this.lentokoneosto2 = new LentokoneOstosValinnat2(this);
-            this.lentokoneosto2.luoKomponentit(this.frame.getContentPane());
-            this.frame.pack();
-        }
-        
+//        
+//         if (ae.getActionCommand().equals("Osta ase "+pelaaja2.getNimi())) {
+//            setValittulentokone1(aseosto2.getValittuL1());
+//            setValittuase1(aseosto2.getValittuA1());
+//            pelaaja2.ostaAse(getValittuase1(), getValittulentokone1());
+//            this.tyhjennys();
+//            this.lentokoneosto2 = new LentokoneOstosValinnat2(this);
+//            this.lentokoneosto2.luoKomponentit(this.frame.getContentPane());
+//            this.frame.pack();
+//            
+//        }
+//        
+//        if (ae.getActionCommand().equals((pelaaja2.getNimi()+" ei osta asetta"))) {
+//            this.tyhjennys();
+//            this.lentokoneosto2 = new LentokoneOstosValinnat2(this);
+//            this.lentokoneosto2.luoKomponentit(this.frame.getContentPane());
+//            this.frame.pack();
+//        }
+//        
         if (ae.getActionCommand().equals("Osta lentokone "+pelaaja2.getNimi())) {
-            setValittulentokone1(lentokoneosto2.getValittuL1());
+            setValittulentokone1(lentokoneosto.getValittuL1());
             pelaaja2.ostaLentokone(getValittulentokone1());
             this.tyhjennys();
             this.valinnat=new TaisteluValinnat(this);
@@ -242,6 +253,14 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     public ArrayList<Ase> getKaikkiAseet() {
         lentokone = new Lentokone();
         return lentokone.palautaKaikkiAseet();
+    }
+    
+    public void setValittuPelaaja(Pelaaja valittuPelaaja) {
+        this.valittuPelaaja=valittuPelaaja;
+    }
+    
+    public Pelaaja getValittuPelaaja() {
+        return valittuPelaaja;
     }
     
     

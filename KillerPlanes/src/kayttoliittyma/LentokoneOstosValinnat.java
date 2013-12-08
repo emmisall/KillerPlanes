@@ -25,6 +25,7 @@ public class LentokoneOstosValinnat {
     private JComboBox<Lentokone> ostokoneet;
     private Kayttoliittyma kayttis;
     private ArrayList<Lentokone> lentokoneet1;
+    private Pelaaja pelaaja;
     
     /**
      * Pelaaja voi ostaa lentokoneen
@@ -33,8 +34,9 @@ public class LentokoneOstosValinnat {
      * @param pelaaja2 
      */
     
-    public LentokoneOstosValinnat(Kayttoliittyma kayttis) {
-        this.kayttis = kayttis;
+    public LentokoneOstosValinnat(Kayttoliittyma kayttis, Pelaaja pelaaja) {
+        this.kayttis= kayttis;
+        this.pelaaja=pelaaja;
     }
 
      public void luoKomponentit(Container container) {
@@ -42,7 +44,7 @@ public class LentokoneOstosValinnat {
         GridLayout leiska = new GridLayout(10,1);
         container.setLayout(leiska);
         container.add(new JLabel("Valitse alasvetovalikosta se lentokone, jonka haluat ostaa. Lentokoneessa on yksi ase valmiina."));
-        container.add(new JLabel("Pelaajalla "+kayttis.getPelaaja1().getNimi()+" on rahaa "+kayttis.getPelaaja1().getRahat()));
+        container.add(new JLabel("Pelaajalla "+pelaaja.getNimi()+" on rahaa "+pelaaja.getRahat()));
         ostokoneet = new JComboBox<Lentokone>();
         lentokoneet1 = new ArrayList<Lentokone>();
         lentokoneet1 = kayttis.getKaikkiLentokoneet();
@@ -52,8 +54,8 @@ public class LentokoneOstosValinnat {
              container.add(ostokoneet);
          }
 
-        JButton osta = new JButton("Osta lentokone "+kayttis.getPelaaja1().getNimi());
-        JButton enosta = new JButton(kayttis.getPelaaja1().getNimi()+" ei osta lentokonetta");
+        JButton osta = new JButton("Osta lentokone "+pelaaja.getNimi());
+        JButton enosta = new JButton(pelaaja.getNimi()+" ei osta lentokonetta");
         osta.addActionListener(this.kayttis);
         container.add(osta);
         enosta.addActionListener(this.kayttis);

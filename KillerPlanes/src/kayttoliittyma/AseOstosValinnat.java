@@ -24,6 +24,7 @@ public class AseOstosValinnat {
     private JComboBox<Lentokone> lentokoneet1;
     private JComboBox<Ase> ostoaseet;
     private Kayttoliittyma kayttis;
+    private Pelaaja pelaaja;
     
     /**
      * Pelaaja voi ostaa aseen tässä, vain 1 pelaaja kerrallaan voi ostaa. 2:n vuoro tulee kun toinen on ostanut halutessaan lentokoneenkin
@@ -33,8 +34,9 @@ public class AseOstosValinnat {
      * @param pelaaja2 
      */
     
-    public AseOstosValinnat(Kayttoliittyma kayttis) {
+    public AseOstosValinnat(Kayttoliittyma kayttis, Pelaaja pelaaja) {
         this.kayttis=kayttis;
+        this.pelaaja=pelaaja;
     }
  
     /**
@@ -46,9 +48,9 @@ public class AseOstosValinnat {
         GridLayout leiska = new GridLayout(10,1);
         container.setLayout(leiska);
         container.add(new JLabel("Valitse alasvetovalikosta se lentokone, johon haluat ostaa aseen."));
-        container.add(new JLabel("Pelaajan "+kayttis.getPelaaja1().getNimi()+" (rahaa "+kayttis.getPelaaja1().getRahat()+") lentokoneet ja niiden aseet ovat: "));
+        container.add(new JLabel("Pelaajan "+pelaaja.getNimi()+" (rahaa "+pelaaja.getRahat()+") lentokoneet ja niiden aseet ovat: "));
         ArrayList<Lentokone> koneet1 = new ArrayList<Lentokone>();
-        koneet1=kayttis.getPelaaja1().palautaLentokoneet();
+        koneet1=pelaaja.palautaLentokoneet();
         lentokoneet1 = new JComboBox<Lentokone>();
          
         for (Lentokone lentokone : koneet1) {
@@ -66,8 +68,8 @@ public class AseOstosValinnat {
             container.add(ostoaseet);
         }
  
-        JButton osta = new JButton("Osta ase "+kayttis.getPelaaja1().getNimi());
-        JButton enosta = new JButton(kayttis.getPelaaja1().getNimi()+" ei osta asetta");
+        JButton osta = new JButton("Osta ase "+pelaaja.getNimi());
+        JButton enosta = new JButton(pelaaja.getNimi()+" ei osta asetta");
         osta.addActionListener(this.kayttis);
         container.add(osta);
         enosta.addActionListener(this.kayttis);

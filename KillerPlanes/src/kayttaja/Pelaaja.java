@@ -90,12 +90,25 @@ public class Pelaaja {
     
     public void setRahaa(int summa) {
         this.rahat=rahat+summa;
-        //jos raha ylittää voittosumman, pelaaja voittaa. tarkistus?
     }
     
     public int getRahat() {
         return rahat;
         
+    }
+    
+    public boolean tarkistaKuoleeko() {
+        if (getRahat() < 0) {
+            return false;
+        }
+        return true;
+    }
+    
+    public boolean tarksitaVoittaako() {
+        if (getRahat() >= 2000) {
+            return true;
+        }
+        return false;
     }
     
     /**
