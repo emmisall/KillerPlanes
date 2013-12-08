@@ -42,7 +42,7 @@ public class Pelaaja {
        this.rahat=1000; //alkupääoma pelaajalle
        this.lentsikat = new LentokoneidenLuominen(lentokone1, lentokone2, lentokone3, lentokone4);
        lentokoneet.add(lentsikat.getLento1()); //lisätään ensimmäinen lentokone pelaajalle 
-       lentokoneet.add(lentsikat.getLento2()); //toinen testimielessä
+//       lentokoneet.add(lentsikat.getLento2()); //toinen testimielessä
     }
     
     public String getNimi() {
@@ -98,13 +98,13 @@ public class Pelaaja {
     }
     
     public boolean tarkistaKuoleeko() {
-        if (getRahat() < 0) {
-            return false;
+        if (palautaLentokoneet().isEmpty()) {
+            return true;
         }
-        return true;
+        else return false;
     }
     
-    public boolean tarksitaVoittaako() {
+    public boolean tarkistaVoittaako() {
         if (getRahat() >= 2000) {
             return true;
         }

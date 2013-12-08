@@ -44,7 +44,9 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     private Ase valittuase1;
     private Ase valittuase2;
     private Taistelu taistelu;
-
+    private Voitto voitto;
+    private Tasapeli tasapeli;
+    
     public Kayttoliittyma() {
         
         this.taistelu=new Taistelu();
@@ -100,12 +102,48 @@ public class Kayttoliittyma implements ActionListener, Runnable{
         }
         
         if (ae.getActionCommand().equals("Asekauppaan "+pelaaja1.getNimi())) {
-            setValittuPelaaja(pelaaja1);
-            this.tyhjennys();
-            this.aseosto = new AseOstosValinnat(this, getValittuPelaaja());
-            this.aseosto.luoKomponentit(this.frame.getContentPane());
-            this.frame.pack();
             
+            if (pelaaja1.tarkistaVoittaako()==true && pelaaja2.tarkistaVoittaako()==true) {
+                this.tyhjennys();
+                this.tasapeli = new Tasapeli(this);
+                this.frame.pack();
+            }
+            
+            else if (pelaaja1.tarkistaVoittaako()==true) {
+                this.tyhjennys();
+                this.voitto = new Voitto(this, pelaaja1, pelaaja2);
+                this.frame.pack();
+            }
+            
+            else if (pelaaja2.tarkistaVoittaako()==true) {
+                this.tyhjennys();
+                this.voitto = new Voitto(this, pelaaja2, pelaaja1);
+                this.frame.pack();
+            }
+            
+            else if (pelaaja1.tarkistaKuoleeko()==true && pelaaja2.tarkistaKuoleeko()==true) {
+                this.tyhjennys();
+                this.tasapeli = new Tasapeli(this);
+                this.frame.pack();
+            }
+            
+            else if (pelaaja1.tarkistaKuoleeko()==true) {
+                this.tyhjennys();
+                this.voitto=new Voitto(this, pelaaja2, pelaaja1);
+                this.frame.pack();
+            }
+            else if (pelaaja2.tarkistaKuoleeko()==true) {
+                this.tyhjennys();
+                this.voitto=new Voitto(this, pelaaja1, pelaaja2);
+                this.frame.pack();
+            }
+            else {
+                setValittuPelaaja(pelaaja1);
+                this.tyhjennys();
+                this.aseosto = new AseOstosValinnat(this, getValittuPelaaja());
+                this.aseosto.luoKomponentit(this.frame.getContentPane());
+                this.frame.pack();
+            }  
         }
         
         if (ae.getActionCommand().equals("Osta ase "+pelaaja1.getNimi()) || ae.getActionCommand().equals("Osta ase "+pelaaja2.getNimi())) {

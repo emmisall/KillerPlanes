@@ -139,6 +139,30 @@ public class PelaajaTest {
        pelaaja1.ostaLentokone(lentokone2);
        assertEquals(pelaaja1.getRahat(), 100);
    }
+   
+   @Test
+   public void palauttaaTrueJosEiOleLentokoneitaEliKuolee() {
+       pelaaja1.palautaLentokoneet().clear();
+       assertTrue(pelaaja1.tarkistaKuoleeko());
+   }
+   
+   @Test 
+   public void palauttaaFalseJosEiKuole() {
+       pelaaja1.lisaaLentokone(lentokone1);
+       assertFalse(pelaaja1.tarkistaKuoleeko());
+   }
+   
+   @Test
+   public void palauttaaTrueJosVoittaa() {
+       pelaaja1.setRahaa(5000);
+       assertTrue(pelaaja1.tarkistaVoittaako());
+   }
+   
+   @Test
+   public void palauttaaFalseJosEiVoita() {
+       assertFalse(pelaaja1.tarkistaVoittaako());
+   }
+   
 
     
 }
