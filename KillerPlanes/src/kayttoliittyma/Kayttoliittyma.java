@@ -106,35 +106,41 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             if (pelaaja1.tarkistaVoittaako()==true && pelaaja2.tarkistaVoittaako()==true) {
                 this.tyhjennys();
                 this.tasapeli = new Tasapeli(this);
+                this.tasapeli.luoKomponentit(this.frame.getContentPane());
                 this.frame.pack();
             }
             
             else if (pelaaja1.tarkistaVoittaako()==true) {
                 this.tyhjennys();
                 this.voitto = new Voitto(this, pelaaja1, pelaaja2);
+                this.voitto.luoKomponentit(this.frame.getContentPane());
                 this.frame.pack();
             }
             
             else if (pelaaja2.tarkistaVoittaako()==true) {
                 this.tyhjennys();
                 this.voitto = new Voitto(this, pelaaja2, pelaaja1);
+                this.voitto.luoKomponentit(this.frame.getContentPane());
                 this.frame.pack();
             }
             
             else if (pelaaja1.tarkistaKuoleeko()==true && pelaaja2.tarkistaKuoleeko()==true) {
                 this.tyhjennys();
                 this.tasapeli = new Tasapeli(this);
+                this.tasapeli.luoKomponentit(this.frame.getContentPane());
                 this.frame.pack();
             }
             
             else if (pelaaja1.tarkistaKuoleeko()==true) {
                 this.tyhjennys();
                 this.voitto=new Voitto(this, pelaaja2, pelaaja1);
+                this.voitto.luoKomponentit(this.frame.getContentPane());
                 this.frame.pack();
             }
             else if (pelaaja2.tarkistaKuoleeko()==true) {
                 this.tyhjennys();
                 this.voitto=new Voitto(this, pelaaja1, pelaaja2);
+                this.voitto.luoKomponentit(this.frame.getContentPane());
                 this.frame.pack();
             }
             else {
@@ -188,25 +194,7 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             this.aseosto.luoKomponentit(this.frame.getContentPane());           
             this.frame.pack();
         }
-//        
-//         if (ae.getActionCommand().equals("Osta ase "+pelaaja2.getNimi())) {
-//            setValittulentokone1(aseosto2.getValittuL1());
-//            setValittuase1(aseosto2.getValittuA1());
-//            pelaaja2.ostaAse(getValittuase1(), getValittulentokone1());
-//            this.tyhjennys();
-//            this.lentokoneosto2 = new LentokoneOstosValinnat2(this);
-//            this.lentokoneosto2.luoKomponentit(this.frame.getContentPane());
-//            this.frame.pack();
-//            
-//        }
-//        
-//        if (ae.getActionCommand().equals((pelaaja2.getNimi()+" ei osta asetta"))) {
-//            this.tyhjennys();
-//            this.lentokoneosto2 = new LentokoneOstosValinnat2(this);
-//            this.lentokoneosto2.luoKomponentit(this.frame.getContentPane());
-//            this.frame.pack();
-//        }
-//        
+
         if (ae.getActionCommand().equals("Osta lentokone "+pelaaja2.getNimi())) {
             setValittulentokone1(lentokoneosto.getValittuL1());
             pelaaja2.ostaLentokone(getValittulentokone1());

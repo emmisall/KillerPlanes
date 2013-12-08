@@ -45,7 +45,7 @@ public class Taistelu {
             System.out.println("Osui, random oli:"+randomi);
             lentokone.paivitaEnergia(ase);
             kohde.tarkistaSailyykoKoneIlmassa(lentokone);
-            ampuja.setRahaa(ase.getTeho()*3); //ampuja saa osumasta rahaa sen verran kuin aseessa oli tehoja tai kenties kertaa 3 tms. jos tuntuu että peli ei etene
+            ampuja.setRahaa(ase.getTeho()*4); 
             return true; //osuu
         }
         System.out.println("Ei osunut, randomi oli: "+randomi);

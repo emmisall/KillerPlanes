@@ -74,7 +74,7 @@ public class TaisteluTest {
         ase1.setTeho(40);
         ase1.setTarkkuus(1);
         taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
-        assertEquals(pelaaja2.getRahat(),1120);
+        assertEquals(pelaaja2.getRahat(),1160);
     }
     
     @Test 
