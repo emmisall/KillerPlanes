@@ -62,7 +62,7 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     public void run() {
         frame = new JFrame("KillerPlanes");
         JPanel paneeli = new JPanel();
-        frame.setPreferredSize(new Dimension(1000,500));
+//        frame.setPreferredSize(new Dimension(1000,500));
         frame.setContentPane(paneeli);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

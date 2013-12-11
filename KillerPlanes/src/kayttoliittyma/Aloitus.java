@@ -19,7 +19,7 @@ import javax.swing.JTextField;
  *
  */
 
-public class Aloitus extends JPanel {
+public class Aloitus {
 
     private Kayttoliittyma kayttis;
     private JTextField nimiKentta1;
@@ -37,7 +37,13 @@ public class Aloitus extends JPanel {
 
     public void luoKomponentit(Container container) {
         
-        paneeli = new JPanel();
+        container.add(teeNappulat());
+        
+    }
+    
+    private JPanel teeNappulat() {
+        
+        paneeli = new JPanel(new GridLayout(3,2));
         paneeli.setVisible(true);
         paneeli.setSize(500, 500);
         JLabel pelaajan1nimi = new JLabel("Pelaajan1 nimi: ");
@@ -48,11 +54,13 @@ public class Aloitus extends JPanel {
         JButton lisaaNappula = new JButton("Aloita peli!");
         lisaaNappula.addActionListener(this.kayttis);
         
-        add(pelaajan1nimi);
-        add(nimiKentta1);
-        add(pelaajan2nimi);
-        add(nimiKentta2);
-        add(lisaaNappula);
+        paneeli.add(pelaajan1nimi);
+        paneeli.add(nimiKentta1);
+        paneeli.add(pelaajan2nimi);
+        paneeli.add(nimiKentta2);
+        paneeli.add(lisaaNappula);
+        return paneeli;
+        
     }
     
     public String pelaajanimi1() {
