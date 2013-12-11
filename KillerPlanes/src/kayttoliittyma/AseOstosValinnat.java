@@ -12,12 +12,12 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import kayttaja.Pelaaja;
 import lentokone.Ase;
-import lentokone.AseidenLuominen;
 import lentokone.Lentokone;
 
 /**
- *
- * @author emmisall
+ * Pelaaja voi valitsemaansa omaan lentokoneeseensa aseen kaikista pelissä tarjolla olevista aseista, jos pelaajalla on rahaa 
+ * ja ase mahtuu valittuun lentokoneeseen
+ * 
  */
 public class AseOstosValinnat {
 
@@ -25,14 +25,7 @@ public class AseOstosValinnat {
     private JComboBox<Ase> ostoaseet;
     private Kayttoliittyma kayttis;
     private Pelaaja pelaaja;
-    
-    /**
-     * Pelaaja voi ostaa aseen tässä, vain 1 pelaaja kerrallaan voi ostaa. 2:n vuoro tulee kun toinen on ostanut halutessaan lentokoneenkin
-     * 
-     * 
-     * @param pelaaja1
-     * @param pelaaja2 
-     */
+ 
     
     public AseOstosValinnat(Kayttoliittyma kayttis, Pelaaja pelaaja) {
         this.kayttis=kayttis;

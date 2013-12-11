@@ -5,8 +5,8 @@
 package kayttoliittyma;
 
 /**
- *
- * @author emmisall
+ * Hallitsee käyttöliittymää kokonaisuudessaan, luo framen johon tuodaan sisältöä muista käyttöliittymän luokista
+ * 
  */
 
 import java.awt.Dimension;
@@ -14,11 +14,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
 import lentokone.Ase;
-import lentokone.AseidenLuominen;
 import lentokone.Lentokone;
 import taistelu.Taistelu;
 
@@ -32,9 +30,6 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     private PelinTulos tulos;
     private AseOstosValinnat aseosto;
     private LentokoneOstosValinnat lentokoneosto;
-//    private AseOstosValinnat2 aseosto2;
-//    private LentokoneOstosValinnat2 lentokoneosto2;
-//    
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
     private Pelaaja valittuPelaaja;
@@ -53,6 +48,9 @@ public class Kayttoliittyma implements ActionListener, Runnable{
 
     }
     
+    /**
+     * Ensimmäisen näkymä luokasta PelinAloitus
+     */
         
     @Override
     public void run() {
@@ -69,6 +67,12 @@ public class Kayttoliittyma implements ActionListener, Runnable{
         
         
     }
+    
+    /**
+     * Kuuntelee, mitä nappia painetaan ja sisältö tuodaan sen perusteella frameen
+     * Huolehtii framen tyhjentämisestä sopivassa kohdassa, kun edellisestä framesta on saatu kaikki tieto, esim. mitkä aseet ja lentokoneet on valittu taisteluun
+     * @param ae 
+     */
     
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -215,6 +219,10 @@ public class Kayttoliittyma implements ActionListener, Runnable{
         
  
     }
+    
+    /**
+     * Tyhjentää framen
+     */
     
     private void tyhjennys() {
         this.frame.getContentPane().removeAll();

@@ -14,8 +14,8 @@ import javax.swing.JLabel;
 
 
 /**
+ * Ennen ensimmäistä taistelua kerrotaan pelaajille heidän ensimmäisten lentokoneidensa tiedot
  *
- * @author verijuotikas
  */
 
 public class PelinAloitus {
@@ -27,9 +27,7 @@ public class PelinAloitus {
     public PelinAloitus(Kayttoliittyma kayttis) {
         this.kayttis=kayttis;
     }
-    
 
-    
      public void luoKomponentit(Container container) {
 
         GridLayout leiska = new GridLayout(6,1);

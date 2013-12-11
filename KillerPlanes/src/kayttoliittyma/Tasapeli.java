@@ -11,8 +11,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 
 /**
- *
- * @author verijuotikas
+ * Peli voi päättyä tasapeliin jos molemmat saavat yhtäaikaa 2000 tai enemmän rahaa täyteen tai kuolevat samassa taistelussa
+ * 
  */
 public class Tasapeli {
     
@@ -22,6 +22,11 @@ public class Tasapeli {
         this.kayttis=kayttis;
         
     }
+    
+    /**
+     * Tarkistaa, mikä oli tasapelin syy ja kertoo tuloksen sen perusteella
+     * @param container 
+     */
     
     public void luoKomponentit(Container container) {
         GridLayout leiska = new GridLayout(10,1);

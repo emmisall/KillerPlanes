@@ -7,14 +7,13 @@
 package kayttoliittyma;
 
 /**
+ * Ensimmäisen framen sisältö, jossa annetaan pelaajille nimet
  *
- * @author verijuotikas
  */
 
 import java.awt.Container;
 import java.awt.GridLayout;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 

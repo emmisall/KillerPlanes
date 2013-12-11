@@ -18,10 +18,7 @@ public class Pelaaja {
     
     private String nimi;
     private ArrayList<Lentokone> lentokoneet; 
-    private Lentokone lentokone;
     private int rahat;
-    private int summa;
-    private Ase ase;
     private LentokoneidenLuominen lentsikat;
     private Lentokone lentokone1;
     private Lentokone lentokone2;
@@ -41,8 +38,7 @@ public class Pelaaja {
        this.lentokoneet=new ArrayList<Lentokone>();
        this.rahat=1000; //alkupääoma pelaajalle
        this.lentsikat = new LentokoneidenLuominen(lentokone1, lentokone2, lentokone3, lentokone4);
-       lentokoneet.add(lentsikat.getLento1()); //lisätään ensimmäinen lentokone pelaajalle 
-//       lentokoneet.add(lentsikat.getLento2()); //toinen testimielessä
+       lentokoneet.add(lentsikat.getEka());
     }
     
     public String getNimi() {
@@ -55,6 +51,7 @@ public class Pelaaja {
      * 
      * @param lentokone Se lentokone, joka halutaan lisätä, esim. ostettu lentokone
      */
+    
     public void lisaaLentokone(Lentokone lentokone) {
         lentokoneet.add(lentokone);
     }
@@ -92,6 +89,11 @@ public class Pelaaja {
         }
         else return true;
     }
+    
+    /**
+     * Lisätään pelaajalle rahaa summan verran esim. taistelun voitosta
+     * @param summa se summa, minkä verran rahaa halutaa antaa
+     */
     
     public void setRahaa(int summa) {
         this.rahat=rahat+summa;

@@ -6,18 +6,19 @@ package kayttoliittyma;
 
 import java.awt.Container;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import kayttaja.Pelaaja;
 import lentokone.Lentokone;
-import lentokone.LentokoneidenLuominen;
 
 /**
- *
- * @author emmisall
+ * Pelaaja voi ostaa itselleen uuden lentokoneen kaikista pelin lentokoneista, jos pelaajalla on rahaa
+ * Lentokoneen luodaan tässä uudestaan, koska muuten käy niin että tässä myydään lentokoneita joita on jo käytetty
+ * (ostaessa viitataan lentokoneidenLuomisessa tehtäviin lentokoneisiin ja se viittaus säilyy koko ajan, joten lentokoneet
+ * pitää luoda uudestaan ennen ostoa jotta ne ovat uusia)
+ * 
  */
 public class LentokoneOstosValinnat {
     
@@ -26,13 +27,6 @@ public class LentokoneOstosValinnat {
     private Kayttoliittyma kayttis;
     private ArrayList<Lentokone> lentokoneet1;
     private Pelaaja pelaaja;
-    
-    /**
-     * Pelaaja voi ostaa lentokoneen
-     * 
-     * @param pelaaja1
-     * @param pelaaja2 
-     */
     
     public LentokoneOstosValinnat(Kayttoliittyma kayttis, Pelaaja pelaaja) {
         this.kayttis= kayttis;

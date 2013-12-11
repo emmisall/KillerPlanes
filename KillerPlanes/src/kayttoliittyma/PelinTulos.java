@@ -9,31 +9,17 @@ package kayttoliittyma;
 import java.awt.Container;
 import java.awt.GridLayout;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import kayttaja.Pelaaja;
-import lentokone.Ase;
-import lentokone.Lentokone;
-import taistelu.Taistelu;
+
 
 /**
- *
- * @author verijuotikas
+ * Kertoo taistelun tuloksen ja pelaajien rahatilanteen taistelun jälkeen
+ * 
  */
 public class PelinTulos {
     
     private Kayttoliittyma kayttis;
     
-    /**
-     * Kertoo pelin tuloksen, ampuminen tapahtuu TaisteluValinnat-luokan mukaisilla valinnoilla (jos se vaan toimisi..)
-     * 
-     * @param lentokone1 pelaajan1 valitsema lentokone 
-     * @param lentokone2 pelaajan2 valitsema lentokone
-     * @param ase1 pelaajan1 valitsema ase
-     * @param ase2 pelaajan2 valitsema ase
-     * @param pelaaja1
-     * @param pelaaja2 
-     */
     
     public PelinTulos(Kayttoliittyma kayttis) {
         
@@ -41,7 +27,7 @@ public class PelinTulos {
     }
 
     /**
-     * ammutaan molempia vuorotellen valituilla aseilla valittuihin lentokoneisiin
+     * Ampumpinen tapahtuu tässä luokassa pelaajien valitsemien lentokoneiden ja aseiden perusteella, tulos ilmoitetetaan heti
      * @param container 
      */
     

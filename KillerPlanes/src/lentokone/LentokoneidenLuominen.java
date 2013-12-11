@@ -78,6 +78,14 @@ public class LentokoneidenLuominen {
         return kaikkilentokoneet;
     }
     
+    public Lentokone getEka() {
+        Lentokone eka = new Lentokone();
+        eka.setNimi("Rääpäle");
+        eka.setEnergia(200);
+        eka.setHinta(200);
+        return eka;
+    }
+    
     
 
 }

@@ -14,8 +14,9 @@ import lentokone.Ase;
 import lentokone.Lentokone;
 
 /**
- *
- * @author emmisall
+ * Pelaajat valitsevat taisteluun lentokoneen ja aseen omista lentokoneistaan ja niiden aseista 
+ * Lentokoneet ja aseet ovat alasvetovalikoissa
+ * 
  */
 public class TaisteluValinnat {
     
@@ -25,13 +26,6 @@ public class TaisteluValinnat {
     private JComboBox<Lentokone> lentokoneet2;
     private Kayttoliittyma kayttis;
     
-    /**
-     * Pelaajat valitsevat tässä itselleen taisteluun aseen ja lentokoneen omista lentokoneistaan
-     * (tai valitsevat jos tämä toimisi mutta ei toimi nyt oikein..)
-     * 
-     * @param pelaaja1
-     * @param pelaaja2 
-     */
     
     public TaisteluValinnat(Kayttoliittyma kayttis) {
         this.kayttis=kayttis;
@@ -50,8 +44,6 @@ public class TaisteluValinnat {
         container.add(teksti1);
         
         lentokoneet1 = new JComboBox<Lentokone>();
-        
-        //tää ei nyt vieläkään rullaa ihan oikein kun tuo eka lentokoneen alasvetovalikko menee väärään kohtaan..
         
         for (Lentokone lentokone : koneet1) {
             lentokoneet1.addItem(lentokone);
@@ -87,12 +79,7 @@ public class TaisteluValinnat {
             }
             
         }
-//        
-//        kayttis.setValittulentokone1((Lentokone) lentokoneet1.getSelectedItem());
-//        kayttis.setValittuase1((Ase) aseistus1.getSelectedItem());
-//        kayttis.setValittulentokone2((Lentokone) lentokoneet1.getSelectedItem());
-//        kayttis.setValittuase2((Ase) aseistus1.getSelectedItem());
-   
+        
         JButton taistele = new JButton("Taistele!");
         taistele.addActionListener(this.kayttis);
         container.add(taistele);
