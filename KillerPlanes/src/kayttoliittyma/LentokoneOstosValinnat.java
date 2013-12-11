@@ -82,15 +82,15 @@ public class LentokoneOstosValinnat {
         JLabel raapaleKuva = new JLabel(new ImageIcon(raapale));
         paneeli2.add(new JLabel("Rääpäle"));
         paneeli2.add(raapaleKuva);
-        BufferedImage turbo = ImageIO.read(new File("/home/verijuotikas/KillerPlanes/KillerPlanes/src/kayttoliittyma/turbo.jpg"));
+        BufferedImage turbo = ImageIO.read(getClass().getResource("turbo.jpg"));
         JLabel turboKuva = new JLabel(new ImageIcon(turbo));
         paneeli2.add(new JLabel("Turbo"));
         paneeli2.add(turboKuva);
-        BufferedImage kingi = ImageIO.read(new File("/home/verijuotikas/KillerPlanes/KillerPlanes/src/kayttoliittyma/kingi.jpg"));
+        BufferedImage kingi = ImageIO.read(getClass().getResource("kingi.jpg"));
         JLabel kingiKuva = new JLabel(new ImageIcon(kingi));
         paneeli2.add(new JLabel("Kingi"));
         paneeli2.add(kingiKuva);
-        BufferedImage killer = ImageIO.read(new File("/home/verijuotikas/KillerPlanes/KillerPlanes/src/kayttoliittyma/killer.jpg"));
+        BufferedImage killer = ImageIO.read(getClass().getResource("killer.jpg"));
         JLabel killerKuva = new JLabel(new ImageIcon(killer));
         paneeli2.add(new JLabel("Killer"));
         paneeli2.add(killerKuva);
