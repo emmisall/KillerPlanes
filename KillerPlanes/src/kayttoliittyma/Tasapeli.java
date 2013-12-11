@@ -36,7 +36,7 @@ public class Tasapeli {
             container.add(new JLabel("Tasapeli! Pelaajalla "+kayttis.getPelaaja1().getNimi()+" on rahaa "+kayttis.getPelaaja1().getRahat()+" ja pelaajalla "+kayttis.getPelaaja2().getNimi()+" on rahaa "+kayttis.getPelaaja2().getRahat()));
         }
         else
-            container.add(new JLabel("Molempien kaikki lentokoneet tippuivat."));
+            container.add(new JLabel("Tasapeli! Molempien kaikki lentokoneet tippuivat."));
     }
     
 }
