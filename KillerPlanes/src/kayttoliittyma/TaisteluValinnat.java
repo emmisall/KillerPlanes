@@ -62,9 +62,9 @@ public class TaisteluValinnat {
             paneeli.add(new JLabel(lentokone.getNimi()+" aseet: "));
             for (Ase ase : aseet1) {
                 aseistus1.addItem(ase);
-                paneeli.add(aseistus1);
+                
             }
-            
+            paneeli.add(aseistus1);
         }
         
         paneeli.add(teksti3);
@@ -81,10 +81,9 @@ public class TaisteluValinnat {
             paneeli.add(new JLabel(lentokone.getNimi()+" aseet: "));
             
             for (Ase ase : aseet2) {
-                aseistus2.addItem(ase);
-                paneeli.add(aseistus2);
+                aseistus2.addItem(ase);     
             }
-            
+            paneeli.add(aseistus2);
         }
         
         
