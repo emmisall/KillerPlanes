@@ -1,6 +1,7 @@
 Ohjeet peliin:
 
 1. Anna pelaajille nimet, pelaajat saavat lentokoneen ja aseen.
+Jos pelaajien nimet ovat samat, lisää ohjelma toisen perään numeron 2.
 2. Valitse taisteluun lentokone ja ase (ekalla kierroksella vain yksi vaihtoehto)
 3. Taistele ja näet tuloksen.
 4. Kaupassa ostetaan ensin aseita. Aseita voi ostaa jo omistettuihin 

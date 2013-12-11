@@ -45,6 +45,10 @@ public class Pelaaja {
         return nimi;
     }
     
+    public void setNimi(String nimi2) {
+        this.nimi=nimi+nimi2;
+    }
+    
     
     /**
      * Metodi lisää lentokoneen käyttäjän lentokone-listaan
@@ -64,15 +68,6 @@ public class Pelaaja {
     
     public ArrayList<Lentokone> palautaLentokoneet() {
         return lentokoneet;
-    }
-    
-    /**
-     * Tämä metodi palauttaa kaikki lentokoneet, jotka ovat pelissä ostettavissa
-     * @return lista kaikista pelin lentokoneista
-     */
-    
-    public ArrayList<Lentokone> palautaKaikki() {
-        return lentsikat.getKaikkiLentokoneet();
     }
     
     /**

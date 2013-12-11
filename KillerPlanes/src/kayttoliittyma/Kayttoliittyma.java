@@ -93,6 +93,9 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             this.pelaaja2 = new Pelaaja(aloitus.pelaajanimi2());
             setPelaaja1(pelaaja1);
             setPelaaja2(pelaaja2);
+            if (pelaaja1.getNimi().equals(pelaaja2.getNimi())) {
+                pelaaja2.setNimi("2");
+            }
             this.pelaajaKuuntelija.luoKomponentit(this.frame.getContentPane());
             this.frame.pack();
         }
@@ -173,6 +176,7 @@ public class Kayttoliittyma implements ActionListener, Runnable{
             setValittuase1(aseosto.getValittuA1());
             pelaaja1.ostaAse(getValittuase1(), getValittulentokone1());
             this.tyhjennys();
+            frame.setPreferredSize(new Dimension(1500,800));
             if (getValittuPelaaja().equals(pelaaja1)) {
                 this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja1);
             }
