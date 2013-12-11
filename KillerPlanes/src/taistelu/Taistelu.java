@@ -36,15 +36,12 @@ public class Taistelu {
      */
     
     public boolean ammu(Lentokone lentokone, Ase ase, Pelaaja kohde, Pelaaja ampuja) {
-        double randomi = rand.nextDouble(); 
-        if (randomi < ase.getTarkkuus()) {
-            System.out.println("Osui, random oli:"+randomi);
+        if (rand.nextDouble() < ase.getTarkkuus()) {
             lentokone.paivitaEnergia(ase);
             kohde.tarkistaSailyykoKoneIlmassa(lentokone);
             ampuja.setRahaa(ase.getTeho()*4); 
             return true; //osuu
         }
-        System.out.println("Ei osunut, randomi oli: "+randomi);
         return false; //ei osu
     }
     

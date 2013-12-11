@@ -8,7 +8,10 @@ package kayttoliittyma;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
@@ -62,7 +65,7 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     public void run() {
         frame = new JFrame("KillerPlanes");
         JPanel paneeli = new JPanel();
-//        frame.setPreferredSize(new Dimension(1000,500));
+        frame.setPreferredSize(new Dimension(1000,500));
         frame.setContentPane(paneeli);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -174,19 +177,27 @@ public class Kayttoliittyma implements ActionListener, Runnable{
                 this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja1);
             }
             else this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja2);
-            
-            this.lentokoneosto.luoKomponentit(this.frame.getContentPane());
+            try {
+                this.lentokoneosto.luoKomponentit(this.frame.getContentPane());
+            } catch (IOException ex) {
+                System.out.println("Kuvaa ei löynyt, "+ex.getMessage());
+            }
             this.frame.pack();
             
         }
         
         if (ae.getActionCommand().equals((pelaaja1.getNimi()+" ei osta asetta")) || ae.getActionCommand().equals(pelaaja2.getNimi()+" ei osta asetta")) {
             this.tyhjennys();
+            frame.setPreferredSize(new Dimension(1500,800));
             if (getValittuPelaaja().equals(pelaaja1)) {
                 this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja1);
             }
             else this.lentokoneosto = new LentokoneOstosValinnat(this, pelaaja2);
-            this.lentokoneosto.luoKomponentit(this.frame.getContentPane());
+            try {
+                this.lentokoneosto.luoKomponentit(this.frame.getContentPane());
+            } catch (IOException ex) {
+                Logger.getLogger(Kayttoliittyma.class.getName()).log(Level.SEVERE, null, ex);
+            }
             this.frame.pack();
         }
         
