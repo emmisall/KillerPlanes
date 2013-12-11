@@ -4,10 +4,6 @@
  */
 package kayttoliittyma;
 
-/**
- * Hallitsee käyttöliittymää kokonaisuudessaan, luo framen johon tuodaan sisältöä muista käyttöliittymän luokista
- * 
- */
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -21,6 +17,10 @@ import lentokone.Lentokone;
 import lentokone.LentokoneidenLuominen;
 import taistelu.Taistelu;
 
+/**
+ * Hallitsee käyttöliittymää kokonaisuudessaan, luo framen johon tuodaan sisältöä muista käyttöliittymän luokista
+ * 
+ */
 
 public class Kayttoliittyma implements ActionListener, Runnable{
     

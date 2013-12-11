@@ -19,6 +19,7 @@ import lentokone.Lentokone;
  * ja ase mahtuu valittuun lentokoneeseen
  * 
  */
+
 public class AseOstosValinnat {
 
     private JComboBox<Lentokone> lentokoneet1;

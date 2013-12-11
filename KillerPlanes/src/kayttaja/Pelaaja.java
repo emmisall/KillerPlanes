@@ -131,7 +131,7 @@ public class Pelaaja {
     /**
      * Metodilla ostetaan lentokone, jos on rahaa tarpeeksi. Lentokone lisätään arrayListiin ja pelaajalta otetaan rahaa pois.
      * 
-     * @param se lentokone, joka halutaan ostaa
+     * @param lentokone joka halutaan ostaa
      * @return true jos oli rahaa ostaa, false jos ei ollut
      */
     

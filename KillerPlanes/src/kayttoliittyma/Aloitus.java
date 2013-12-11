@@ -6,10 +6,6 @@
 
 package kayttoliittyma;
 
-/**
- * Ensimmäisen framen sisältö, jossa annetaan pelaajille nimet
- *
- */
 
 import java.awt.Container;
 import java.awt.GridLayout;
@@ -17,7 +13,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-
+/**
+ * Ensimmäisen framen sisältö, jossa annetaan pelaajille nimet
+ *
+ */
 
 public class Aloitus {
 
@@ -26,9 +25,9 @@ public class Aloitus {
     private JTextField nimiKentta2;
     
     /**
-* Pelin alku, annetaan pelaajille nimet.
-* @param kayttis
-*/
+    * Pelin alku, annetaan pelaajille nimet.
+    * @param kayttis
+    */
     
     public Aloitus(Kayttoliittyma kayttis) {
         this.kayttis = kayttis;

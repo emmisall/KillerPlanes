@@ -46,7 +46,7 @@ public class Lentokone {
     
     /**
      * Lisää lentokoneelle aseen, jos lentokoneessa ei ole vielä aseet täynnä (max 3)
-     * @param ase, se ase joka halutaan lisätä 
+     * @param ase se ase joka halutaan lisätä 
      * @return true jos ase mahtui, false jos ei
      */
     
