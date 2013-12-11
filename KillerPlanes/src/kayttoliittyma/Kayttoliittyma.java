@@ -23,6 +23,7 @@ import taistelu.Taistelu;
 
 /**
  * Hallitsee käyttöliittymää kokonaisuudessaan, luo framen johon tuodaan sisältöä muista käyttöliittymän luokista
+ * Tallentaa tietoa valituista lentokoneista ja aseista taistelun eri vaiheissa ja kaupassa
  * 
  */
 

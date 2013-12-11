@@ -47,17 +47,16 @@ public class TaisteluValinnat {
         JLabel teksti = new JLabel("Valitkaa yksi lentokone ja siitä yksi ase.");
         JLabel teksti1 = new JLabel("Pelaajan "+kayttis.getPelaaja1().getNimi()+" lentokoneet ja niiden aseet ovat seuraavat: ");
         JLabel teksti3 = new JLabel("Pelaajan "+kayttis.getPelaaja2().getNimi()+" lentokoneet ja niiden aseet ovat seuraavat: ");
-        ArrayList<Lentokone> koneet1 = new ArrayList<Lentokone>();
+        ArrayList<Lentokone> koneet1 = kayttis.getPelaaja1().palautaLentokoneet();
         ArrayList<Ase> aseet1 = new ArrayList<Ase>();
-        koneet1=kayttis.getPelaaja1().palautaLentokoneet();
         paneeli.add(teksti);
         paneeli.add(teksti1);
         
         lentokoneet1 = new JComboBox<Lentokone>();
+        paneeli.add(lentokoneet1);
         
         for (Lentokone lentokone : koneet1) {
             lentokoneet1.addItem(lentokone);
-            paneeli.add(lentokoneet1);
             aseet1 = lentokone.palautaAseet();
             aseistus1 = new JComboBox<Ase>();
             paneeli.add(new JLabel(lentokone.getNimi()+" aseet: "));
@@ -70,15 +69,13 @@ public class TaisteluValinnat {
         
         paneeli.add(teksti3);
 
-        ArrayList<Lentokone> koneet2 = new ArrayList<Lentokone>();
+        ArrayList<Lentokone> koneet2 = kayttis.getPelaaja2().palautaLentokoneet();
         ArrayList<Ase> aseet2 = new ArrayList<Ase>();
-        koneet2=kayttis.getPelaaja2().palautaLentokoneet();
-        lentokoneet2 = new JComboBox<Lentokone>();
+        lentokoneet2 = new JComboBox<Lentokone>(); 
+        paneeli.add(lentokoneet2);
         
         for (Lentokone lentokone : koneet2) {
             lentokoneet2.addItem(lentokone);
-            paneeli.add(lentokoneet2);
-            
             aseet2 = lentokone.palautaAseet();
             aseistus2 = new JComboBox<Ase>();
             paneeli.add(new JLabel(lentokone.getNimi()+" aseet: "));
