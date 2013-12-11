@@ -18,6 +18,7 @@ import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
 import lentokone.Ase;
 import lentokone.Lentokone;
+import lentokone.LentokoneidenLuominen;
 import taistelu.Taistelu;
 
 
@@ -41,6 +42,10 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     private Taistelu taistelu;
     private Voitto voitto;
     private Tasapeli tasapeli;
+    private Lentokone lentokone1;
+    private Lentokone lentokone2;
+    private Lentokone lentokone3;
+    private Lentokone lentokone4;
     
     public Kayttoliittyma() {
         
@@ -282,7 +287,8 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     }
     
     public ArrayList<Lentokone> getKaikkiLentokoneet() {
-        return pelaaja1.palautaKaikki();
+        LentokoneidenLuominen lentokoneet = new LentokoneidenLuominen(lentokone1, lentokone2, lentokone3, lentokone4);
+        return lentokoneet.getKaikkiLentokoneet();
     }
     
     public ArrayList<Ase> getKaikkiAseet() {
