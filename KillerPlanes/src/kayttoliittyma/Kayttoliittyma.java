@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import kayttaja.Pelaaja;
 import lentokone.Ase;
@@ -60,7 +61,9 @@ public class Kayttoliittyma implements ActionListener, Runnable{
     @Override
     public void run() {
         frame = new JFrame("KillerPlanes");
+        JPanel paneeli = new JPanel();
         frame.setPreferredSize(new Dimension(1000,500));
+        frame.setContentPane(paneeli);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         frame.pack();

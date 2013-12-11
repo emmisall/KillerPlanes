@@ -11,6 +11,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -18,11 +19,12 @@ import javax.swing.JTextField;
  *
  */
 
-public class Aloitus {
+public class Aloitus extends JPanel {
 
     private Kayttoliittyma kayttis;
     private JTextField nimiKentta1;
     private JTextField nimiKentta2;
+    private JPanel paneeli;
     
     /**
     * Pelin alku, annetaan pelaajille nimet.
@@ -34,9 +36,10 @@ public class Aloitus {
     }
 
     public void luoKomponentit(Container container) {
-
-        GridLayout leiska = new GridLayout(3,2);
-        container.setLayout(leiska);
+        
+        paneeli = new JPanel();
+        paneeli.setVisible(true);
+        paneeli.setSize(500, 500);
         JLabel pelaajan1nimi = new JLabel("Pelaajan1 nimi: ");
         nimiKentta1 = new JTextField();
         JLabel pelaajan2nimi = new JLabel("Pelaajan2 nimi: ");
@@ -45,11 +48,11 @@ public class Aloitus {
         JButton lisaaNappula = new JButton("Aloita peli!");
         lisaaNappula.addActionListener(this.kayttis);
         
-        container.add(pelaajan1nimi);
-        container.add(nimiKentta1);
-        container.add(pelaajan2nimi);
-        container.add(nimiKentta2);
-        container.add(lisaaNappula);
+        add(pelaajan1nimi);
+        add(nimiKentta1);
+        add(pelaajan2nimi);
+        add(nimiKentta2);
+        add(lisaaNappula);
     }
     
     public String pelaajanimi1() {

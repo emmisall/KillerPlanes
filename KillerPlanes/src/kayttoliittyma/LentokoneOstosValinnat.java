@@ -7,6 +7,7 @@ package kayttoliittyma;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -40,11 +41,14 @@ public class LentokoneOstosValinnat {
         lentokoneet1 = new ArrayList<Lentokone>();
         lentokoneet1 = kayttis.getKaikkiLentokoneet();
         
-         for (Lentokone lentokone : lentokoneet1) {
+        for (Lentokone lentokone : lentokoneet1) {
              ostokoneet.addItem(lentokone);
              container.add(ostokoneet);
          }
-
+         
+//        ImageIcon raapale = new ImageIcon("raapale.jpg");
+        
+        
         JButton osta = new JButton("Osta lentokone "+pelaaja.getNimi());
         JButton enosta = new JButton(pelaaja.getNimi()+" ei osta lentokonetta");
         osta.addActionListener(this.kayttis);
