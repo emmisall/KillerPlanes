@@ -2,15 +2,11 @@ Aihe: Pieni lentokonetaistelupeli
 
 Tehdään kaksintaistelupeli (ei tekoälyä), jossa lentokoneet taistelevat vastekkain.
 Lähtötilanteessa molemmat saavat samanlaiset lentokoneet. Lentokoneet
-taistelevat, osumasta saa aina rahaa. Jos omaan lentokoneeseen osuu, lentokoneeseen tulee vaurio ja
-sen korjaaminen maksaa. Rahalla voi myös ostaa parempia aseita (uusi
-aseolio). Paremmat aseet osuvat suuremmalla todennäköisyydellä.
-Jos on paljon rahaa niin voi ostaa uuden lentokoneen (uusi lentokoneolio). Pelin voittaa se, jolla on ensin tietty
-summa rahaa kasassa.
-
-HUOM! Pelissä tällä hetkellä olevat rahat, hinnat jne. eivät ole mietittyjä vaan keksitty jotta peliä
-voi koodata, oikeasti nuo summat eivät ole toimivia sen kannalta että peli loppuisikin joskus.
-Voittosummaa ei myös ole päätetty, tarkoituksena on että peli kestäisi n. 10-15 minuuttia.
+taistelevat, osumasta saa aina rahaa. Jos omaan lentokoneeseen osuu, lentokoneen energia vähenee.
+Rahalla voi myös ostaa uusia aseita ja uusia lentokoneita. Paremmat aseet tekevät enemmän vahinkoa, mutta
+osuvat pienemmällä todennäköisyydellä. Jos on paljon rahaa niin voi ostaa uuden lentokoneen (uusi lentokoneolio).
+Lentokoneita on erilaisia, kalliimmat lentokoneet ovat kestävämpiä. Pelin voittaa se, jolla on ensin 
+2000 rahaa kasassa. Pelin häviää, jos pelaajan kaikki lentokoneet tippuvat. Myös tasapeli on mahdollinen.
 
 
 Käyttäjät: Pelaaja 1 ja pelaaja 2.
@@ -27,13 +23,9 @@ Aloita taistelu
 - valitse ase
 - ammu
 
-Näytä oma rahamäärä
-Näytä kaikki myynnissä olevat aseet ja lentokoneet
 Osta ase
 - valitse mihin lentokoneeseen
 Osta lentokone
-
-Lopeta peli (luovuttaa)
 
 Idea pelin kulkuun
 1) Pelaaja aloittaa pelin, molemmat antavat nimen pelaajilleen, pelaajat 
@@ -42,10 +34,12 @@ saavat ensimmäisen lentokoneen ja rahaa
 - Pelaajat valitsevat lentokoneen ja aseen kierrokselle
 3) Taistelun lopputulos ilmoitetaan
 - Pelaajat saavat rahaa riippuen taistelukierroksen lopputuloksesta
-4) Pelaajat ostavat aseita/lentokoneita/lentokoneen korjausta kierrosten välissä
-- Ostaminen tapahtuu pelaaja kerrallaan, voi ostaa yhden aseen ja yhden lentokoneen kerrallaan, mutta
-ostoskierroksia voi olla useita
-5) Uusi taistelukierros alkaa kun pelaajat haluavat
-6) Peli päättyy kun toinen saa tietyn rahamäärän täyteen ja voittaa 
+4) Pelaajat ostavat aseita ja lentokoneita kierrosten välissä
+- Ostaminen tapahtuu pelaaja kerrallaan, voi ostaa yhden aseen ja yhden lentokoneen kerrallaan. Aseet
+ostetaan ensin.
+5) Uusi taistelukierros alkaa kun molemmat ovat saaneet mahdollisuuden ostoksiin
+6) Peli päättyy kun toinen saa tietyn rahamäärän täyteen ja voittaa tai jos toisen kaikki lentokoneet tippuvat.
+Jos molemmat saavat 2000 täyteen samalla kierroksella tai molemmilta loppuvat koneet samalla kierroksella, on 
+kyseessä tasapeli. 
 
 

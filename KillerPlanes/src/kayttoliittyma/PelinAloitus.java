@@ -35,15 +35,12 @@ public class PelinAloitus {
         JLabel teksti = new JLabel("Taistelu alkaa, ensimmäiset lentokoneet ovat valmiina pelaajille "+kayttis.getPelaaja1().getNimi()+" ja "+kayttis.getPelaaja2().getNimi()+".");
         JLabel teksti2 = new JLabel("Ensimmäisen lentokoneen tiedot ovat molemmilla samat.");
         JLabel teksti3 = new JLabel("Nimi on "+kayttis.getPelaaja1().palautaLentokoneet().get(0).getNimi()+" ja energia on "+kayttis.getPelaaja1().palautaLentokoneet().get(0).getEnergia()+".");
-        JButton ohjeet = new JButton("Pelin ohjeet."); //ei tee vielä mitään
         JButton aloitus = new JButton("Aloita taistelu.");
         aloitus.addActionListener(this.kayttis);
 
-        
         container.add(teksti);
         container.add(teksti2);
         container.add(teksti3);
-        container.add(ohjeet);
         container.add(aloitus);
 
     }
