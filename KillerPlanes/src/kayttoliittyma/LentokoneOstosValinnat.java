@@ -10,6 +10,7 @@ import java.awt.GridLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -77,7 +78,7 @@ public class LentokoneOstosValinnat {
         
         paneeli2 = new JPanel(new GridLayout(2,4));
         
-        BufferedImage raapale = ImageIO.read(new File("/home/verijuotikas/KillerPlanes/KillerPlanes/src/kayttoliittyma/raapale.jpg"));
+        BufferedImage raapale = ImageIO.read(getClass().getResource("raapale.jpg"));
         JLabel raapaleKuva = new JLabel(new ImageIcon(raapale));
         paneeli2.add(new JLabel("Rääpäle"));
         paneeli2.add(raapaleKuva);
