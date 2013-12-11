@@ -286,6 +286,13 @@ public class Kayttoliittyma implements ActionListener, Runnable{
         return this.taistelu;
     }
     
+    /**
+     * Lentokoneet pitää luoda uudestaan, koska ostaessa jää viittaus ostettuun lentokoneeseen ja ostettavien lista
+     * perustuu kaikkiin lentokoneisiin. Jos niitä ei luoda uudestaan, myydään jo käytettyjä lentokoneita (energia pienempi,
+     * jos lentokoneeseen on osuttu).
+     * @return kaikki lentokoneet, jotka voi ostaa
+     */
+    
     public ArrayList<Lentokone> getKaikkiLentokoneet() {
         LentokoneidenLuominen lentokoneet = new LentokoneidenLuominen(lentokone1, lentokone2, lentokone3, lentokone4);
         return lentokoneet.getKaikkiLentokoneet();

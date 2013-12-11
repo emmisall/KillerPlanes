@@ -14,10 +14,7 @@ import kayttaja.Pelaaja;
 import lentokone.Lentokone;
 
 /**
- * Pelaaja voi ostaa itselleen uuden lentokoneen kaikista pelin lentokoneista, jos pelaajalla on rahaa
- * Lentokoneen luodaan tässä uudestaan, koska muuten käy niin että tässä myydään lentokoneita joita on jo käytetty
- * (ostaessa viitataan lentokoneidenLuomisessa tehtäviin lentokoneisiin ja se viittaus säilyy koko ajan, joten lentokoneet
- * pitää luoda uudestaan ennen ostoa jotta ne ovat uusia)
+ * Pelaaja voi ostaa itselleen uuden lentokoneen kaikista pelin lentokoneista, jos pelaajalla on rahaa 
  * 
  */
 public class LentokoneOstosValinnat {
