@@ -1,0 +1,14 @@
+Ohjeet peliin:
+
+1. Anna pelaajille nimet, pelaajat saavat lentokoneen ja aseen.
+2. Valitse taisteluun lentokone ja ase (ekalla kierroksella vain yksi vaihtoehto)
+3. Taistele ja näet tuloksen.
+4. Kaupassa ostetaan ensin aseita. Aseita voi ostaa jo omistettuihin 
+lentokoneisiin. Yhdessä lentokoneessa voi olla max 3 asetta.
+5. Osta lentokone halutessasi.
+6. Toinen pelaaja suorittaa kohdat 4-5
+7. Valitse lentokone ja ase lentokoneesta seuraavaan taisteluun.
+8. Kohdat 3-7 toistuvat, kunnes jompi kumpi voittaa tai päädytään tasapeliin.
+Pelissä voittaa, jos saa 2000 rahaa kasaan tai toisen pelaajan kaikki
+lentokoneet ovat tippuneet. Tasapeli voi tapahtua, jos molemmat saavat
+samalla kierroksella 2000 rahaa kasaan tai molempien kaikki koneet ovat tippuneet.

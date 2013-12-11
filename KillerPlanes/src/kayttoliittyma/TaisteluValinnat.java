@@ -67,7 +67,7 @@ public class TaisteluValinnat {
             }
             
         }
-
+        
         paneeli.add(teksti3);
 
         ArrayList<Lentokone> koneet2 = new ArrayList<Lentokone>();
@@ -89,6 +89,7 @@ public class TaisteluValinnat {
             }
             
         }
+        
         
         JButton taistele = new JButton("Taistele!");
         taistele.addActionListener(this.kayttis);
