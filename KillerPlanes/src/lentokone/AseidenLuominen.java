@@ -9,8 +9,8 @@ package lentokone;
 import java.util.ArrayList;
 
 /**
- *
- * @author verijuotikas
+ * Luodaan aseet lentokoneille, "ylläpidon" määrittelemä, pelaaja ei voi hallita näitä
+ * 
  */
 public class AseidenLuominen {
     
@@ -19,11 +19,9 @@ public class AseidenLuominen {
     private Ase ase3;
     private ArrayList<Ase> kaikkiaseet;
     
-    //asiden ominaisuudet ei välttämättä ole optimaaliset pelin läpiviennin kannalta vielä mutta ovat kuitenkin olemassa
-    //että peliä voi pelata
     
     /**
-     * Luodaan aseet lentokoneelle, "ylläpidon" määrittelemä, pelaaja ei voi hallita näitä
+     * Luodaan kolme asetta ja annetaan niille nimi, teho, tarkkuus ja hinta
      * @param ase1
      * @param ase2
      * @param ase3 
@@ -58,6 +56,11 @@ public class AseidenLuominen {
     public Ase getAse3() {
         return ase3;
     }
+    
+    /**
+     * Paluttaa kaikki pelin aseet listana
+     * @return lista kaikista aseista
+     */
     
     public ArrayList<Ase> palautaKaikki() {
         this.kaikkiaseet = new ArrayList<Ase>();

@@ -6,28 +6,22 @@
 
 package lentokone;
 
+  
 /**
- *
- * @author verijuotikas
+ * Aseiden tietojen määrittäminen + getterit niille
  */
+
 public class Ase {
     
     private int teho;
     private double tarkkuus;
     private String nimi;
     private int hinta;
-    
-    /**
-     * Asetetaan aseen tiedot ja voidaan saada ne gettereillä taistelua ja ostamista varten
-     */
-    
+  
     public Ase () {
         
     }
-    
-    //tässä ei puututa virheellisiin (esim. < 0) syöttöarvoihin vielä, tiedetään
-    //mutta aseet lisää ylläpitäjä joka nyt saa toistaiseksi luvan tietää että mitä on tekemässä, 
-    //pelaajat vain ottavat käyttöön ylläpitäjän lisäämiä aseita
+
     
     public void setNimi(String nimi) {
         this.nimi=nimi;

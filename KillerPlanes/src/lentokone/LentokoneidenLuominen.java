@@ -9,8 +9,8 @@ package lentokone;
 import java.util.ArrayList;
 
 /**
- *
- * @author verijuotikas
+ *Luodaan kaikki pelin lentokoneet. "Ylläpidon" määrittelemiä, pelaaja ei voi hallita näitä
+ * 
  */
 public class LentokoneidenLuominen {
     
@@ -22,8 +22,7 @@ public class LentokoneidenLuominen {
     private ArrayList<Lentokone> kaikkilentokoneet;
 
     /**
-     * Luodaan lentokoneet, joita voi ostaa. "Ylläpidon" määrittelemiä, pelaaja ei voi hallita näitä
-     * 
+     * Luodaan kolme lentokonetta ja annetaan niille nimi, energia ja hinta
      * @param lentokone1
      * @param lentokone2
      * @param lentokone3
@@ -64,6 +63,11 @@ public class LentokoneidenLuominen {
     public Lentokone getLento4() {
         return lentokone4;
     }
+    
+    /**
+     * Palauttaa kaikki pelin lentokoneet listana
+     * @return lista kaikisa lentokoneista
+     */
     
     public ArrayList<Lentokone> getKaikkiLentokoneet() {
         this.kaikkilentokoneet=new ArrayList<Lentokone>();

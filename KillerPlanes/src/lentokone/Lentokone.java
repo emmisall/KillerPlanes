@@ -7,34 +7,27 @@
 package lentokone;
 
 import java.util.ArrayList;
-import kayttaja.Pelaaja;
 
 
 /**
- *
- * @author verijuotikas
+ * Hallitsee lentokoneen energiaa ja aseita
+ * 
  */
 public class Lentokone {
     
-    private Ase ase;
     private String nimi;
     private int hinta;
     private ArrayList<Ase> aseet;
     private int energia;
-    private Pelaaja pelaaja;
     private AseidenLuominen aseistuksenTeko;
     private Ase ase1;
     private Ase ase2;
     private Ase ase3;
 
-    //tässä ei puututa virheellisiin (esim. < 0) syöttöarvoihin vielä, tiedetään
-    //mutta lentokoneet lisää ylläpitäjä joka nyt saa toistaiseksi luvan tietää että mitä on tekemässä, 
-    //pelaajat vain ottavat käyttöön ylläpitäjän lisäämiä lentokoneita
     
-    /**
-     * Lentokone-luokka hallitsee lentokoneen energiaa ja aseita
-     */
- 
+ /**
+  * Konstruktorissa luodaan lentokoneelle lista aseista ja siihen lisätään lentokoneen ensimmäinen ase
+  */
     
     public Lentokone () {
         this.aseet=new ArrayList<Ase>();
@@ -50,6 +43,12 @@ public class Lentokone {
     public String getNimi() {
         return nimi;
     }
+    
+    /**
+     * Lisää lentokoneelle aseen, jos lentokoneessa ei ole vielä aseet täynnä (max 3)
+     * @param ase, se ase joka halutaan lisätä 
+     * @return true jos ase mahtui, false jos ei
+     */
     
     public boolean lisaaAse(Ase ase) {
         if (aseet.size()==3) {
@@ -69,7 +68,7 @@ public class Lentokone {
     
     /**
      * Päivittää lentokoneen energian, jos siihen osutaan taistelussa, vähentää energiaa
-     * sen verran mitä aseessa on tehoja
+     * sen verran mitä aseessa on tehoja*3
      * @param ase se ase, jolla ammuttiin
      */
     
@@ -86,6 +85,11 @@ public class Lentokone {
         return aseet;
     }
     
+    /**
+     * Palauttaa kaikki pelin aseet
+     * @return kaikki aseet listana
+     */
+    
     public ArrayList<Ase> palautaKaikkiAseet() {
         return aseistuksenTeko.palautaKaikki();
     }
@@ -99,6 +103,7 @@ public class Lentokone {
         return hinta;
     }
     
+    @Override
     public String toString() {
              String aseita=" Aseet: ";
         for (Ase ase4 : aseet) {

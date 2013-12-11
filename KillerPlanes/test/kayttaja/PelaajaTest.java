@@ -67,6 +67,7 @@ public class PelaajaTest {
    @Test
    public void palauttaaFalseJosLentokoneTippuuEnergiaTasanNolla() {
        ase1.setTeho(200);
+       lentokone1.setEnergia(600); //laitetaan tasan 600 koska 200*3=600 joten ampumisessa energia menee nollaksi.
        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
        assertFalse(pelaaja1.tarkistaSailyykoKoneIlmassa(lentokone1));
        
@@ -82,6 +83,7 @@ public class PelaajaTest {
    @Test 
    public void palauttaaTrueJosLentokoneEiTipuEnergiaYliNolla() {
        ase1.setTeho(100);
+       lentokone1.setEnergia(1000);
        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
        assertTrue(pelaaja1.tarkistaSailyykoKoneIlmassa(lentokone1));
    }
@@ -96,6 +98,7 @@ public class PelaajaTest {
    @Test
    public void eiPoistaLentokonettaListastaJosSeEiTipu() {
        ase1.setTeho(100);
+       lentokone1.setEnergia(1000);
        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
        assertTrue(pelaaja1.palautaLentokoneet().contains(lentokone1));
    }
@@ -161,6 +164,12 @@ public class PelaajaTest {
    @Test
    public void palauttaaFalseJosEiVoita() {
        assertFalse(pelaaja1.tarkistaVoittaako());
+   }
+   
+   @Test
+   public void palauttaaTrueJosRahaaTasan2000() {
+       pelaaja1.setRahaa(1000); //lisätään pelaajalle 1000 rahaa niin on yhteensä 2000
+       assertTrue(pelaaja1.tarkistaVoittaako());
    }
    
 

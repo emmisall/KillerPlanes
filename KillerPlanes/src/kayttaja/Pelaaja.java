@@ -9,8 +9,8 @@ import lentokone.Ase;
 import lentokone.LentokoneidenLuominen;
 
 /**
+ * Pelaaja-luokka hallitsee pelaajan lentokoneita ja rahoja.
  * 
- * @author verijuotikas
  */
 
 public class Pelaaja {
@@ -31,7 +31,7 @@ public class Pelaaja {
     
     /**
      * 
-     * Pelaaja-luokka hallitsee pelaajan lentokoneita ja rahoja
+     * Konstruktorissa luodaan pelaajalle lista lentokoneista ja lisätään sinne pelaajan ensimmäinen lentokone.
      * 
      * @param nimi pelaajan antama pelaajanimi
      */
@@ -51,7 +51,7 @@ public class Pelaaja {
     
     
     /**
-     * Metodi lisää lentokoneen käyttäjän lentokone-arrayListiin
+     * Metodi lisää lentokoneen käyttäjän lentokone-listaan
      * 
      * @param lentokone Se lentokone, joka halutaan lisätä, esim. ostettu lentokone
      */
@@ -61,26 +61,31 @@ public class Pelaaja {
     
     
     /**
-     * Tämä metodi palauttaa siis vain tämän pelaajan lentokoneet
-     * @return lista lentokoneista
+     * Tämä metodi palauttaa vain tämän pelaajan lentokoneet
+     * @return lista pelaajan lentokoneista
      */
     
     public ArrayList<Lentokone> palautaLentokoneet() {
         return lentokoneet;
     }
     
+    /**
+     * Tämä metodi palauttaa kaikki lentokoneet, jotka ovat pelissä ostettavissa
+     * @return lista kaikista pelin lentokoneista
+     */
+    
     public ArrayList<Lentokone> palautaKaikki() {
         return lentsikat.getKaikkiLentokoneet();
     }
     
     /**
-     * Metodin avulla tarkistetaan, säilyykö pelaajan lentokone ilmassa osuman jälkeen, poistaa pelaajan arrayLististä koneen jos se tippuu
+     * Metodin avulla tarkistetaan, säilyykö pelaajan lentokone ilmassa osuman jälkeen, poistaa pelaajan listasta koneen jos se tippuu
      * 
      * @param lentokone eli se pelaajan lentokone, johon osuttiin
      * @return false jos tippuu, true jos ei tipu 
      */
     
-    public boolean tarkistaSailyykoKoneIlmassa(Lentokone lentokone) { //tässä siis poistetaan lentokone pelaajan listasta jos tippuu taistelussa
+    public boolean tarkistaSailyykoKoneIlmassa(Lentokone lentokone) { 
         if (lentokone.getEnergia() <= 0) {
             lentokoneet.remove(lentokone);
             return false;
@@ -97,12 +102,22 @@ public class Pelaaja {
         
     }
     
+    /**
+     * Metodi tarkistaa, kuoleeko pelaaja eli onko pelaajan listassa enää yhtään lentokonetta
+     * @return true jos kuolee eli kaikki lentokoneen tippuneet ja false jos ei kuole
+     */
+    
     public boolean tarkistaKuoleeko() {
         if (palautaLentokoneet().isEmpty()) {
             return true;
         }
         else return false;
     }
+    
+   /**
+    * Metodi tarkistaa, voittaako pelaaja eli onko pelaajalla rahaa tasan tai yli 2000
+    * @return true jos voittaa, false jos ei voita
+    */
     
     public boolean tarkistaVoittaako() {
         if (getRahat() >= 2000) {
@@ -114,7 +129,7 @@ public class Pelaaja {
     /**
      * Metodilla ostetaan lentokone, jos on rahaa tarpeeksi. Lentokone lisätään arrayListiin ja pelaajalta otetaan rahaa pois.
      * 
-     * @param lentokone
+     * @param se lentokone, joka halutaan ostaa
      * @return true jos oli rahaa ostaa, false jos ei ollut
      */
     
@@ -128,17 +143,15 @@ public class Pelaaja {
     }
     
     /**
-     * Metodilla ostetaan ase, jos on rahaa tarpeeksi. Ase lisätään sen lentokoneen ArrayListiin jolle se ostetaan
-     * Ei sisällä vielä tarkistusta sille että onko koneessa jo 3 asetta, jos on niin ei voi ostaa.
+     * Metodilla ostetaan ase, jos on rahaa tarpeeksi. Ase lisätään sen lentokoneen listaan, johon se ostetaan
      * @param ase se ase joka halutaan ostaa
      * @param lentokone se lentokone, johon asetta ollaan ostamassa
-     * @return true jos oli rahaa ostaa, false jos ei
+     * @return true jos oli rahaa ostaa ja ase mahtuu lentokoneeseen, false jos ei
      */
     
      public boolean ostaAse(Ase ase, Lentokone lentokone) {
-         if (getRahat()-ase.getHinta() >= 0) {
+         if (getRahat()-ase.getHinta() >= 0 && lentokone.lisaaAse(ase)==true) {
              setRahaa(0-ase.getHinta());
-             lentokone.lisaaAse(ase);
              return true;
          }
          return false;

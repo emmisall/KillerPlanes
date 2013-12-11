@@ -12,16 +12,12 @@ import lentokone.Ase;
 import lentokone.Lentokone;
 
 /**
- *
- * @author verijuotikas
+ *Luokka taistelua varten, sisältää ampumisen
+ * 
  */
 public class Taistelu {
     
     Random rand = new Random();
-    
-    /**
-     * Luokka taistelua varten, sisältää toistaiseksi vain ampumista
-     */
     
     public Taistelu () {
         
@@ -40,7 +36,7 @@ public class Taistelu {
      */
     
     public boolean ammu(Lentokone lentokone, Ase ase, Pelaaja kohde, Pelaaja ampuja) {
-        double randomi = rand.nextDouble(); //talletetaan muuttujaan että saan testitulostuksia tehtyä, tulostusta ei jätetä tänne
+        double randomi = rand.nextDouble(); 
         if (randomi < ase.getTarkkuus()) {
             System.out.println("Osui, random oli:"+randomi);
             lentokone.paivitaEnergia(ase);
