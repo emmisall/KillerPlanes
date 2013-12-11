@@ -10,6 +10,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 
 /**
@@ -19,6 +20,7 @@ import javax.swing.JLabel;
 public class PelinTulos {
     
     private Kayttoliittyma kayttis;
+    private JPanel paneeli;
     
     
     public PelinTulos(Kayttoliittyma kayttis) {
@@ -32,9 +34,13 @@ public class PelinTulos {
      */
     
     public void luoKomponentit(Container container) {
-        GridLayout leiska = new GridLayout(10,1);
-        container.setLayout(leiska);
-        JLabel teksti2;
+        container.add(luoSisalto());
+        
+    }
+    
+    private JPanel luoSisalto() {
+        paneeli = new JPanel(new GridLayout(10,1));
+         JLabel teksti2;
         JLabel teksti3;
         JLabel teksti1 = new JLabel("Taistelun tulos:");
         
@@ -54,17 +60,20 @@ public class PelinTulos {
         JLabel rahat1 = new JLabel(kayttis.getPelaaja1().getNimi()+": "+kayttis.getPelaaja1().getRahat());
         JLabel rahat2 = new JLabel(kayttis.getPelaaja2().getNimi()+": "+kayttis.getPelaaja2().getRahat());
         
-        container.add(teksti1);
-        container.add(teksti2);
-        container.add(teksti3);
-        container.add(rahat);
-        container.add(rahat1);
-        container.add(rahat2);
+        paneeli.add(teksti1);
+        paneeli.add(teksti2);
+        paneeli.add(teksti3);
+        paneeli.add(rahat);
+        paneeli.add(rahat1);
+        paneeli.add(rahat2);
 
-        container.add(new JLabel("Kauppa suoritetaan ostamalla ensin aseet ja sitten lentokoneet"));
+        paneeli.add(new JLabel("Kauppa suoritetaan ostamalla ensin aseet ja sitten lentokoneet"));
         JButton kauppa = new JButton("Asekauppaan "+kayttis.getPelaaja1().getNimi());
         kauppa.addActionListener(this.kayttis);
-        container.add(kauppa);
+        paneeli.add(kauppa);
+        
+        return paneeli;
+        
     }
 
     
