@@ -68,3 +68,9 @@ mutta vanhoista koodeista varmasti apua
 
 11.1.2013
 - koodausta, dokumentaatiota yms. 9h 
+
+12.12.2013
+- 1h javadocin testailua eri ympäristöissä
+
+13.12.2013
+- viimeistelyä, tarkistelua, sähläystä, irkissä valittamista yms. n. 4h
