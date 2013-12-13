@@ -18,6 +18,10 @@ taistelussa.
 
 AseidenLuominen ja LentokoneidenLuominen ovat vain ekstra-luokkia, jotta peliin
 tarvittavat aseet ja lentokoneet ovat käytettävissä. Lentokoneet luodaan uudelleen
-ennen kauppaa, jottei käytettyjä lentokoneita myytäisi uudelleen.
+ennen kauppaa, jottei käytettyjä lentokoneita myytäisi uudelleen. Lentokoneet
+ja aseet olisi kannattanut tallentaa taulukkoihin, se olisi ollut paljon mielekkäämpi
+ja fiksumpi toteutus. Tajusin sen liian myöhään enkä uskaltanut enää alkaa säätämään.
+
+
 
 
