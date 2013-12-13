@@ -13,3 +13,12 @@ lentokoneisiin. Yhdessä lentokoneessa voi olla max 3 asetta.
 Pelissä voittaa, jos saa 2000 rahaa kasaan tai toisen pelaajan kaikki
 lentokoneet ovat tippuneet. Tasapeli voi tapahtua, jos molemmat saavat
 samalla kierroksella 2000 rahaa kasaan tai molempien kaikki koneet ovat tippuneet.
+
+
+(Pro tip: Kannattaa kerätä lentokoneita paljon, silloin yhden koneen tippuminen
+ei haittaa. Jos pelin loppumista haluaa testata niin paras niin ettei ostele
+lentokoneita kummallekaan/toiselle pelaajalle paljon niin huomaa että jossain
+vaiheessa toisen koneet loppuu tai jopa molempien samalla kierroksella. Toki 
+peli välillä loppuu siihenkin että rahaa tulee tarpeeksi, etenkin jos onnistutaan
+osumaan isoilla aseilla ja ei ole käytetty paljon rahaa kalliisiin lentokoneisiin.
+Kaikkia aseita voi laittaa kaikkiin lentokoneisiin.)

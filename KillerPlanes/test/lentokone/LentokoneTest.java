@@ -84,15 +84,5 @@ public class LentokoneTest {
         assertEquals(200, lentokone1.getEnergia());
     }
     
-    @Test
-    public void josEnergiaNollanTaiAllePalauttaaFalsen() {
-        Ase ase1 = new Ase();
-        ase1.setTeho(200);
-        ase1.setTarkkuus(1);
-        lentokone1.setEnergia(200);
-        Taistelu taistelu1 = new Taistelu();
-        taistelu1.ammu(lentokone1, ase1, pelaaja1, pelaaja2);
- 
-    }
     
 }
