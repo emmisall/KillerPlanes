@@ -1,0 +1,23 @@
+Luokkakaavio sanallisesti
+
+Luokka Käyttöliittymä "hallitsee" peliä, se kutsuu sisältöä muista 
+käyttöliittymä-paketin luokista riippuen siitä, mitä valintoja pelaaja 
+on tehnyt. Pelin pelaaja-oliot luodaan luokassa Käyttöliittymä pelin alussa. 
+
+Pelajaa-luokka hallitsee pelaajan rahoja, ostoksia ja lentokoneita. Sitä kutsutaan
+aina kun päivitetään rahatilannetta (taistelu tai ostokset), ostetaan aseita 
+tai lentokoneita tai kun taistellaan, jolloin tarkistetaan tippuiko kone.
+
+Lentokone-luokka hallitsee lentokoneen energiaa ja aseita, eli sitä kutsutaan
+aina taistelussa kun lentokoneeseen on osuttu tai kun lentokoneeseen halutaan
+ostaa uusi ase. 
+
+Ase-luokka ei sisällä erityistä toiminnallisuutta, koska aseiden "tilanne" ei 
+muutu pelin edetessä, niitä vain ostetaan mutta ne eivät esim vahingoitu
+taistelussa.
+
+AseidenLuominen ja LentokoneidenLuominen ovat vain ekstra-luokkia, jotta peliin
+tarvittavat aseet ja lentokoneet ovat käytettävissä. Lentokoneet luodaan uudelleen
+ennen kauppaa, jottei käytettyjä lentokoneita myytäisi uudelleen.
+
+
