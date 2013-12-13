@@ -73,4 +73,4 @@ mutta vanhoista koodeista varmasti apua
 - 1h .jar-tiedoston testailua eri ympäristöissä
 
 13.12.2013
-- viimeistelyä, tarkistelua, sähläystä, irkissä valittamista yms. n. 4h
+- viimeistelyä, tarkistelua, sähläystä, irkissä valittamista yms. 4h
